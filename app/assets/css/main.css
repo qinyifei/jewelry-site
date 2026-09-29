@@ -81,11 +81,11 @@ img {
   width: 100%;
   max-width: var(--w-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding-inline: 24px;
 }
 
 .section {
-  padding: 72px 0;
+  padding-block: 72px;
 }
 
 .section-head {
@@ -94,6 +94,13 @@ img {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 32px;
+}
+
+.section-head h2 { margin: 0; }
+
+@media (max-width: 600px) {
+  .section-head { margin-bottom: 20px; }
+  h2 { font-size: 1.6rem; }
 }
 
 .eyebrow {
@@ -160,12 +167,12 @@ img {
 @media (max-width: 600px) {
   .grid-3,
   .grid-2 { grid-template-columns: 1fr; }
-  .section { padding: 48px 0; }
+  .section { padding-block: 48px; }
   .grid { gap: 24px 14px; }
 }
 
 @media (max-width: 480px) {
-  .container { padding: 0 16px; }
+  .container { padding-inline: 16px; }
   .btn { padding: 14px 20px; }
 }
 
@@ -212,7 +219,7 @@ a {
 .prose a { border-bottom: 1px solid var(--c-gold); }
 
 .page-hero {
-  padding: 64px 0 32px;
+  padding-block: 64px 32px;
   text-align: center;
 }
 
