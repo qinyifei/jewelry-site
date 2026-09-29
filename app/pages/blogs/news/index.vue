@@ -15,7 +15,7 @@ usePageSeo({ title: t('blog.title'), description: t('blog.description') })
 
     <div class="grid grid-3">
       <NuxtLinkLocale v-for="post in posts.map(tr)" :key="post.handle" :to="`/blogs/news/${post.handle}`" class="post">
-        <img :src="post.image" :alt="post.title" loading="lazy" width="800" height="800" />
+        <img :src="post.image" :alt="post.title" loading="lazy" width="1200" height="900" />
         <time :datetime="post.date" class="muted">{{ post.date }}</time>
         <h3>{{ post.title }}</h3>
         <p class="muted">{{ post.excerpt }}</p>

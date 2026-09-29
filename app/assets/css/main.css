@@ -161,6 +161,20 @@ img {
   .grid-3,
   .grid-2 { grid-template-columns: 1fr; }
   .section { padding: 48px 0; }
+  .grid { gap: 24px 14px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .btn { padding: 14px 20px; }
+}
+
+/* 长邮箱、长网址在窄屏上自动换行 */
+p,
+li,
+dd,
+a {
+  overflow-wrap: anywhere;
 }
 
 /* 表单 */
@@ -175,7 +189,8 @@ img {
   border: 1px solid var(--c-line);
   border-radius: var(--radius);
   background: #fff;
-  font: 15px/1.4 var(--f-sans);
+  /* 16px 以上 iOS Safari 才不会在聚焦时自动放大页面 */
+  font: 16px/1.4 var(--f-sans);
   color: var(--c-ink);
 }
 

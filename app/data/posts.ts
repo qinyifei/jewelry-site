@@ -6,7 +6,8 @@ export const posts: Post[] = [
     title: 'How to Care for Your Sterling Silver Jewelry',
     date: '2026-09-01',
     excerpt: 'Simple habits that keep your silver bright for years.',
-    image: '/images/products/necklace-1.svg',
+    // 博客封面按 4:3 显示，建议准备 1200×900 的图片
+    image: '/images/blog/silver-care.svg',
     body: [
       'Sterling silver naturally reacts with sulphur in the air, which causes tarnish over time. The good news: a few simple habits keep your pieces looking new.',
       'Store each piece separately in an airtight pouch, take jewelry off before swimming or showering, and polish gently with a soft cloth once a month.',

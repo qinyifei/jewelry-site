@@ -153,7 +153,13 @@ const switchLocalePath = useSwitchLocalePath()
 .burger.open::before { transform: translateY(7px) rotate(45deg); }
 .burger.open::after { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 1180px) {
+/* 英文菜单较长，中等宽度下收紧间距 */
+@media (max-width: 1440px) {
+  .nav { gap: 20px; }
+  .bar { gap: 16px; }
+}
+
+@media (max-width: 1280px) {
   .menu-btn { display: block; }
   .logo { flex: 1; text-align: center; }
 
@@ -175,8 +181,17 @@ const switchLocalePath = useSwitchLocalePath()
 }
 
 @media (max-width: 480px) {
-  .bar { gap: 8px; }
+  .bar { gap: 8px; height: 60px; }
   .logo { font-size: 22px; }
   .lang a { padding: 4px 5px; }
+}
+
+/* 320px 小屏（iPhone SE 一代等） */
+@media (max-width: 374px) {
+  .logo { font-size: 18px; letter-spacing: 0.02em; }
+  .menu-btn { width: 32px; }
+  .lang { gap: 0; }
+  .lang a { padding: 3px 4px; font-size: 11px; }
+  .announcement { font-size: 11px; letter-spacing: 0.02em; }
 }
 </style>
