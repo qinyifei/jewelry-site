@@ -1,0 +1,5 @@
+# 本地用 `npm run preview:cf` 测试询盘接口时，把这个文件复制为 .dev.vars 并填写
+RESEND_API_KEY=re_xxxxxxxx
+INQUIRY_TO=you@example.com
+INQUIRY_FROM=Website <onboarding@resend.dev>
+# TURNSTILE_SECRET_KEY=

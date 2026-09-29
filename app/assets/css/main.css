@@ -1,0 +1,222 @@
+:root {
+  --c-ink: #1f1b16;
+  --c-text: #3d372f;
+  --c-muted: #7a7065;
+  --c-line: #e6dfd5;
+  --c-bg: #fffdf9;
+  --c-soft: #f5f0e9;
+  --c-gold: #b8925a;
+  --c-gold-dark: #97763f;
+  --c-success: #2f6b3a;
+  --c-error: #a23b2a;
+  /* 西文字体在前，中文自动回退到系统中文字体 */
+  --f-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', STSong, SimSun, serif;
+  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --w-max: 1240px;
+  --radius: 2px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--c-text);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  color: var(--c-ink);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+/* 中文标题用衬线字体会偏细，稍微加粗并收紧字号 */
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3 {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+:lang(zh) body,
+body:lang(zh) {
+  line-height: 1.8;
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+h3 { font-size: 1.4rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--w-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-gold-dark);
+  margin-bottom: 12px;
+}
+
+.muted { color: var(--c-muted); }
+
+.link-underline {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 1px solid var(--c-ink);
+  border-radius: var(--radius);
+  background: var(--c-ink);
+  color: #fff;
+  font: 500 13px/1 var(--f-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn:hover { background: var(--c-gold-dark); border-color: var(--c-gold-dark); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--c-ink);
+}
+
+.btn-outline:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); }
+
+.btn-block { width: 100%; }
+
+.grid {
+  display: grid;
+  gap: 32px 24px;
+}
+
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+@media (max-width: 960px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid-3,
+  .grid-2 { grid-template-columns: 1fr; }
+  .section { padding: 48px 0; }
+}
+
+/* 表单 */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-muted); }
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  background: #fff;
+  font: 15px/1.4 var(--f-sans);
+  color: var(--c-ink);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--c-gold);
+}
+
+/* 长文页面（政策、关于我们等） */
+.prose {
+  max-width: 760px;
+}
+
+.prose h2 { font-size: 1.8rem; margin-top: 1.6em; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin-bottom: 0.4em; }
+.prose a { border-bottom: 1px solid var(--c-gold); }
+
+.page-hero {
+  padding: 64px 0 32px;
+  text-align: center;
+}
+
+.page-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--c-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-gold);
+  outline-offset: 2px;
+}

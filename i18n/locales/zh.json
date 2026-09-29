@@ -1,0 +1,123 @@
+{
+  "seo": {
+    "description": "手工打造的 925 纯银与 18K 金包银首饰。选购戒指、项链、耳饰和手链，或与我们合作批发及 OEM 定制。"
+  },
+  "header": {
+    "announcement": "订单满 $80 免费发货（含物流跟踪）· 批发起订量 {moq} 件",
+    "language": "语言"
+  },
+  "nav": {
+    "home": "首页",
+    "shop": "选购",
+    "all": "全部首饰",
+    "wholesale": "批发合作",
+    "about": "关于我们",
+    "journal": "博客",
+    "contact": "联系我们",
+    "menu": "菜单",
+    "close": "关闭"
+  },
+  "home": {
+    "eyebrow": "925 纯银 · 18K 金包银",
+    "heroTitle": "精致首饰，适合每天佩戴",
+    "heroText": "采用 925 纯银与 18K 金包银手工打造。无镍、防过敏、经久耐戴。",
+    "shopNow": "浏览全部系列",
+    "wholesaleCta": "批发询价",
+    "shopByCategory": "按品类选购",
+    "featured": "热销单品",
+    "viewAll": "查看全部",
+    "wholesaleEyebrow": "面向零售商与品牌",
+    "wholesaleTitle": "批发与 OEM 定制",
+    "wholesaleText": "精品店、网店和首饰品牌选择与我们合作，看中的是稳定的品质、低起订量和贴牌包装服务。",
+    "wholesaleMoq": "每款起订量 {moq} 件",
+    "wholesalePrivate": "贴牌包装与定制刻字",
+    "wholesaleLead": "生产周期 {days} 个工作日",
+    "learnMore": "了解详情"
+  },
+  "usp": {
+    "material": "925 纯银",
+    "materialText": "真材实料，带 925 印记",
+    "nickel": "无镍",
+    "nickelText": "符合欧盟 REACH 标准，亲肤不过敏",
+    "shipping": "全球配送",
+    "shippingText": "美国、英国、欧盟全程物流跟踪",
+    "warranty": "一年质保",
+    "warrantyText": "非人为质量问题免费处理"
+  },
+  "product": {
+    "sku": "货号",
+    "from": "起价",
+    "details": "商品参数",
+    "requestQuote": "询价",
+    "askWhatsapp": "WhatsApp 咨询",
+    "wholesaleAvailable": "支持批发 · 起订量 {moq} 件",
+    "related": "你可能还喜欢",
+    "inquiryTitle": "咨询这款商品",
+    "inquiryText": "告诉我们你需要的规格和数量，我们会在 1 个工作日内回复。",
+    "viewImage": "查看第 {n} 张图"
+  },
+  "collection": {
+    "all": "全部首饰",
+    "allDescription": "浏览我们全部的纯银与金包银首饰。",
+    "count": "共 {n} 件",
+    "empty": "这个分类暂时还没有商品。"
+  },
+  "form": {
+    "name": "姓名",
+    "email": "邮箱",
+    "company": "公司 / 店铺（选填）",
+    "country": "国家 / 地区",
+    "type": "咨询类型",
+    "typeRetail": "零售购买",
+    "typeWholesale": "批发",
+    "typeOem": "定制 / OEM",
+    "product": "商品",
+    "options": "规格（材质、尺码等）",
+    "quantity": "数量",
+    "message": "留言",
+    "consent": "我已阅读并同意{link}，同意你们就本次咨询与我联系。",
+    "privacyPolicy": "《隐私政策》",
+    "submit": "提交询盘",
+    "sending": "提交中…",
+    "success": "感谢你的咨询！我们已收到，会在 1 个工作日内回复你。",
+    "error": "抱歉，提交失败。请重试，或直接发邮件至 {email}。"
+  },
+  "whatsapp": {
+    "aria": "通过 WhatsApp 联系我们",
+    "greeting": "你好 {brand}，我想咨询一下你们的首饰。",
+    "product": "你好 {brand}，我对 {product}（{sku}）感兴趣。{options}"
+  },
+  "cookie": {
+    "text": "我们使用 Cookie 来了解网站的使用情况，以改善你的浏览体验。",
+    "accept": "同意",
+    "decline": "拒绝",
+    "learnMore": "隐私政策"
+  },
+  "footer": {
+    "tagline": "精致首饰，适合每天佩戴。",
+    "shop": "选购",
+    "company": "关于",
+    "help": "帮助",
+    "faq": "常见问题",
+    "shipping": "运费政策",
+    "refund": "退换货政策",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "rights": "保留所有权利。"
+  },
+  "policy": {
+    "updated": "最后更新：{date}",
+    "translationNotice": "本中文版本仅供参考，如与英文版本有任何不一致，以英文版本为准。"
+  },
+  "blog": {
+    "title": "博客",
+    "description": "首饰保养指南、搭配灵感和工作室故事。",
+    "readMore": "阅读全文",
+    "back": "返回博客"
+  },
+  "notFound": {
+    "title": "页面不存在",
+    "text": "你访问的页面不存在或已被移动。",
+    "back": "返回首页"
+  }
+}

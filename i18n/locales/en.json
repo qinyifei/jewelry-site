@@ -1,0 +1,123 @@
+{
+  "seo": {
+    "description": "Handcrafted 925 sterling silver and 18K gold vermeil jewelry. Shop rings, necklaces, earrings and bracelets, or partner with us for wholesale and custom OEM orders."
+  },
+  "header": {
+    "announcement": "Free tracked shipping on orders over $80 · Wholesale MOQ {moq} pcs",
+    "language": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "all": "All Jewelry",
+    "wholesale": "Wholesale",
+    "about": "About",
+    "journal": "Journal",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "home": {
+    "eyebrow": "925 Sterling Silver · 18K Gold Vermeil",
+    "heroTitle": "Fine jewelry, made to be worn every day",
+    "heroText": "Handcrafted in 925 sterling silver and 18K gold vermeil. Nickel free, hypoallergenic and built to last.",
+    "shopNow": "Shop the Collection",
+    "wholesaleCta": "Wholesale Enquiries",
+    "shopByCategory": "Shop by Category",
+    "featured": "Bestsellers",
+    "viewAll": "View all",
+    "wholesaleEyebrow": "For Retailers & Brands",
+    "wholesaleTitle": "Wholesale & Custom OEM",
+    "wholesaleText": "Boutiques, online stores and brands work with us for reliable quality, low minimums and private-label packaging.",
+    "wholesaleMoq": "MOQ from {moq} pieces per design",
+    "wholesalePrivate": "Private label packaging & custom engraving",
+    "wholesaleLead": "Production lead time {days} business days",
+    "learnMore": "Learn more"
+  },
+  "usp": {
+    "material": "Solid 925 Sterling Silver",
+    "materialText": "Genuine, stamped and certified",
+    "nickel": "Nickel Free",
+    "nickelText": "EU REACH compliant, gentle on skin",
+    "shipping": "Worldwide Shipping",
+    "shippingText": "Tracked delivery to the US, UK & EU",
+    "warranty": "1-Year Warranty",
+    "warrantyText": "Against manufacturing defects"
+  },
+  "product": {
+    "sku": "SKU",
+    "from": "From",
+    "details": "Details",
+    "requestQuote": "Request a Quote",
+    "askWhatsapp": "Ask on WhatsApp",
+    "wholesaleAvailable": "Wholesale available · MOQ {moq} pcs",
+    "related": "You may also like",
+    "inquiryTitle": "Enquire about this piece",
+    "inquiryText": "Tell us the options and quantity you need and we will reply within 1 business day.",
+    "viewImage": "View image {n}"
+  },
+  "collection": {
+    "all": "All Jewelry",
+    "allDescription": "Browse our full collection of sterling silver and gold vermeil jewelry.",
+    "count": "{n} piece | {n} pieces",
+    "empty": "No products in this collection yet."
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "company": "Company / Store (optional)",
+    "country": "Country",
+    "type": "I'm interested in",
+    "typeRetail": "Retail purchase",
+    "typeWholesale": "Wholesale",
+    "typeOem": "Custom / OEM",
+    "product": "Product",
+    "options": "Options (metal, size…)",
+    "quantity": "Quantity",
+    "message": "Message",
+    "consent": "I agree to the {link} and consent to being contacted about my enquiry.",
+    "privacyPolicy": "Privacy Policy",
+    "submit": "Send Enquiry",
+    "sending": "Sending…",
+    "success": "Thank you! Your enquiry has been sent. We'll get back to you within 1 business day.",
+    "error": "Sorry, something went wrong. Please try again or email us at {email}."
+  },
+  "whatsapp": {
+    "aria": "Chat with us on WhatsApp",
+    "greeting": "Hi {brand}, I have a question about your jewelry.",
+    "product": "Hi {brand}, I'm interested in {product} ({sku}). {options}"
+  },
+  "cookie": {
+    "text": "We use cookies to understand how our site is used and to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Privacy Policy"
+  },
+  "footer": {
+    "tagline": "Fine jewelry, crafted to be worn every day.",
+    "shop": "Shop",
+    "company": "Company",
+    "help": "Help",
+    "faq": "FAQ",
+    "shipping": "Shipping Policy",
+    "refund": "Returns & Refunds",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  },
+  "policy": {
+    "updated": "Last updated: {date}",
+    "translationNotice": ""
+  },
+  "blog": {
+    "title": "Journal",
+    "description": "Jewelry care guides, styling tips and stories from our studio.",
+    "readMore": "Read more",
+    "back": "Back to Journal"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for doesn't exist or has moved.",
+    "back": "Back to Home"
+  }
+}

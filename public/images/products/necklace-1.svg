@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+<rect width="800" height="800" fill="#f4efe8"/>
+<path d="M220 180 Q400 560 580 180" fill="none" stroke="#b8925a" stroke-width="6"/><path d="M400 420 c-40 -50 -90 0 -40 40 l40 40 l40 -40 c50 -40 0 -90 -40 -40z" fill="#b8925a"/>
+<text x="400" y="720" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#8a7a66" letter-spacing="6">PLACEHOLDER</text>
+</svg>
