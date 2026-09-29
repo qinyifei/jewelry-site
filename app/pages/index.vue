@@ -46,7 +46,9 @@ usePageSeo({ title: site.name })
       </div>
       <div class="grid grid-4">
         <NuxtLinkLocale v-for="c in collections" :key="c.handle" :to="`/collections/${c.handle}`" class="cat">
-          <img :src="c.image" :alt="tr(c).title" loading="lazy" width="800" height="800" />
+          <div class="cat-media">
+            <img :src="c.image" :alt="tr(c).title" loading="lazy" width="800" height="800" />
+          </div>
           <span>{{ tr(c).title }}</span>
         </NuxtLinkLocale>
       </div>
@@ -113,19 +115,23 @@ usePageSeo({ title: site.name })
 
 .usp span { color: var(--c-muted); }
 
-.cat { position: relative; display: block; overflow: hidden; }
-.cat img { aspect-ratio: 1; object-fit: cover; transition: transform 0.6s; }
+/* 分类名放在图片下方，不遮挡产品图 */
+.cat { display: block; }
+.cat img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform 0.6s; }
+.cat-media { overflow: hidden; background: var(--c-soft); }
 .cat:hover img { transform: scale(1.04); }
 
 .cat span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
+  display: block;
+  margin-top: 12px;
   text-align: center;
   font-family: var(--f-serif);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--c-ink);
+}
+
+@media (max-width: 600px) {
+  .cat span { font-size: 1.15rem; margin-top: 8px; }
 }
 
 .wholesale { background: var(--c-soft); }
