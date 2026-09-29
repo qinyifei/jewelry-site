@@ -75,7 +75,10 @@ usePageSeo({ title: site.name })
             <li>{{ $t('home.wholesalePrivate') }}</li>
             <li>{{ $t('home.wholesaleLead', { days: site.wholesale.leadTimeDays }) }}</li>
           </ul>
-          <NuxtLinkLocale to="/pages/wholesale" class="btn">{{ $t('home.learnMore') }}</NuxtLinkLocale>
+          <div class="actions">
+            <NuxtLinkLocale to="/pages/wholesale" class="btn">{{ $t('home.learnMore') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/blogs/cases" class="btn btn-outline">{{ $t('home.viewCases') }}</NuxtLinkLocale>
+          </div>
         </div>
       </div>
     </section>

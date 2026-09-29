@@ -35,6 +35,7 @@ const tr = useLocalized()
         <h4>{{ $t('footer.company') }}</h4>
         <NuxtLinkLocale to="/pages/about">{{ $t('nav.about') }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/wholesale">{{ $t('nav.wholesale') }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="/blogs/cases">{{ $t('footer.cases') }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/blogs/news">{{ $t('nav.journal') }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/contact">{{ $t('nav.contact') }}</NuxtLinkLocale>
       </div>

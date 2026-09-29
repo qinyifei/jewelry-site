@@ -32,7 +32,8 @@
     "wholesaleMoq": "MOQ from {moq} pieces per design",
     "wholesalePrivate": "Private label packaging & custom engraving",
     "wholesaleLead": "Production lead time {days} business days",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "viewCases": "View case studies"
   },
   "usp": {
     "material": "Solid 925 Sterling Silver",
@@ -103,7 +104,8 @@
     "refund": "Returns & Refunds",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "cases": "Case Studies"
   },
   "policy": {
     "updated": "Last updated: {date}",
@@ -119,5 +121,30 @@
     "title": "Page not found",
     "text": "The page you are looking for doesn't exist or has moved.",
     "back": "Back to Home"
+  },
+  "design": {
+    "title": "From sketch to finished piece",
+    "sketch": "Design sketch",
+    "final": "Finished piece",
+    "story": "The design story"
+  },
+  "cases": {
+    "title": "Case Studies",
+    "eyebrow": "Our Work",
+    "description": "Real projects with retailers and brands: from the first sketch to the finished collection.",
+    "viewAll": "View all case studies",
+    "view": "View case",
+    "challenge": "The brief",
+    "solution": "What we did",
+    "results": "The result",
+    "quantity": "Order",
+    "leadTime": "Lead time",
+    "service": "Service",
+    "seeProduct": "See the product",
+    "ctaTitle": "Have a design in mind?",
+    "ctaText": "Send us your sketch or reference images and we will reply with a quote and sample plan within 1 business day.",
+    "cta": "Start your project",
+    "back": "Back to Case Studies",
+    "client": "Client"
   }
 }

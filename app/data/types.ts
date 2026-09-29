@@ -15,6 +15,8 @@ export interface ProductText {
   description: string[]
   details: { label: string; value: string }[]
   options: ProductOption[]
+  // 设计故事（可选）：配合 designImage 显示在商品页底部
+  designStory?: string
 }
 
 export interface Product extends ProductText, Translations<ProductText> {
@@ -27,6 +29,31 @@ export interface Product extends ProductText, Translations<ProductText> {
   images: string[]
   wholesale: boolean
   featured?: boolean
+  // 设计稿（可选）：低分辨率、加水印、去掉尺寸标注；不填就不显示「设计故事」板块
+  designImage?: string
+}
+
+export interface CaseText {
+  title: string
+  client: string // 客户类型和所在地，例如 "Online boutique · California, USA"
+  service: string // 服务类型，例如 "Private label / OEM"
+  summary: string
+  challenge: string
+  solution: string
+  results: string[]
+  // 客户评价（可选）：必须是客户真实说过、并同意公开的话
+  quote?: string
+  quoteAuthor?: string
+}
+
+export interface CaseStudy extends CaseText, Translations<CaseText> {
+  handle: string
+  sketch: string // 设计稿
+  finished: string // 成品实物图
+  quantity: string
+  leadTime: string
+  // 案例里用到的现有商品（可选），会显示「查看同款」链接
+  product?: string
 }
 
 export interface CollectionText {

@@ -3,6 +3,7 @@ import { products } from './app/data/products'
 import { collections } from './app/data/collections'
 import { posts } from './app/data/posts'
 import { policies } from './app/data/policies'
+import { cases } from './app/data/cases'
 
 const routes = [
   '/',
@@ -15,6 +16,8 @@ const routes = [
   '/pages/faq',
   '/blogs/news',
   ...posts.map(p => `/blogs/news/${p.handle}`),
+  '/blogs/cases',
+  ...cases.map(c => `/blogs/cases/${c.handle}`),
   ...policies.map(p => `/policies/${p.handle}`),
 ]
 
