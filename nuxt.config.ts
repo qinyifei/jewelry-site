@@ -63,6 +63,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    // 固定为纯静态输出。否则在 Cloudflare 构建时会自动切到 cloudflare-pages-static，
+    // 输出目录变成 dist，和 Cloudflare 里设置的 .output/public 对不上
+    preset: 'static',
     prerender: {
       // 生成 products/xxx.html 而不是 products/xxx/index.html，
       // 这样 Cloudflare Pages 上的网址不带结尾斜杠，和 Shopify 格式一致
