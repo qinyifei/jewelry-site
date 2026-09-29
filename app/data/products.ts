@@ -29,8 +29,12 @@ export const products: Product[] = [
     options: [metal, ringSize],
     wholesale: true,
     featured: true,
+    designImage: '/images/cases/sketch-ring.svg',
+    designStory:
+      'We wanted a solitaire that sits low enough for everyday wear. Early sketches explored four, six and eight prongs; six gave the best balance of security and sparkle.',
     i18n: {
       zh: {
+        designStory: '我们想做一枚镶口足够低、适合日常佩戴的单钻戒。早期草图试过四爪、六爪和八爪，最终选择了在牢固和闪耀之间最平衡的六爪。',
         title: '经典单钻戒指',
         summary: '经典六爪镶嵌，配圆形明亮式切工锆石。',
         description: [
@@ -100,8 +104,12 @@ export const products: Product[] = [
     options: [metal],
     wholesale: true,
     featured: true,
+    designImage: '/images/cases/sketch-necklace.svg',
+    designStory:
+      'The puffed heart started as a flat outline. We added volume so it catches light from every angle, and kept the back flat for engraving.',
     i18n: {
       zh: {
+        designStory: '立体爱心最初只是一个平面轮廓。我们加了饱满的弧度，让它从各个角度都能反光，同时保留平整的背面方便刻字。',
         title: '爱心吊坠项链',
         summary: '立体爱心吊坠，搭配可调节细链。',
         description: [

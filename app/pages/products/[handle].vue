@@ -147,6 +147,15 @@ useHead({
       </div>
     </div>
 
+    <section v-if="p.designImage" class="section story">
+      <div class="story-text">
+        <p class="eyebrow">{{ $t('design.story') }}</p>
+        <h2>{{ $t('design.title') }}</h2>
+        <p v-if="p.designStory">{{ p.designStory }}</p>
+      </div>
+      <DesignCompare :sketch="p.designImage" :finished="p.images[0]!" :alt="p.title" />
+    </section>
+
     <section id="inquiry" class="section inquiry">
       <h2>{{ $t('product.inquiryTitle') }}</h2>
       <p class="muted">{{ $t('product.inquiryText') }}</p>
@@ -247,6 +256,19 @@ useHead({
 .details dt { color: var(--c-muted); }
 
 .inquiry { max-width: 760px; }
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: center;
+  border-top: 1px solid var(--c-line);
+  margin-top: 56px;
+}
+
+@media (max-width: 860px) {
+  .story { grid-template-columns: 1fr; gap: 24px; }
+}
 
 @media (max-width: 860px) {
   .pdp { grid-template-columns: 1fr; gap: 32px; }

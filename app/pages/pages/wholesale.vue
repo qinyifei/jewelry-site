@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { site } from '~/config/site'
+import { cases } from '~/data/cases'
 
 const { moq, leadTimeDays } = site.wholesale
+const tr = useLocalized()
+const showcase = cases[0] && tr(cases[0])
 
 const c = useLocaleContent({
   en: {
@@ -92,6 +95,28 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
       </ol>
     </section>
 
+    <section v-if="showcase" class="section container design">
+      <div class="design-inner">
+        <div>
+          <p class="eyebrow">{{ showcase.service }}</p>
+          <h2>{{ $t('design.title') }}</h2>
+          <p class="muted">{{ showcase.summary }}</p>
+          <NuxtLinkLocale :to="`/blogs/cases/${showcase.handle}`" class="link-underline">{{ $t('cases.view') }}</NuxtLinkLocale>
+        </div>
+        <DesignCompare :sketch="showcase.sketch" :finished="showcase.finished" :alt="showcase.title" />
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <h2>{{ $t('cases.title') }}</h2>
+        <NuxtLinkLocale to="/blogs/cases" class="link-underline">{{ $t('cases.viewAll') }}</NuxtLinkLocale>
+      </div>
+      <div class="grid grid-3">
+        <CaseCard v-for="item in cases.slice(0, 3)" :key="item.handle" :item="item" />
+      </div>
+    </section>
+
     <section class="section soft">
       <div class="container two">
         <div>
@@ -127,6 +152,17 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
 .num { font-family: var(--f-serif); font-size: 2rem; color: var(--c-gold); }
 
 .soft { background: var(--c-soft); }
+
+.design-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .design-inner { grid-template-columns: 1fr; gap: 28px; }
+}
 
 .two {
   display: grid;

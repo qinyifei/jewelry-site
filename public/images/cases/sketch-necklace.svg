@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+<defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#e3ddd2" stroke-width="1"/></pattern></defs>
+<rect width="800" height="800" fill="#faf8f3"/>
+<rect width="800" height="800" fill="url(#g)"/>
+<path d="M220 180 Q400 560 580 180" fill="none" stroke="#5b5650" stroke-width="3"/>
+<path d="M400 420 c-40 -50 -90 0 -40 40 l40 40 l40 -40 c50 -40 0 -90 -40 -40z" fill="none" stroke="#5b5650" stroke-width="3"/>
+<path d="M372 432 q28 -12 56 0" fill="none" stroke="#5b5650" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="400" y="720" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#9a9186" letter-spacing="6">DESIGN SKETCH · PLACEHOLDER</text>
+<text x="400" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#5b5650" opacity="0.07" transform="rotate(-30 400 400)">© AURELIA JEWELRY</text>
+</svg>

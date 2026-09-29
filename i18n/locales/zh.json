@@ -32,7 +32,8 @@
     "wholesaleMoq": "每款起订量 {moq} 件",
     "wholesalePrivate": "贴牌包装与定制刻字",
     "wholesaleLead": "生产周期 {days} 个工作日",
-    "learnMore": "了解详情"
+    "learnMore": "了解详情",
+    "viewCases": "查看合作案例"
   },
   "usp": {
     "material": "925 纯银",
@@ -103,7 +104,8 @@
     "refund": "退换货政策",
     "privacy": "隐私政策",
     "terms": "服务条款",
-    "rights": "保留所有权利。"
+    "rights": "保留所有权利。",
+    "cases": "合作案例"
   },
   "policy": {
     "updated": "最后更新：{date}",
@@ -119,5 +121,30 @@
     "title": "页面不存在",
     "text": "你访问的页面不存在或已被移动。",
     "back": "返回首页"
+  },
+  "design": {
+    "title": "从设计稿到成品",
+    "sketch": "设计稿",
+    "final": "成品实物",
+    "story": "设计故事"
+  },
+  "cases": {
+    "title": "合作案例",
+    "eyebrow": "我们的作品",
+    "description": "与零售商和品牌的真实合作项目：从第一张草图到完整系列。",
+    "viewAll": "查看全部案例",
+    "view": "查看案例",
+    "challenge": "客户需求",
+    "solution": "我们的方案",
+    "results": "合作成果",
+    "quantity": "订单",
+    "leadTime": "交期",
+    "service": "服务类型",
+    "seeProduct": "查看同款商品",
+    "ctaTitle": "有自己的设计想法？",
+    "ctaText": "把草图或参考图发给我们，我们会在 1 个工作日内回复报价和打样方案。",
+    "cta": "开始你的项目",
+    "back": "返回合作案例",
+    "client": "客户"
   }
 }
