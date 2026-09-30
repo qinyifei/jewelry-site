@@ -1,0 +1,150 @@
+{
+  "seo": {
+    "description": "Håndlagde smykker i 925 sterlingsølv og 18K forgyllt gull. Handle ringer, halskjeder, øredobber og armbånd, eller samarbeid med oss om engros- og OEM-bestillinger."
+  },
+  "header": {
+    "announcement": "Gratis sporet frakt på bestillinger over $80 · Engros minimumskjøp {moq} stk",
+    "language": "Språk"
+  },
+  "nav": {
+    "home": "Hjem",
+    "shop": "Butikk",
+    "all": "Alle smykker",
+    "wholesale": "Engros",
+    "about": "Om oss",
+    "journal": "Journal",
+    "contact": "Kontakt",
+    "menu": "Meny",
+    "close": "Lukk"
+  },
+  "home": {
+    "eyebrow": "925 Sterlingsølv · 18K Forgyllt gull",
+    "heroTitle": "Fine smykker, laget for å bæres hver dag",
+    "heroText": "Håndlaget i 925 sterlingsølv og 18K forgyllt gull. Nikkelfritt, hypoallergent og bygget for å vare.",
+    "shopNow": "Handle kolleksjonen",
+    "wholesaleCta": "Engrosforespørsler",
+    "shopByCategory": "Handle etter kategori",
+    "featured": "Bestselgere",
+    "viewAll": "Se alle",
+    "wholesaleEyebrow": "For forhandlere og merkevarer",
+    "wholesaleTitle": "Engros & Tilpasset OEM",
+    "wholesaleText": "Butikker, nettbutikker og merkevarer samarbeider med oss om pålitelig kvalitet, lave minimumskjøp og privat merkevareemballasje.",
+    "wholesaleMoq": "Minimumskjøp fra {moq} stykker per design",
+    "wholesalePrivate": "Privat merkevareemballasje og tilpasset gravering",
+    "wholesaleLead": "Produksjonstid {days} arbeidsdager",
+    "learnMore": "Lær mer",
+    "viewCases": "Se casestudier"
+  },
+  "usp": {
+    "material": "Massivt 925 Sterlingsølv",
+    "materialText": "Ekte, stemplet og sertifisert",
+    "nickel": "Nikkelfritt",
+    "nickelText": "EU REACH-kompatibelt, skånsomt mot huden",
+    "shipping": "Verdensomspennende frakt",
+    "shippingText": "Sporet levering til USA, UK & EU",
+    "warranty": "1 års garanti",
+    "warrantyText": "Mot produksjonsfeil"
+  },
+  "product": {
+    "sku": "Varenr.",
+    "from": "Fra",
+    "details": "Detaljer",
+    "requestQuote": "Be om tilbud",
+    "askWhatsapp": "Spør på WhatsApp",
+    "wholesaleAvailable": "Engros tilgjengelig · Minimumskjøp {moq} stk",
+    "related": "Du vil kanskje også like",
+    "inquiryTitle": "Forespør om dette stykket",
+    "inquiryText": "Fortell oss alternativene og mengden du trenger, så svarer vi innen 1 arbeidsdag.",
+    "viewImage": "Se bilde {n}"
+  },
+  "collection": {
+    "all": "Alle smykker",
+    "allDescription": "Bla gjennom vår fulle kollektion av sterlingsølv og forgyllt gull smykker.",
+    "count": "{n} stykke | {n} stykker",
+    "empty": "Ingen produkter i denne kolleksjonen ennå."
+  },
+  "form": {
+    "name": "Navn",
+    "email": "E-post",
+    "company": "Bedrift / Butikk (valgfritt)",
+    "country": "Land",
+    "type": "Jeg er interessert i",
+    "typeRetail": "Detaljhandelskjøp",
+    "typeWholesale": "Engros",
+    "typeOem": "Tilpasset / OEM",
+    "product": "Produkt",
+    "options": "Alternativer (metall, størrelse…)",
+    "quantity": "Antall",
+    "message": "Melding",
+    "consent": "Jeg godtar {link} og samtykker til å bli kontaktet om min forespørsel.",
+    "privacyPolicy": "Personvernreglene",
+    "submit": "Send forespørsel",
+    "sending": "Sender…",
+    "success": "Takk! Din forespørsel er sendt. Vi kommer tilbake til deg innen 1 arbeidsdag.",
+    "error": "Beklager, noe gikk galt. Prøv igjen eller send oss en e-post på {email}."
+  },
+  "whatsapp": {
+    "aria": "Chat med oss på WhatsApp",
+    "greeting": "Hei {brand}, jeg har et spørsmål om smykkene dine.",
+    "product": "Hei {brand}, jeg er interessert i {product} ({sku}). {options}"
+  },
+  "cookie": {
+    "text": "Vi bruker informasjonskapsler for å forstå hvordan nettstedet vårt brukes og for å forbedre opplevelsen din.",
+    "accept": "Godta",
+    "decline": "Avvis",
+    "learnMore": "Personvernregler"
+  },
+  "footer": {
+    "tagline": "Fine smykker, laget for å bæres hver dag.",
+    "shop": "Butikk",
+    "company": "Selskap",
+    "help": "Hjelp",
+    "faq": "FAQ",
+    "shipping": "Fraktpolicy",
+    "refund": "Returer & refusjoner",
+    "privacy": "Personvernregler",
+    "terms": "Tjenestevilkår",
+    "rights": "Alle rettigheter forbeholdt.",
+    "cases": "Casestudier"
+  },
+  "policy": {
+    "updated": "Sist oppdatert: {date}",
+    "translationNotice": ""
+  },
+  "blog": {
+    "title": "Journal",
+    "description": "Smykkestell-guider, stylingtips og historier fra studioet vårt.",
+    "readMore": "Les mer",
+    "back": "Tilbake til Journal"
+  },
+  "notFound": {
+    "title": "Siden ble ikke funnet",
+    "text": "Siden du leter etter eksisterer ikke eller har blitt flyttet.",
+    "back": "Tilbake til forsiden"
+  },
+  "design": {
+    "title": "Fra skisse til ferdig stykke",
+    "sketch": "Designskisse",
+    "final": "Ferdig stykke",
+    "story": "Designhistorien"
+  },
+  "cases": {
+    "title": "Casestudier",
+    "eyebrow": "Vårt arbeid",
+    "description": "Virkelige prosjekter med forhandlere og merkevarer: fra den første skissen til den ferdige kolleksjonen.",
+    "viewAll": "Se alle casestudier",
+    "view": "Se case",
+    "challenge": "Oppdraget",
+    "solution": "Hva vi gjorde",
+    "results": "Resultatet",
+    "quantity": "Bestilling",
+    "leadTime": "Leveringstid",
+    "service": "Tjeneste",
+    "seeProduct": "Se produktet",
+    "ctaTitle": "Har du en designidé?",
+    "ctaText": "Send oss skissen din eller referansebilder, og vi svarer med et tilbud og prøveplan innen 1 arbeidsdag.",
+    "cta": "Start prosjektet ditt",
+    "back": "Tilbake til casestudier",
+    "client": "Kunde"
+  }
+}
