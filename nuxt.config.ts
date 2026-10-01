@@ -12,6 +12,7 @@ const routes = [
   ...products.map(p => `/products/${p.handle}`),
   '/pages/about',
   '/pages/wholesale',
+  '/pages/materials',
   '/pages/contact',
   '/pages/faq',
   '/blogs/news',
@@ -56,6 +57,9 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
       { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
+      { code: 'sv', language: 'sv-SE', name: 'Svenska', file: 'sv.json' },
+      { code: 'da', language: 'da-DK', name: 'Dansk', file: 'da.json' },
+      { code: 'no', language: 'nb-NO', name: 'Norsk', file: 'no.json' },
     ],
     // 不按浏览器语言自动跳转：搜索引擎和欧美客户默认都看英文，想看中文的访客自己切换
     detectBrowserLanguage: false,
@@ -74,7 +78,13 @@ export default defineNuxtConfig({
       // 这样 Cloudflare Pages 上的网址不带结尾斜杠，和 Shopify 格式一致
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: [...routes, ...routes.map(r => `/zh${r === '/' ? '' : r}`)],
+      routes: [
+        ...routes,
+        ...routes.map(r => `/zh${r === '/' ? '' : r}`),
+        ...routes.map(r => `/sv${r === '/' ? '' : r}`),
+        ...routes.map(r => `/da${r === '/' ? '' : r}`),
+        ...routes.map(r => `/no${r === '/' ? '' : r}`),
+      ],
     },
   },
 })

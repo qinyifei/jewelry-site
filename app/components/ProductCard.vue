@@ -12,27 +12,41 @@ const p = computed(() => tr(props.product))
       <img :src="p.images[0]" :alt="p.title" loading="lazy" width="800" height="800" />
       <img v-if="p.images[1]" :src="p.images[1]" alt="" class="alt" loading="lazy" width="800" height="800" />
     </div>
-    <h3 class="title">{{ p.title }}</h3>
-    <div v-if="p.price" class="price">{{ $t('product.from') }} ${{ p.price }}</div>
+    <div class="info">
+      <p class="title">{{ p.title }}</p>
+      <p v-if="p.price" class="price">${{ p.price }}</p>
+    </div>
   </NuxtLinkLocale>
 </template>
 
 <style scoped>
-.card { display: block; }
+.card { display: block; text-decoration: none; }
 
 .media {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: var(--c-soft);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+}
+
+.media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.7s ease;
+  pointer-events: none;
+}
+
+.card:hover .media::after {
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.4s, transform 0.6s;
+  transition: opacity 0.5s ease, transform 0.7s ease;
 }
 
 .media .alt {
@@ -42,15 +56,35 @@ const p = computed(() => tr(props.product))
 }
 
 .card:hover .alt { opacity: 1; }
-.card:hover .media img { transform: scale(1.03); }
+.card:hover .media img:first-child { transform: scale(1.03); }
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 2px;
+}
 
 .title {
-  font-size: 1.25rem;
-  margin: 0 0 4px;
+  margin: 0;
+  font-family: 'Inter', var(--f-sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #554537;
+  line-height: 1.4;
 }
 
 .price {
-  font-size: 14px;
-  color: var(--c-muted);
+  margin: 0;
+  font-family: 'Inter', var(--f-sans);
+  font-size: 11px;
+  font-weight: 300;
+  color: #554537;
+  opacity: 0.7;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 </style>

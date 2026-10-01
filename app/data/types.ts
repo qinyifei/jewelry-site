@@ -1,5 +1,5 @@
 // 除英文外的语言，新增语言时在这里加
-export type ExtraLocale = 'zh'
+export type ExtraLocale = 'zh' | 'sv' | 'da' | 'no'
 
 // 各语言的翻译覆盖：只写需要翻译的字段，没写的字段自动用英文
 type Translations<T> = { i18n?: Partial<Record<ExtraLocale, Partial<T>>> }

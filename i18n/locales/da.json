@@ -1,0 +1,160 @@
+{
+  "seo": {
+    "description": "Håndlavede smykker i 925 sterlingssølv og 18K forgyldt guld. Shop ringe, halskæder, øreringe og armbånd, eller samarbejd med os om engros- og OEM-ordrer."
+  },
+  "header": {
+    "announcement": "Gratis sporet fragt på ordrer over $80 · Engros minimumskøb {moq} stk",
+    "language": "Sprog"
+  },
+  "nav": {
+    "home": "Hjem",
+    "shop": "Shop",
+    "all": "Alle smykker",
+    "wholesale": "Engros",
+    "about": "Om os",
+    "journal": "Journal",
+    "contact": "Kontakt",
+    "menu": "Menu",
+    "close": "Luk"
+  },
+  "home": {
+    "eyebrow": "925 Sterlingssølv · 18K Forgyldt guld",
+    "heroTitle": "Fine smykker, skabt til at bære hver dag",
+    "heroText": "Håndlavede i 925 sterlingssølv og 18K forgyldt guld. Nikkelfri, hypoallergene og bygget til at holde.",
+    "shopNow": "Shop kollektionen",
+    "wholesaleCta": "Engrosforespørgsler",
+    "shopByCategory": "Shop efter kategori",
+    "featured": "Bestsellere",
+    "viewAll": "Se alle",
+    "wholesaleEyebrow": "Til forhandlere og brands",
+    "wholesaleTitle": "Engros & Tilpasset OEM",
+    "wholesaleText": "Butikker, netbutikker og brands samarbejder med os om pålidelig kvalitet, lave minimumskøb og private label-emballage.",
+    "wholesaleMoq": "Minimumskøb fra {moq} stykker pr. design",
+    "wholesalePrivate": "Private label-emballage og tilpasset gravering",
+    "wholesaleLead": "Produktionstid {days} arbejdsdage",
+    "learnMore": "Læs mere",
+    "viewCases": "Se casestudier"
+  },
+  "usp": {
+    "material": "Massivt 925 Sterlingssølv",
+    "materialText": "Ægte, stemplet og certificeret",
+    "nickel": "Nikkelfrit",
+    "nickelText": "EU REACH-kompatibelt, skånsomt mod huden",
+    "shipping": "Verdensomspændende fragt",
+    "shippingText": "Sporet levering til USA, UK & EU",
+    "warranty": "1 års garanti",
+    "warrantyText": "Mod produktionsfejl"
+  },
+  "product": {
+    "sku": "Varenr.",
+    "from": "Fra",
+    "details": "Detaljer",
+    "requestQuote": "Anmod om tilbud",
+    "askWhatsapp": "Spørg på WhatsApp",
+    "wholesaleAvailable": "Engros tilgængeligt · Minimumskøb {moq} stk",
+    "related": "Du vil måske også synes om",
+    "inquiryTitle": "Forespørg om dette stykke",
+    "inquiryText": "Fortæl os de muligheder og den mængde, du har brug for, og vi svarer inden for 1 arbejdsdag.",
+    "viewImage": "Se billede {n}"
+  },
+  "collection": {
+    "all": "Alle smykker",
+    "allDescription": "Gennemse vores fulde kollektion af sterlingssølv og forgyldt guld smykker.",
+    "count": "{n} stykke | {n} stykker",
+    "empty": "Ingen produkter i denne kollektion endnu."
+  },
+  "form": {
+    "name": "Navn",
+    "email": "E-mail",
+    "company": "Virksomhed / Butik (valgfrit)",
+    "country": "Land",
+    "type": "Jeg er interesseret i",
+    "typeRetail": "Detailkøb",
+    "typeWholesale": "Engros",
+    "typeOem": "Tilpasset / OEM",
+    "product": "Produkt",
+    "options": "Muligheder (metal, størrelse…)",
+    "quantity": "Antal",
+    "message": "Besked",
+    "consent": "Jeg accepterer {link} og giver samtykke til at blive kontaktet om min forespørgsel.",
+    "privacyPolicy": "Privatlivspolitikken",
+    "submit": "Send forespørgsel",
+    "sending": "Sender…",
+    "success": "Tak! Din forespørgsel er blevet sendt. Vi vender tilbage inden for 1 arbejdsdag.",
+    "error": "Beklager, noget gik galt. Prøv igen eller send os en e-mail på {email}."
+  },
+  "whatsapp": {
+    "aria": "Chat med os på WhatsApp",
+    "greeting": "Hej {brand}, jeg har et spørgsmål om dine smykker.",
+    "product": "Hej {brand}, jeg er interesseret i {product} ({sku}). {options}"
+  },
+  "cookie": {
+    "text": "Vi bruger cookies til at forstå, hvordan vores side bruges, og til at forbedre din oplevelse.",
+    "accept": "Accepter",
+    "decline": "Afvis",
+    "learnMore": "Privatlivspolitik"
+  },
+  "footer": {
+    "tagline": "Fine smykker, skabt til at bære hver dag.",
+    "shop": "Shop",
+    "company": "Virksomhed",
+    "help": "Hjælp",
+    "faq": "FAQ",
+    "shipping": "Fragtpolitik",
+    "refund": "Returneringer & refunderinger",
+    "privacy": "Privatlivspolitik",
+    "terms": "Servicevilkår",
+    "rights": "Alle rettigheder forbeholdt.",
+    "cases": "Casestudier"
+  },
+  "policy": {
+    "updated": "Sidst opdateret: {date}",
+    "translationNotice": ""
+  },
+  "blog": {
+    "title": "Journal",
+    "description": "Smykkeplejeguider, stylingtips og historier fra vores atelier.",
+    "readMore": "Læs mere",
+    "back": "Tilbage til Journal"
+  },
+  "notFound": {
+    "title": "Side ikke fundet",
+    "text": "Den side, du leder efter, eksisterer ikke eller er blevet flyttet.",
+    "back": "Tilbage til forsiden"
+  },
+  "design": {
+    "title": "Fra skitse til færdigt stykke",
+    "sketch": "Designskitse",
+    "final": "Færdigt stykke",
+    "story": "Designhistorien"
+  },
+  "cases": {
+    "title": "Casestudier",
+    "eyebrow": "Vores arbejde",
+    "description": "Virkelige projekter med forhandlere og brands: fra den første skitse til den færdige kollektion.",
+    "viewAll": "Se alle casestudier",
+    "view": "Se case",
+    "challenge": "Opgaven",
+    "solution": "Hvad vi gjorde",
+    "results": "Resultatet",
+    "quantity": "Bestilling",
+    "leadTime": "Leveringstid",
+    "service": "Service",
+    "seeProduct": "Se produktet",
+    "ctaTitle": "Har du en designidé?",
+    "ctaText": "Send os din skitse eller referencebilleder, og vi svarer med et tilbud og prøveplan inden for 1 arbejdsdag.",
+    "cta": "Start dit projekt",
+    "back": "Tilbage til casestudier",
+    "client": "Kunde"
+  },
+  "materials": {
+    "title": "Perleguide",
+    "eyebrow": "Materialerne",
+    "description": "Alt hvad du behøver at vide om de seks perlefamilier — fra den klassiske Akoya til den sjældne Keshi.",
+    "heroTitle": "Lær dine perler at kende",
+    "heroText": "Hver perletype har sin egen karakter, dannet af en anden østers i et andet ocean. Denne guide hjælper dig med at forstå, hvad der gør hver sort særlig.",
+    "nav": "Perleguide",
+    "traits": "Vigtige egenskaber",
+    "shopCollection": "Shop denne kollektion"
+  }
+}

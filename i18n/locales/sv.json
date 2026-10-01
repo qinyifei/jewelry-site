@@ -1,0 +1,160 @@
+{
+  "seo": {
+    "description": "Handgjorda smycken i 925 sterlingsilver och 18K förgyllt guld. Handla ringar, halsband, örhängen och armband, eller samarbeta med oss för grossist- och OEM-beställningar."
+  },
+  "header": {
+    "announcement": "Fri spårbar frakt på beställningar över $80 · Grossistminimum {moq} st",
+    "language": "Språk"
+  },
+  "nav": {
+    "home": "Hem",
+    "shop": "Butik",
+    "all": "Alla smycken",
+    "wholesale": "Grossist",
+    "about": "Om oss",
+    "journal": "Journal",
+    "contact": "Kontakt",
+    "menu": "Meny",
+    "close": "Stäng"
+  },
+  "home": {
+    "eyebrow": "925 Sterlingsilver · 18K Förgyllt guld",
+    "heroTitle": "Fina smycken, skapade för att bäras varje dag",
+    "heroText": "Handgjorda i 925 sterlingsilver och 18K förgyllt guld. Nickelfria, hypoallergena och byggda för att hålla.",
+    "shopNow": "Handla kollektionen",
+    "wholesaleCta": "Grossistförfrågningar",
+    "shopByCategory": "Handla efter kategori",
+    "featured": "Bästsäljare",
+    "viewAll": "Visa alla",
+    "wholesaleEyebrow": "För återförsäljare och varumärken",
+    "wholesaleTitle": "Grossist & Anpassad OEM",
+    "wholesaleText": "Butiker, nätbutiker och varumärken samarbetar med oss för pålitlig kvalitet, låga minimibeställningar och privata etikettförpackningar.",
+    "wholesaleMoq": "Minimibeställning från {moq} stycken per design",
+    "wholesalePrivate": "Privata etikettförpackningar och anpassad gravyr",
+    "wholesaleLead": "Produktionstid {days} arbetsdagar",
+    "learnMore": "Läs mer",
+    "viewCases": "Visa fallstudier"
+  },
+  "usp": {
+    "material": "Massivt 925 Sterlingsilver",
+    "materialText": "Äkta, stämplat och certifierat",
+    "nickel": "Nickelfritt",
+    "nickelText": "EU REACH-kompatibelt, skonsamt mot huden",
+    "shipping": "Världsomspännande frakt",
+    "shippingText": "Spårbar leverans till USA, UK & EU",
+    "warranty": "1 års garanti",
+    "warrantyText": "Mot tillverkningsfel"
+  },
+  "product": {
+    "sku": "Artikelnr",
+    "from": "Från",
+    "details": "Detaljer",
+    "requestQuote": "Begär offert",
+    "askWhatsapp": "Fråga på WhatsApp",
+    "wholesaleAvailable": "Grossist tillgänglig · Minimum {moq} st",
+    "related": "Du kanske också gillar",
+    "inquiryTitle": "Fråga om denna produkt",
+    "inquiryText": "Berätta vilka alternativ och vilken kvantitet du behöver så svarar vi inom 1 arbetsdag.",
+    "viewImage": "Visa bild {n}"
+  },
+  "collection": {
+    "all": "Alla smycken",
+    "allDescription": "Bläddra i vår hela kollektion av sterlingsilver och förgyllt guld smycken.",
+    "count": "{n} smycke | {n} smycken",
+    "empty": "Inga produkter i denna kollektion ännu."
+  },
+  "form": {
+    "name": "Namn",
+    "email": "E-post",
+    "company": "Företag / Butik (valfritt)",
+    "country": "Land",
+    "type": "Jag är intresserad av",
+    "typeRetail": "Detaljhandelsköp",
+    "typeWholesale": "Grossist",
+    "typeOem": "Anpassad / OEM",
+    "product": "Produkt",
+    "options": "Alternativ (metall, storlek…)",
+    "quantity": "Antal",
+    "message": "Meddelande",
+    "consent": "Jag godkänner {link} och samtycker till att bli kontaktad angående min förfrågan.",
+    "privacyPolicy": "Integritetspolicyn",
+    "submit": "Skicka förfrågan",
+    "sending": "Skickar…",
+    "success": "Tack! Din förfrågan har skickats. Vi återkommer inom 1 arbetsdag.",
+    "error": "Tyvärr, något gick fel. Försök igen eller maila oss på {email}."
+  },
+  "whatsapp": {
+    "aria": "Chatta med oss på WhatsApp",
+    "greeting": "Hej {brand}, jag har en fråga om dina smycken.",
+    "product": "Hej {brand}, jag är intresserad av {product} ({sku}). {options}"
+  },
+  "cookie": {
+    "text": "Vi använder cookies för att förstå hur vår webbplats används och för att förbättra din upplevelse.",
+    "accept": "Acceptera",
+    "decline": "Avböj",
+    "learnMore": "Integritetspolicy"
+  },
+  "footer": {
+    "tagline": "Fina smycken, skapade för att bäras varje dag.",
+    "shop": "Butik",
+    "company": "Företag",
+    "help": "Hjälp",
+    "faq": "Vanliga frågor",
+    "shipping": "Fraktpolicy",
+    "refund": "Returer & återbetalningar",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "rights": "Alla rättigheter förbehållna.",
+    "cases": "Fallstudier"
+  },
+  "policy": {
+    "updated": "Senast uppdaterad: {date}",
+    "translationNotice": ""
+  },
+  "blog": {
+    "title": "Journal",
+    "description": "Smyckesvårdsguider, stiltips och berättelser från vårt studio.",
+    "readMore": "Läs mer",
+    "back": "Tillbaka till Journal"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "text": "Sidan du letar efter finns inte eller har flyttats.",
+    "back": "Tillbaka till startsidan"
+  },
+  "design": {
+    "title": "Från skiss till färdig produkt",
+    "sketch": "Designskiss",
+    "final": "Färdig produkt",
+    "story": "Designberättelsen"
+  },
+  "cases": {
+    "title": "Fallstudier",
+    "eyebrow": "Vårt arbete",
+    "description": "Verkliga projekt med återförsäljare och varumärken: från den första skissen till den färdiga kollektionen.",
+    "viewAll": "Visa alla fallstudier",
+    "view": "Visa fall",
+    "challenge": "Uppdraget",
+    "solution": "Vad vi gjorde",
+    "results": "Resultatet",
+    "quantity": "Beställning",
+    "leadTime": "Leveranstid",
+    "service": "Tjänst",
+    "seeProduct": "Se produkten",
+    "ctaTitle": "Har du en designidé?",
+    "ctaText": "Skicka din skiss eller referensbilder så svarar vi med en offert och provplan inom 1 arbetsdag.",
+    "cta": "Starta ditt projekt",
+    "back": "Tillbaka till fallstudier",
+    "client": "Kund"
+  },
+  "materials": {
+    "title": "Pärlguide",
+    "eyebrow": "Materialen",
+    "description": "Allt du behöver veta om de sex pärlslagen — från den klassiska Akoya till den sällsynta Keshi.",
+    "heroTitle": "Lär känna pärlorna",
+    "heroText": "Varje pärltyp har sin egen karaktär, bildad av ett annat ostron i ett annat hav. Den här guiden hjälper dig förstå vad som gör varje sort speciell.",
+    "nav": "Pärlguide",
+    "traits": "Viktiga egenskaper",
+    "shopCollection": "Handla denna kollektion"
+  }
+}
