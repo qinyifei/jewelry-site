@@ -13,6 +13,15 @@ usePageSeo({ title: site.name });
   <div>
     <!-- ─── Hero ─── -->
     <section class="hero">
+      <!-- 用 img 而非 background-image，方便 object-position 精确控制移动端裁切焦点 -->
+      <img
+        src="/images/home.png"
+        alt=""
+        aria-hidden="true"
+        class="hero-bg"
+        loading="eager"
+        fetchpriority="high"
+      />
       <div class="hero-overlay" aria-hidden="true" />
       <!-- 居中品牌 logo，复刻 Hargreaves Stockholm 首屏风格 -->
       <div class="hero-center">
@@ -115,11 +124,21 @@ usePageSeo({ title: site.name });
 /* ─── Hero ─── */
 .hero {
   position: relative;
-  background: url("/images/home.png") center / cover no-repeat;
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
-  /* header 是 fixed，hero 从顶部开始铺满，不需要 margin */
+  overflow: hidden;
+}
+
+/* 背景图用 img 标签，object-position 可在不同断点精确锚定焦点 */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
 }
 
 .hero-overlay {
@@ -443,24 +462,17 @@ usePageSeo({ title: site.name });
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* ─── Responsive ─── */
-@media (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .editorial-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 72px 40px;
-  }
-}
-
+/* 移动端把焦点往上移，让主体物（珍珠吊坠/戒指等）在竖屏上更居中显示 */
 @media (max-width: 768px) {
-  .cat-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-bg {
+    object-position: 65% center;
   }
+  .hero-center { display: none; }
   .hero-inner {
-    padding: 80px 24px 56px;
+    padding: 72px 20px 48px;
+  }
+  .hero-inner h1 {
+    font-size: 1.9rem;
   }
   .featured-section {
     padding: 56px 0;
@@ -468,6 +480,9 @@ usePageSeo({ title: site.name });
 }
 
 @media (max-width: 480px) {
+  .hero-bg {
+    object-position: 65% 30%;
+  }
   .cat-grid {
     grid-template-columns: 1fr;
   }
@@ -478,5 +493,16 @@ usePageSeo({ title: site.name });
   .editorial-inner {
     padding: 56px 24px;
   }
+  .hero-inner {
+    padding: 64px 16px 40px;
+  }
+  .hero-inner h1 {
+    font-size: 1.65rem;
+    letter-spacing: 0.02em;
+  }
+  .hero-sub { margin-bottom: 24px; }
+  .hero-actions { flex-direction: column; }
+  .btn-hero-primary,
+  .btn-hero-outline { text-align: center; }
 }
 </style>
