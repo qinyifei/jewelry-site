@@ -146,5 +146,15 @@
     "cta": "Start prosjektet ditt",
     "back": "Tilbake til casestudier",
     "client": "Kunde"
+  },
+  "materials": {
+    "title": "Perleguide",
+    "eyebrow": "Materialene",
+    "description": "Alt du trenger å vite om de seks perlefamiliene — fra den klassiske Akoya til den sjeldne Keshi.",
+    "heroTitle": "Bli kjent med perlene",
+    "heroText": "Hver perletype har sin egen karakter, dannet av en annen østers i et annet hav. Denne guiden hjelper deg å forstå hva som gjør hver sort spesiell.",
+    "nav": "Perleguide",
+    "traits": "Viktige egenskaper",
+    "shopCollection": "Handle denne kolleksjonen"
   }
 }

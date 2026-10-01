@@ -1,19 +1,29 @@
 :root {
-  --c-ink: #1f1b16;
-  --c-text: #3d372f;
-  --c-muted: #7a7065;
-  --c-line: #e6dfd5;
-  --c-bg: #fffdf9;
-  --c-soft: #f5f0e9;
-  --c-gold: #b8925a;
-  --c-gold-dark: #97763f;
-  --c-success: #2f6b3a;
-  --c-error: #a23b2a;
-  /* 西文字体在前，中文自动回退到系统中文字体 */
-  --f-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', STSong, SimSun, serif;
-  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
-  --w-max: 1240px;
-  --radius: 2px;
+  /* ── Hargreaves Stockholm color tokens ── */
+  --c-bg:        #ffffff;   /* pure white background */
+  --c-text:      #554537;   /* warm brown body text */
+  --c-ink:       #170C02;   /* near-black warm brown (nav / headings) */
+  --c-nav-bg:    #f1efed;   /* warm off-white nav/header */
+  --c-accent-bg: #e9dcd0;   /* warm pinkish sand badge/accent */
+  --c-dark-bg:   #191515;   /* near-black dark sections */
+  --c-filled-bg: #554537;   /* warm brown filled sections */
+  --c-muted:     #8a7060;   /* derived muted text */
+  --c-line:      #d8cfc8;   /* derived border */
+
+  /* ── Letter-spacing tokens ── */
+  --ls-sm: 0.06em;
+  --ls-md: 0.13em;
+
+  /* ── Type ── */
+  --f-serif: 'Cormorant', 'Cormorant Garamond', Georgia, 'Times New Roman',
+             'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', STSong, SimSun, serif;
+  --f-sans:  'Inter', system-ui, -apple-system, 'Segoe UI',
+             'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+
+  /* ── Layout ── */
+  --w-max:    1280px;
+  --radius:   0px;
+  --radius-sm: 0px;
 }
 
 *,
@@ -29,25 +39,59 @@ html {
 body {
   margin: 0;
   font-family: var(--f-sans);
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.6;
   color: var(--c-text);
   background: var(--c-bg);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-family: var(--f-serif);
   font-weight: 400;
   color: var(--c-ink);
-  line-height: 1.2;
   margin: 0 0 0.5em;
 }
 
-/* 中文标题用衬线字体会偏细，稍微加粗并收紧字号 */
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.0;
+}
+
+h2 {
+  font-size: clamp(3.0rem, 7.2vw, 4.5rem);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: clamp(2.75rem, 4.8vw, 3.0rem);
+  line-height: 1.1;
+}
+
+h4 { font-size: 2.0rem; }
+
+h5 {
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+h6 {
+  font-family: var(--f-sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* 中文标题衬线字体稍微加粗，匹配新字号比例 */
 :lang(zh) h1,
 :lang(zh) h2,
 :lang(zh) h3 {
@@ -59,10 +103,6 @@ h4 {
 body:lang(zh) {
   line-height: 1.8;
 }
-
-h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
-h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
-h3 { font-size: 1.4rem; }
 
 p { margin: 0 0 1em; }
 
@@ -76,6 +116,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 
 .container {
   width: 100%;
@@ -100,14 +141,16 @@ img {
 
 @media (max-width: 600px) {
   .section-head { margin-bottom: 20px; }
-  h2 { font-size: 1.6rem; }
+  h2 { font-size: clamp(2rem, 7.2vw, 3rem); }
 }
 
 .eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.2em;
+  font-family: var(--f-sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: var(--ls-md);
   text-transform: uppercase;
-  color: var(--c-gold-dark);
+  color: var(--c-text);
   margin-bottom: 12px;
 }
 
@@ -116,40 +159,52 @@ img {
 .link-underline {
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: var(--ls-sm);
   text-transform: uppercase;
 }
 
+/* ── Buttons ── */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 28px;
-  border: 1px solid var(--c-ink);
+  padding: 13px 28px;
+  border: 1px solid var(--c-filled-bg);
   border-radius: var(--radius);
-  background: var(--c-ink);
-  color: #fff;
-  font: 500 13px/1 var(--f-sans);
-  letter-spacing: 0.12em;
+  background: var(--c-filled-bg);
+  color: #ffffff;
+  font: 300 0.75rem/1 var(--f-sans);
+  letter-spacing: var(--ls-md);
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
 }
 
-.btn:hover { background: var(--c-gold-dark); border-color: var(--c-gold-dark); }
-.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn:hover {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: #ffffff;
+}
+
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
 
 .btn-outline {
   background: transparent;
   color: var(--c-ink);
+  border: 1px solid var(--c-ink);
 }
 
-.btn-outline:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); }
+.btn-outline:hover {
+  background: var(--c-ink);
+  color: #ffffff;
+}
 
 .btn-block { width: 100%; }
 
+/* ── Grid ── */
 .grid {
   display: grid;
   gap: 32px 24px;
@@ -184,9 +239,18 @@ a {
   overflow-wrap: anywhere;
 }
 
-/* 表单 */
+/* ── Form ── */
 .field { display: flex; flex-direction: column; gap: 6px; }
-.field label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-muted); }
+
+.field label {
+  font-family: var(--f-sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: var(--ls-sm);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
 
 .field input,
 .field select,
@@ -195,7 +259,7 @@ a {
   padding: 12px 14px;
   border: 1px solid var(--c-line);
   border-radius: var(--radius);
-  background: #fff;
+  background: #ffffff;
   /* 16px 以上 iOS Safari 才不会在聚焦时自动放大页面 */
   font: 16px/1.4 var(--f-sans);
   color: var(--c-ink);
@@ -205,7 +269,7 @@ a {
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--c-gold);
+  border-color: var(--c-text);
 }
 
 /* 长文页面（政策、关于我们等） */
@@ -213,10 +277,10 @@ a {
   max-width: 760px;
 }
 
-.prose h2 { font-size: 1.8rem; margin-top: 1.6em; }
+.prose h2 { font-size: clamp(2.0rem, 4vw, 2.5rem); margin-top: 1.6em; }
 .prose ul { padding-left: 1.2em; }
 .prose li { margin-bottom: 0.4em; }
-.prose a { border-bottom: 1px solid var(--c-gold); }
+.prose a { border-bottom: 1px solid var(--c-text); }
 
 .page-hero {
   padding-block: 64px 32px;
@@ -239,6 +303,26 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--c-gold);
+  outline: 2px solid var(--c-text);
   outline-offset: 2px;
 }
+
+/* ── Section utility classes ── */
+.dark-section {
+  background: #191515;
+  color: #ffffff;
+}
+
+.accent-section {
+  background: #e9dcd0;
+  color: #3b2b2e;
+}
+
+.filled-section {
+  background: #554537;
+  color: #ffffff;
+}
+
+
+
+

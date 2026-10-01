@@ -146,5 +146,15 @@
     "cta": "Starta ditt projekt",
     "back": "Tillbaka till fallstudier",
     "client": "Kund"
+  },
+  "materials": {
+    "title": "Pärlguide",
+    "eyebrow": "Materialen",
+    "description": "Allt du behöver veta om de sex pärlslagen — från den klassiska Akoya till den sällsynta Keshi.",
+    "heroTitle": "Lär känna pärlorna",
+    "heroText": "Varje pärltyp har sin egen karaktär, bildad av ett annat ostron i ett annat hav. Den här guiden hjälper dig förstå vad som gör varje sort speciell.",
+    "nav": "Pärlguide",
+    "traits": "Viktiga egenskaper",
+    "shopCollection": "Handla denna kollektion"
   }
 }

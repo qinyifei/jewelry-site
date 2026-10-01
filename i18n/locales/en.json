@@ -146,5 +146,39 @@
     "cta": "Start your project",
     "back": "Back to Case Studies",
     "client": "Client"
+  },
+  "materials": {
+    "title": "Pearl Guide",
+    "eyebrow": "The Materials",
+    "description": "Everything you need to know about the six pearl families — from the classic Akoya to the rare Keshi.",
+    "heroTitle": "Know Your Pearls",
+    "heroText": "Each pearl type has its own character, formed by a different oyster in a different ocean. This guide will help you understand what makes each one special.",
+    "nav": "Pearl Guide",
+    "traits": "Key traits",
+    "shopCollection": "Shop this collection",
+    "south-sea-white": {
+      "what": "Grown in the Pinctada maxima oyster off the coast of Australia and Indonesia, South Sea white pearls are among the largest saltwater pearls in the world. Their thick nacre builds slowly over two to four years, producing a deep, mirror-like lustre that no other pearl can match.",
+      "traits": "Size 10–18 mm · Colour white to silver · Lustre deep and satiny · Nacre very thick"
+    },
+    "golden-south-sea": {
+      "what": "The rarest colour in the South Sea pearl family. Golden South Sea pearls get their warm, natural colour from the golden-lipped Pinctada maxima oyster found in the Philippines and Indonesia. The colour is never treated — what you see is pure nacre.",
+      "traits": "Size 10–18 mm · Colour champagne to deep gold · Lustre warm and glowing · Nacre very thick"
+    },
+    "tahitian": {
+      "what": "Grown in the black-lipped Pinctada margaritifera oyster in the lagoons of French Polynesia, Tahitian pearls are the only naturally dark pearls in the world. Each one is unique — the same oyster can produce a jet-black pearl one season and a deep peacock green the next.",
+      "traits": "Size 8–16 mm · Colour black, peacock, aubergine, silver-grey · Lustre sharp and metallic · Nacre thick"
+    },
+    "akoya": {
+      "what": "The pearl that set the benchmark for what a pearl should look like. Grown in the Pinctada fucata oyster in the cold waters of Japan and China, Akoya pearls are prized for their near-perfect roundness, bright white colour, and the sharpest, most reflective lustre of any pearl.",
+      "traits": "Size 6–9 mm · Colour white to cream with rose or silver overtones · Lustre bright and mirror-sharp · Nacre fine"
+    },
+    "keshi": {
+      "what": "Keshi pearls form by accident. When a grafted oyster rejects its nucleus during the culturing process, it sometimes continues to produce nacre around the remaining tissue, creating a pearl that is 100% nacre with no nucleus at all. The result is extraordinary lustre in unpredictable baroque shapes.",
+      "traits": "Size 3–10 mm · Colour varies by host oyster · Lustre exceptionally high · Shape baroque, no two alike"
+    },
+    "mabe": {
+      "what": "Unlike round pearls that grow freely inside the oyster's body, Mabé pearls grow pressed against the inner shell. The oyster coats a half-sphere implant in nacre, producing a flat-backed blister pearl with a large face and vivid overtones — perfect for rings and earrings where a flat back is an advantage.",
+      "traits": "Size 12–20 mm · Colour white, cream, or silver · Lustre vivid with strong overtones · Shape flat-backed dome"
+    }
   }
 }

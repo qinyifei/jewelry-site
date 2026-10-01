@@ -12,6 +12,7 @@ const routes = [
   ...products.map(p => `/products/${p.handle}`),
   '/pages/about',
   '/pages/wholesale',
+  '/pages/materials',
   '/pages/contact',
   '/pages/faq',
   '/blogs/news',
