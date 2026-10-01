@@ -13,7 +13,6 @@ usePageSeo({ title: site.name });
   <div>
     <!-- ─── Hero ─── -->
     <section class="hero">
-      <!-- 用 img 而非 background-image，方便 object-position 精确控制移动端裁切焦点 -->
       <img
         src="/images/home.png"
         alt=""
@@ -23,24 +22,19 @@ usePageSeo({ title: site.name });
         fetchpriority="high"
       />
       <div class="hero-overlay" aria-hidden="true" />
-      <!-- 居中品牌 logo，复刻 Hargreaves Stockholm 首屏风格 -->
+      <!-- 居中品牌 logo 图片 -->
       <div class="hero-center">
-        <NuxtLinkLocale to="/collections/all" class="hero-logo" :aria-label="site.name">
-          {{ site.name }}
+        <NuxtLinkLocale
+          to="/collections/all"
+          class="hero-logo-link"
+          :aria-label="site.name"
+        >
+          <img
+            src="/images/logo-en.png"
+            :alt="site.name"
+            class="hero-logo-img"
+          />
         </NuxtLinkLocale>
-      </div>
-      <!-- 左下角文字叠层 -->
-      <div class="hero-inner">
-        <h1>{{ $t("home.heroTitle") }}</h1>
-        <p class="hero-sub">{{ $t("home.heroText") }}</p>
-        <div class="hero-actions">
-          <NuxtLinkLocale to="/collections/all" class="btn-hero-primary">{{
-            $t("home.shopNow")
-          }}</NuxtLinkLocale>
-          <NuxtLinkLocale to="/pages/wholesale" class="btn-hero-outline">{{
-            $t("home.wholesaleCta")
-          }}</NuxtLinkLocale>
-        </div>
       </div>
     </section>
 
@@ -153,7 +147,7 @@ usePageSeo({ title: site.name });
   pointer-events: none;
 }
 
-/* 居中品牌 logo，叠在图片正中 */
+/* 居中品牌 logo 图片，叠在图片正中 */
 .hero-center {
   position: absolute;
   inset: 0;
@@ -164,93 +158,21 @@ usePageSeo({ title: site.name });
   pointer-events: none;
 }
 
-.hero-logo {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-  text-align: center;
-  line-height: 1.1;
+.hero-logo-link {
+  display: block;
   pointer-events: auto;
-  transition: color 0.2s;
-  text-shadow: 0 2px 24px rgba(25, 21, 21, 0.35);
 }
 
-.hero-logo:hover { color: #fff; }
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  padding: 120px 80px 80px;
-  color: #fff;
-  max-width: 860px;
+.hero-logo-img {
+  width: clamp(240px, 33vw, 480px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 24px rgba(25, 21, 21, 0.35));
+  transition: opacity 0.2s;
 }
 
-.hero-inner h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #fff;
-  margin: 0 0 16px;
-  line-height: 1.1;
-}
-
-.hero-sub {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 36px;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.btn-hero-primary {
-  display: inline-block;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #fff;
-  color: #554537;
-  padding: 12px 28px;
-  border: none;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn-hero-primary:hover { background: #e9dcd0; }
-
-.btn-hero-outline {
-  display: inline-block;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.85);
-  padding: 12px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  text-decoration: none;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.btn-hero-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #fff;
-  color: #fff;
+.hero-logo-link:hover .hero-logo-img {
+  opacity: 0.88;
 }
 
 /* ─── USP Strip ─── */
@@ -462,17 +384,12 @@ usePageSeo({ title: site.name });
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* 移动端把焦点往上移，让主体物（珍珠吊坠/戒指等）在竖屏上更居中显示 */
 @media (max-width: 768px) {
   .hero-bg {
     object-position: 65% center;
   }
-  .hero-center { display: none; }
-  .hero-inner {
-    padding: 72px 20px 48px;
-  }
-  .hero-inner h1 {
-    font-size: 1.9rem;
+  .hero-logo-img {
+    width: clamp(120px, 40vw, 200px);
   }
   .featured-section {
     padding: 56px 0;
@@ -493,16 +410,5 @@ usePageSeo({ title: site.name });
   .editorial-inner {
     padding: 56px 24px;
   }
-  .hero-inner {
-    padding: 64px 16px 40px;
-  }
-  .hero-inner h1 {
-    font-size: 1.65rem;
-    letter-spacing: 0.02em;
-  }
-  .hero-sub { margin-bottom: 24px; }
-  .hero-actions { flex-direction: column; }
-  .btn-hero-primary,
-  .btn-hero-outline { text-align: center; }
 }
 </style>
