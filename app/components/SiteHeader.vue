@@ -74,6 +74,22 @@ watch(() => route.fullPath, () => {
           <span class="nav-chevron" :class="{ flipped: shopOpen }" aria-hidden="true" />
         </button>
 
+        <!-- 移动端内联子菜单（桌面端用 mega menu，这个只在抽屉里显示） -->
+        <div v-if="shopOpen" class="mobile-shop-menu">
+          <NuxtLinkLocale to="/collections/all" class="mobile-shop-link mobile-shop-all" @click="shopOpen = false; open = false">
+            {{ $t('nav.all') }}
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
+            v-for="c in collections"
+            :key="c.handle"
+            :to="`/collections/${c.handle}`"
+            class="mobile-shop-link"
+            @click="shopOpen = false; open = false"
+          >
+            {{ tr(c).title }}
+          </NuxtLinkLocale>
+        </div>
+
         <NuxtLinkLocale to="/pages/wholesale">{{ $t('nav.wholesale') }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/materials">{{ $t('materials.nav') }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/about">{{ $t('nav.about') }}</NuxtLinkLocale>
@@ -525,6 +541,40 @@ watch(() => route.fullPath, () => {
     border-bottom: 1px solid #e9dcd0;
     color: #554537 !important;
   }
+
+  /* 移动端 Shop 子菜单 */
+  .mobile-shop-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 16px;
+    border-bottom: 1px solid #e9dcd0;
+  }
+
+  .mobile-shop-link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9dcd0;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #554537;
+    transition: color 0.15s;
+  }
+
+  .mobile-shop-link:last-child { border-bottom: none; }
+  .mobile-shop-link:hover { color: #170C02; }
+
+  .mobile-shop-all {
+    font-weight: 400;
+    color: #170C02;
+  }
+}
+
+/* 桌面端隐藏移动端子菜单 */
+@media (min-width: 1081px) {
+  .mobile-shop-menu { display: none; }
 }
 
 @media (max-width: 480px) {
