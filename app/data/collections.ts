@@ -1,8 +1,72 @@
 import type { Collection } from './types'
 
 export const collections: Collection[] = [
+  // ── 顶级：珠宝通用品类 ──
+  {
+    handle: 'earrings',
+    title: 'Earrings',
+    description: 'Earrings for every occasion — from everyday studs and huggies to statement drops.',
+    image: '/images/collections/earrings.svg',
+    i18n: {
+      zh: {
+        title: '耳环',
+        description: '适合各种场合的耳饰——从日常耳钉、贴耳圈到垂坠耳环。',
+      },
+    },
+  },
+  {
+    handle: 'necklaces',
+    title: 'Necklaces',
+    description: 'Necklaces and pendants in delicate chains and bold silhouettes, layerable and lasting.',
+    image: '/images/collections/necklaces.svg',
+    i18n: {
+      zh: {
+        title: '项链',
+        description: '从纤细链条到大胆造型的项链与吊坠，可叠戴、耐久。',
+      },
+    },
+  },
+  {
+    handle: 'rings',
+    title: 'Rings',
+    description: 'Rings to stack, gift and wear every day — bands, solitaires and statement pieces.',
+    image: '/images/collections/rings.svg',
+    i18n: {
+      zh: {
+        title: '戒指',
+        description: '适合叠戴、送礼和日常佩戴的戒指——指环、单钻与造型款。',
+      },
+    },
+  },
+  {
+    handle: 'bracelets',
+    title: 'Bracelets',
+    description: 'Bracelets and bangles, from fine chains to bold links, finished by hand.',
+    image: '/images/collections/bracelets.svg',
+    i18n: {
+      zh: {
+        title: '手链',
+        description: '手链与手镯，从细链到粗链，全部手工精修。',
+      },
+    },
+  },
+  // ── 顶级：珍珠大类 ──
+  {
+    handle: 'pearls',
+    title: 'Pearls',
+    description: 'High-quality saltwater pearls sourced directly from farms — South Sea, Tahitian, Akoya and more.',
+    image: '/images/collections/澳白吊坠.jpg',
+    i18n: {
+      zh: {
+        title: '珍珠',
+        description: '直接源自养殖场的高品质海水珍珠——南洋珠、大溪地、Akoya 等。',
+      },
+    },
+  },
+  // ── 珍珠子类：品种 ──
   {
     handle: 'south-sea-white',
+    parent: 'pearls',
     title: 'South Sea Pearls',
     description: 'Lustrous white and silver South Sea pearls harvested from Australian waters. Among the largest and finest pearls in the world, celebrated for their deep mirror-like lustre.',
     image: '/images/collections/澳白吊坠.jpg',
@@ -27,6 +91,7 @@ export const collections: Collection[] = [
   },
   {
     handle: 'golden-south-sea',
+    parent: 'pearls',
     title: 'Golden South Sea Pearls',
     description: 'Rare golden South Sea pearls from the Philippine and Indonesian archipelago. Their warm champagne-to-deep-gold colour is entirely natural — never treated or dyed.',
     image: '/images/collections/澳白吊坠.jpg',
@@ -51,6 +116,7 @@ export const collections: Collection[] = [
   },
   {
     handle: 'tahitian',
+    parent: 'pearls',
     title: 'Tahitian Pearls',
     description: 'Exotic dark pearls from the black-lipped oyster of French Polynesia. Each pearl is unique, ranging from jet black and peacock green to deep aubergine and silver-grey.',
     image: '/images/collections/tahitian.svg',
@@ -75,6 +141,7 @@ export const collections: Collection[] = [
   },
   {
     handle: 'akoya',
+    parent: 'pearls',
     title: 'Akoya Pearls',
     description: 'The classic saltwater pearl. Akoya pearls from Pinctada fucata oysters are prized for their exceptional roundness, bright white body colour and sharp, reflective lustre.',
     image: '/images/collections/akoya.svg',
@@ -99,6 +166,7 @@ export const collections: Collection[] = [
   },
   {
     handle: 'keshi',
+    parent: 'pearls',
     title: 'Keshi Pearls',
     description: 'Keshi pearls form without a nucleus as a by-product of culturing. Entirely nacre, they display extraordinary lustre in organic baroque shapes — no two are alike.',
     image: '/images/collections/keshi.svg',
@@ -123,6 +191,7 @@ export const collections: Collection[] = [
   },
   {
     handle: 'mabe',
+    parent: 'pearls',
     title: 'Mabé Pearls',
     description: 'Mabé pearls grow against the inner shell of the oyster, producing a flat-backed dome of solid nacre. Their large surface and vivid overtones make them ideal for rings and earrings.',
     image: '/images/collections/mabe.svg',
@@ -148,3 +217,7 @@ export const collections: Collection[] = [
 ]
 
 export const findCollection = (handle: string) => collections.find(c => c.handle === handle)
+// 顶级分类（无 parent）
+export const topCollections = collections.filter(c => !c.parent)
+// 某个分类的子分类
+export const childCollections = (parent: string) => collections.filter(c => c.parent === parent)

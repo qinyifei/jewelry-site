@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { site } from "~/config/site";
-import { collections } from "~/data/collections";
+import { topCollections as collections } from "~/data/collections";
 import { products } from "~/data/products";
 
 const featured = products.filter((p) => p.featured);
@@ -13,14 +13,17 @@ usePageSeo({ title: site.name });
   <div>
     <!-- ─── Hero ─── -->
     <section class="hero">
-      <img
-        src="/images/home.png"
-        alt=""
-        aria-hidden="true"
-        class="hero-bg"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <picture>
+        <source media="(max-width: 768px)" srcset="/images/home-phone.png" />
+        <img
+          src="/images/home.png"
+          alt=""
+          aria-hidden="true"
+          class="hero-bg"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
       <div class="hero-overlay" aria-hidden="true" />
       <!-- 居中品牌 logo 图片 -->
       <div class="hero-center">

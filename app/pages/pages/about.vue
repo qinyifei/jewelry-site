@@ -4,71 +4,48 @@ import { site } from '~/config/site'
 const c = useLocaleContent({
   en: {
     seoTitle: 'About Us',
-    seoDescription: `The story behind ${site.name}: handcrafted fine jewelry made with care, from our studio to you.`,
+    seoDescription: `The story behind ${site.name}: a decade of sourcing pearls across Asia, from our own farm to your hands.`,
     eyebrow: 'Our Story',
-    title: 'Made with care, worn with meaning',
-    intro: `${site.name} began with a simple idea: fine jewelry should be beautiful, honest and made to last. Since 2015, we have focused exclusively on high-quality saltwater pearls — sourcing, grading and delivering them to boutiques and brands around the world.`,
-    craftTitle: 'A Decade of Sourcing',
-    craft:
-      'Our founder has spent over a decade travelling to pearl-producing regions across Indonesia, the Philippines, Japan, Myanmar and beyond — attending auctions, visiting farms and building direct relationships with growers. In 2018 we established our own pearl farm in Indonesia, giving us first-hand knowledge of every stage from seeding to harvest.',
-    pearlsTitle: 'Our Pearls',
-    pearls:
-      'We carry the major saltwater pearl categories: South Sea white, Tahitian black, Japanese Akoya, South Sea golden, Keshi, and freshwater cultured. Every batch is hand-selected against strict grading criteria for luster, surface quality, shape and size — meeting the standards required by wholesale buyers and high-end retail brands.',
-    materialsTitle: 'Key Milestones',
-    materials: [
-      '2015 — Founded in Shenzhen; first boutique opens at Jin Zhan Jewelry Plaza',
-      '2018 — Pearl farm established in Indonesia',
-      '2020 — Pioneered online order-based pearl procurement; adopted by international partners',
-      '2021 — Recognized at Shenzhen Craftsman Week, Gold & Jewelry Industry Talent Awards',
-      '2023 — Hong Kong branch opens, expanding international services',
-      '2024 — Second retail store opens; "Pearl +" cross-category concept launched',
+    title: 'About Pantone Jewelry',
+    letterLead:
+      'It began with a single black pearl pendant — "its iridescent glow, round and full of magic." That is how our love for pearls started, and how Pantone Jewelry was born in 2015.',
+    letterParas: [
+      'In 2013 our founder attended her first pearl auction. She became a professional pearl buyer, and for years she was never not on the road — Indonesia, the Philippines, Japan, Myanmar, Dubai. She flew through earthquakes and typhoons, and watched the most beautiful sunsets over pearl farms.',
+      'In 2018 we built our own farm in Indonesia and became pearl growers ourselves. Seeding, tending, harvesting — every step by hand, so that every pearl we sell can be traced back to the water it came from.',
+      'Along the way we earned NGTC certification, were invited to the Taiwan Gemological Association as a guest, and were recognized at Shenzhen Craftsman Week. From our first counter in Shenzhen to a Hong Kong branch and a second boutique — ten years, one pearl at a time.',
     ],
-    expertiseTitle: 'Professional Credentials',
-    expertise:
-      'NGTC (National Gemstone Testing Centre) certified alumna. Invited guest at the TGA Taiwan Gemological Association Annual General Meeting. Winner of the Shenzhen Craftsman Week "Gold & Jewelry Industry Skills Talent" award. We stay current with industry developments because the best guarantee we can offer clients is deep, up-to-date expertise.',
-    spiritTitle: 'What Drives Us',
-    spirit:
-      'Ten years of auctions in unfamiliar ports, overnight flights, and farms reached only by small boats — none of it was a shortcut. Every step left a mark, the way a nacre layer builds around a grain of sand. The result is a pearl worth wearing, and a company worth trusting.',
+    letterEnd: 'The journey continues.',
+    letterPs: '(Actually, it has only just begun.)',
     workTitle: 'Work with us',
     workIntro: 'We partner with boutiques, online stores and brands around the world.',
     workWholesale: 'Learn about wholesale and OEM',
     workOr: 'or',
     workContact: 'get in touch',
+    galleryFarm: 'At our pearl farm — seeding, tending and harvesting by hand',
+    galleryStore: `${site.name} boutique`,
   },
   zh: {
     seoTitle: '关于我们',
-    seoDescription: '提亚珠宝品牌故事：十年溯源之旅，从印尼到日本，深入珍珠产地，只为将真正有来源保障的高品质海水珍珠带给每一位客人。',
+    seoDescription: '潘通珠宝品牌故事：十年寻珠之旅，从自建养殖场到你的手中。',
     eyebrow: '品牌故事',
-    title: '从一粒珍珠，到一段故事',
-    intro:
-      '提亚珠宝的起点，是一条黑珍珠吊坠——"黑珍珠伴着迷人的晕彩，浑圆而充满魔幻"。这份爱从那一刻延续，也让提亚珠宝在 2015 年正式诞生，专注于高品质海水珍珠的批发、零售与行业一体化服务。珍珠是温和的，也是多样的——多样的珍珠如咖啡般，一眼看透却琢磨不透。',
-    craftTitle: '溯源之旅',
-    craft:
-      '创始人自 2013 年起便走遍印尼、菲律宾、日本、缅甸、迪拜等主要珍珠产地，亲赴拍卖会、养殖场和珠商深入考察，飞行里程早已数不清。2018 年，提亚在印尼自建养殖基地，成为真正意义上的"养珠人"——从选贝、养殖到采珠、加工，每一道工序亲历其中，确保每一粒珍珠都有清晰可追溯的来源。出差途中曾遇印尼地震、台风"山竹"、波音坠海，条件艰苦，却从未停下寻珠的脚步。',
-    pearlsTitle: '我们的珍珠',
-    pearls:
-      '提亚覆盖海水珍珠主要品类：南洋白珠、大溪地黑珍珠、日本 Akoya 珠、南洋金珠、Keshi 珠及淡水珍珠。每一批货均来自有长期合作关系的养殖场，经过严格人工挑选，光泽、形态、瑕疵等级均符合批发商与高端零售品牌的采购标准。店内设有珍珠打孔机，可随时为客人定制加工珍珠首饰，满足个性化需求。',
-    materialsTitle: '十年里程碑',
-    materials: [
-      '2015年：提亚珠宝正式成立，首家门店入驻深圳金展珠宝广场',
-      '2018年：印尼海水珍珠养殖基地建成，深度参与珍珠养殖全流程',
-      '2020年：首创线上订单式采购模式，获国际合作伙伴认可',
-      '2021年：荣获深圳工匠活动周"黄金珠宝产业技能人才表彰"优秀学员殊荣',
-      '2023年：香港分公司落成，联合举办珍珠拍卖会，拓展国际珠宝行业服务',
-      '2024年：第二家门店于特力金钻大厦开业，开启"珍珠+"跨界联动',
+    title: '关于潘通珠宝',
+    letterLead:
+      '一切始于一条黑珍珠吊坠——"黑珍珠伴着迷人的晕彩，浑圆而充满魔幻"。爱从那一刻开始，潘通珠宝也从那一刻诞生。',
+    letterParas: [
+      '2013 年，创始人第一次参加珍珠拍卖会，从此成为专业珍珠买手。不是在寻珠，就是在寻珠的路上——印尼、菲律宾、日本、缅甸、迪拜。途中经历过地震和台风，也见过养殖场上空最美的晚霞。',
+      '2018 年，我们在印尼建起自己的养殖基地，从买珠人变成了养珠人。选贝、插核、培育、采收，每一道工序都亲力亲为——只为让每一粒珍珠，都能追溯到它生长的那片海。',
+      '十年间，我们拿下 NGTC 认证，受邀出席台湾宝石学协会年会，在深圳工匠活动周获得表彰；从深圳金展的第一家店，到香港分公司，再到第二家门店。十年，一粒珍珠一步。',
     ],
-    expertiseTitle: '专业背景',
-    expertise:
-      'NGTC（国家珠宝玉石质量监督检验中心）认证校友；曾受邀以嘉宾身份出席 TGA 台湾宝石学协会第二届年度大会暨颁奖典礼；荣获深圳工匠活动周"黄金珠宝产业技能人才表彰"优秀学员殊荣。入行以来从未停下学习的脚步，深知每一粒珍珠背后的专业积累，是给每位客人最真实的承诺。',
-    spiritTitle: '初心与坚持',
-    spirit:
-      '十年篇章，风雨兼程，阳光彩虹。无论是激动人心的突破，还是刻骨铭心的挫折，这些点滴如同历经沧海沙砾散落的真珠，最终串成一条有意义的珍珠项链——每一颗都独特，每一颗都唯一，在我们身上闪烁着莹润的珠光。路漫漫其修远兮，慢行稳走，终见心中美好。',
+    letterEnd: '——故事未完。',
+    letterPs: '（其实，这才是开始。）',
     workTitle: '与我们合作',
     workIntro:
-      '我们专注高品质海水珍珠批发与零售，服务全球精品店、珠宝品牌及零售商，也诚邀每一位珍珠爱好者走进提亚，一起感受珍珠的美好。',
+      '我们专注高品质海水珍珠批发与零售，服务全球精品店、珠宝品牌及零售商，也诚邀每一位珍珠爱好者走进潘通，一起感受珍珠的美好。',
     workWholesale: '了解批发与 OEM 合作',
     workOr: '，或',
     workContact: '联系我们',
+    galleryFarm: '珍珠养殖现场——插核、培育、采收均亲力亲为',
+    galleryStore: `${site.name} 门店`,
   },
 })
 
@@ -77,30 +54,42 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
 
 <template>
   <div class="container">
-    <section class="page-hero">
-      <p class="eyebrow">{{ c.eyebrow }}</p>
-      <h1>{{ c.title }}</h1>
-      <p>{{ c.intro }}</p>
-    </section>
+    <!-- 信件式品牌故事 -->
+    <article class="letter">
+      <h1 class="letter-title">{{ c.title }}</h1>
+      <p class="letter-lead">{{ c.letterLead }}</p>
+      <div class="letter-body">
+        <p v-for="(para, i) in c.letterParas" :key="i">{{ para }}</p>
+      </div>
+      <p class="letter-end">{{ c.letterEnd }}</p>
+      <p class="letter-ps">{{ c.letterPs }}</p>
+    </article>
+
+    <!-- 品牌图片：养殖场 / 门店 -->
+    <div class="about-gallery">
+      <figure class="about-shot">
+        <img
+          src="/images/about/farm.png"
+          :alt="c.galleryFarm"
+          loading="lazy"
+          width="1316"
+          height="1195"
+        />
+        <figcaption>{{ c.galleryFarm }}</figcaption>
+      </figure>
+      <figure class="about-shot">
+        <img
+          src="/images/about/store.jpg"
+          :alt="c.galleryStore"
+          loading="lazy"
+          width="1628"
+          height="1383"
+        />
+        <figcaption>{{ c.galleryStore }}</figcaption>
+      </figure>
+    </div>
 
     <div class="prose" style="margin: 0 auto">
-      <h2>{{ c.craftTitle }}</h2>
-      <p>{{ c.craft }}</p>
-
-      <h2>{{ c.pearlsTitle }}</h2>
-      <p>{{ c.pearls }}</p>
-
-      <h2>{{ c.materialsTitle }}</h2>
-      <ul>
-        <li v-for="m in c.materials" :key="m">{{ m }}</li>
-      </ul>
-
-      <h2>{{ c.expertiseTitle }}</h2>
-      <p>{{ c.expertise }}</p>
-
-      <h2>{{ c.spiritTitle }}</h2>
-      <p>{{ c.spirit }}</p>
-
       <h2>{{ c.workTitle }}</h2>
       <p>
         {{ c.workIntro }}
@@ -111,3 +100,93 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
     </div>
   </div>
 </template>
+
+<style scoped>
+/* 信件式排版：左对齐、大标题、斜体引言、正文窄栏 */
+.letter {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 0 24px;
+}
+
+.letter-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  color: #170C02;
+  margin: 0 0 40px;
+  line-height: 1.1;
+}
+
+.letter-lead {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.8;
+  color: #554537;
+  margin: 0 0 32px;
+}
+
+.letter-body p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 2.1;
+  color: #6b5d51;
+  margin: 0 0 24px;
+}
+
+.letter-end {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #170C02;
+  margin: 40px 0 0;
+}
+
+.letter-ps {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #9a8d81;
+  margin: 8px 0 0;
+}
+
+/* 品牌图片：双列网格，移动端单列 */
+.about-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 56px auto;
+}
+
+.about-shot {
+  margin: 0;
+}
+
+.about-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-shot figcaption {
+  margin-top: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b3a89e;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .about-gallery {
+    grid-template-columns: 1fr;
+    margin: 40px auto;
+  }
+}
+</style>

@@ -65,6 +65,8 @@ export interface Collection extends CollectionText, Translations<CollectionText>
   // 对应 /collections/{handle}
   handle: string
   image: string
+  // 父分类（可选）：如珍珠品种挂在 pearls 下；不写就是顶级分类
+  parent?: string
 }
 
 export interface PostText {

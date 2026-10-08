@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { site } from '~/config/site'
-import { collections } from '~/data/collections'
+import { topCollections, childCollections } from '~/data/collections'
 
 const year = new Date().getFullYear()
 const tr = useLocalized()
@@ -26,9 +26,17 @@ const tr = useLocalized()
       <div>
         <h4>{{ $t('footer.shop') }}</h4>
         <NuxtLinkLocale to="/collections/all">{{ $t('nav.all') }}</NuxtLinkLocale>
-        <NuxtLinkLocale v-for="c in collections" :key="c.handle" :to="`/collections/${c.handle}`">
-          {{ tr(c).title }}
-        </NuxtLinkLocale>
+        <template v-for="c in topCollections" :key="c.handle">
+          <NuxtLinkLocale :to="`/collections/${c.handle}`">{{ tr(c).title }}</NuxtLinkLocale>
+          <NuxtLinkLocale
+            v-for="s in childCollections(c.handle)"
+            :key="s.handle"
+            :to="`/collections/${s.handle}`"
+            class="footer-sub"
+          >
+            {{ tr(s).title }}
+          </NuxtLinkLocale>
+        </template>
       </div>
 
       <div>
@@ -86,6 +94,13 @@ const tr = useLocalized()
 }
 
 .cols a:hover { color: rgba(255, 255, 255, 0.9); }
+
+/* 珍珠品种子分类：缩进、字号略小 */
+.cols a.footer-sub {
+  padding-left: 12px;
+  font-size: 11px;
+  opacity: 0.85;
+}
 
 h4 {
   color: #fff;

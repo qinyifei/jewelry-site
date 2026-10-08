@@ -61,7 +61,11 @@
     "all": "Alle smykker",
     "allDescription": "Bla gjennom vår fulle kollektion av sterlingsølv og forgyllt gull smykker.",
     "count": "{n} stykke | {n} stykker",
-    "empty": "Ingen produkter i denne kolleksjonen ennå."
+    "empty": "Ingen produkter i denne kolleksjonen ennå.",
+    "filterAll": "Alle",
+    "filterType": "Type",
+    "filterPearl": "Perletype",
+    "filterClear": "Nullstill filter"
   },
   "form": {
     "name": "Navn",
