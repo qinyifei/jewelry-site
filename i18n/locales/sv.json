@@ -61,7 +61,11 @@
     "all": "Alla smycken",
     "allDescription": "Bläddra i vår hela kollektion av sterlingsilver och förgyllt guld smycken.",
     "count": "{n} smycke | {n} smycken",
-    "empty": "Inga produkter i denna kollektion ännu."
+    "empty": "Inga produkter i denna kollektion ännu.",
+    "filterAll": "Alla",
+    "filterType": "Typ",
+    "filterPearl": "Pärltyp",
+    "filterClear": "Rensa filter"
   },
   "form": {
     "name": "Namn",

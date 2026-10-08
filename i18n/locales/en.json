@@ -61,7 +61,11 @@
     "all": "All Jewelry",
     "allDescription": "Browse our full collection of sterling silver and gold vermeil jewelry.",
     "count": "{n} piece | {n} pieces",
-    "empty": "No products in this collection yet."
+    "empty": "No products in this collection yet.",
+    "filterAll": "All",
+    "filterType": "Category",
+    "filterPearl": "Pearl Type",
+    "filterClear": "Clear filters"
   },
   "form": {
     "name": "Name",

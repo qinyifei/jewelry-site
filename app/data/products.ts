@@ -1,4 +1,5 @@
 import type { Product } from './types'
+import { collections } from './collections'
 
 // 示例商品，替换成真实商品时保持字段结构不变即可。
 // i18n.zh 里写中文版本，没写的字段会显示英文。
@@ -13,7 +14,7 @@ export const products: Product[] = [
     sku: 'AR-R001',
     title: 'Classic Solitaire Ring',
     price: 89,
-    collections: ['south-sea-white'],
+    collections: ['rings', 'south-sea-white'],
     images: ['/images/products/澳白吊坠.jpg', '/images/products/ring-2.svg'],
     summary: 'A timeless 6-prong solitaire set with a brilliant-cut cubic zirconia.',
     description: [
@@ -56,7 +57,7 @@ export const products: Product[] = [
     sku: 'AR-R002',
     title: 'Twisted Stacking Band',
     price: 49,
-    collections: ['akoya'],
+    collections: ['rings', 'akoya'],
     images: ['/images/products/ring-2.svg', '/images/products/ring-1.svg'],
     summary: 'A slim twisted rope band made for stacking.',
     description: [
@@ -88,7 +89,7 @@ export const products: Product[] = [
     sku: 'AR-N001',
     title: 'Heart Pendant Necklace',
     price: 69,
-    collections: ['tahitian'],
+    collections: ['necklaces', 'tahitian'],
     images: ['/images/products/necklace-1.svg', '/images/products/necklace-2.svg'],
     summary: 'A puffed heart pendant on an adjustable cable chain.',
     description: [
@@ -131,7 +132,7 @@ export const products: Product[] = [
     sku: 'AR-N002',
     title: 'Initial Bar Necklace',
     price: 59,
-    collections: ['golden-south-sea'],
+    collections: ['necklaces', 'golden-south-sea'],
     images: ['/images/products/necklace-2.svg', '/images/products/necklace-1.svg'],
     summary: 'A minimalist horizontal bar, personalised with your initials.',
     description: ['A slim bar pendant that can be engraved on both sides. A perfect personalised gift.'],
@@ -161,7 +162,7 @@ export const products: Product[] = [
     sku: 'AR-E001',
     title: 'Pearl Drop Earrings',
     price: 79,
-    collections: ['south-sea-white'],
+    collections: ['earrings', 'south-sea-white'],
     images: ['/images/products/earrings-1.svg', '/images/products/earrings-2.svg'],
     summary: 'Freshwater pearls suspended from polished huggie hoops.',
     description: [
@@ -194,7 +195,7 @@ export const products: Product[] = [
     sku: 'AR-E002',
     title: 'Mini Huggie Hoops',
     price: 45,
-    collections: ['mabe'],
+    collections: ['earrings', 'mabe'],
     images: ['/images/products/earrings-2.svg', '/images/products/earrings-1.svg'],
     summary: 'Everyday 10 mm hoops with a secure hinged closure.',
     description: ['Comfortable enough to sleep in, polished enough to wear anywhere.'],
@@ -222,7 +223,7 @@ export const products: Product[] = [
     sku: 'AR-B001',
     title: 'Tennis Bracelet',
     price: 129,
-    collections: ['keshi'],
+    collections: ['bracelets', 'keshi'],
     images: ['/images/products/bracelet-1.svg', '/images/products/bracelet-2.svg'],
     summary: 'A continuous line of 3 mm stones with a secure box clasp.',
     description: [
@@ -255,7 +256,7 @@ export const products: Product[] = [
     sku: 'AR-B002',
     title: 'Paperclip Chain Bracelet',
     price: 55,
-    collections: ['keshi'],
+    collections: ['bracelets', 'keshi'],
     images: ['/images/products/bracelet-2.svg', '/images/products/bracelet-1.svg'],
     summary: 'A modern paperclip link bracelet with a lobster clasp.',
     description: ['Bold elongated links that layer beautifully with fine chains and bangles.'],
@@ -283,5 +284,9 @@ export const products: Product[] = [
 ]
 
 export const findProduct = (handle: string) => products.find(p => p.handle === handle)
-export const productsIn = (collection: string) =>
-  collection === 'all' ? products : products.filter(p => p.collections.includes(collection))
+export const productsIn = (collection: string) => {
+  if (collection === 'all') return products
+  // 父分类（如 pearls）自动包含所有子分类的商品
+  const handles = [collection, ...collections.filter(c => c.parent === collection).map(c => c.handle)]
+  return products.filter(p => p.collections.some(h => handles.includes(h)))
+}

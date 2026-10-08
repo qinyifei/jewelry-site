@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { site } from '~/config/site'
-import { collections } from '~/data/collections'
-import { products } from '~/data/products'
+import { topCollections, childCollections } from '~/data/collections'
+import { products, productsIn } from '~/data/products'
 
 const route = useRoute()
 
@@ -18,11 +18,28 @@ const switchLocalePath = useSwitchLocalePath()
 const isHome = computed(() => route.path === '/' || /^\/(zh|sv|da|no)\/?$/.test(route.path))
 const transparent = computed(() => isHome.value && !scrolled.value && !shopOpen.value)
 
+// 国旗 emoji 在 Windows 上不渲染（只显示字母代码），改用本地 SVG 图片
 const flags: Record<string, string> = {
-  en: '🇺🇸', zh: '🇨🇳', sv: '🇸🇪', da: '🇩🇰', no: '🇳🇴',
+  en: '/images/flags/us.svg',
+  zh: '/images/flags/cn.svg',
+  sv: '/images/flags/se.svg',
+  da: '/images/flags/dk.svg',
+  no: '/images/flags/no.svg',
 }
 
-const menuProducts = products.filter(p => p.featured).slice(0, 3)
+// mega 菜单：左侧 hover 哪个分类，右侧就显示哪个分类的商品
+const hoveredCat = ref('all')
+
+const megaProducts = computed(() => {
+  if (hoveredCat.value === 'all') {
+    return products.filter(p => p.featured).slice(0, 3)
+  }
+  return productsIn(hoveredCat.value).slice(0, 3)
+})
+
+function onCatEnter(handle: string) {
+  hoveredCat.value = handle
+}
 
 function onScroll() {
   scrolled.value = window.scrollY > 60
@@ -46,6 +63,7 @@ onUnmounted(() => {
 watch(() => route.fullPath, () => {
   langOpen.value = false
   shopOpen.value = false
+  hoveredCat.value = 'all'
   open.value = false
 })
 </script>
@@ -79,15 +97,24 @@ watch(() => route.fullPath, () => {
           <NuxtLinkLocale to="/collections/all" class="mobile-shop-link mobile-shop-all" @click="shopOpen = false; open = false">
             {{ $t('nav.all') }}
           </NuxtLinkLocale>
-          <NuxtLinkLocale
-            v-for="c in collections"
-            :key="c.handle"
-            :to="`/collections/${c.handle}`"
-            class="mobile-shop-link"
-            @click="shopOpen = false; open = false"
-          >
-            {{ tr(c).title }}
-          </NuxtLinkLocale>
+          <template v-for="c in topCollections" :key="c.handle">
+            <NuxtLinkLocale
+              :to="`/collections/${c.handle}`"
+              class="mobile-shop-link"
+              @click="shopOpen = false; open = false"
+            >
+              {{ tr(c).title }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              v-for="s in childCollections(c.handle)"
+              :key="s.handle"
+              :to="`/collections/${s.handle}`"
+              class="mobile-shop-link mobile-shop-sub"
+              @click="shopOpen = false; open = false"
+            >
+              {{ tr(s).title }}
+            </NuxtLinkLocale>
+          </template>
         </div>
 
         <NuxtLinkLocale to="/pages/wholesale">{{ $t('nav.wholesale') }}</NuxtLinkLocale>
@@ -108,7 +135,7 @@ watch(() => route.fullPath, () => {
             @mouseenter="langOpen = true"
             @click="langOpen = !langOpen"
           >
-            <span class="lang-flag">{{ flags[locale] }}</span>
+            <img :src="flags[locale]" alt="" class="lang-flag" />
             <span class="lang-code">{{ locale.toUpperCase() }}</span>
             <span class="lang-chevron" :class="{ flipped: langOpen }" aria-hidden="true" />
           </button>
@@ -123,7 +150,7 @@ watch(() => route.fullPath, () => {
                 role="menuitem"
                 @click="langOpen = false"
               >
-                <span class="lang-flag">{{ flags[l.code] }}</span>
+                <img :src="flags[l.code]" alt="" class="lang-flag" />
                 <span class="lang-name">{{ l.name }}</span>
                 <span v-if="l.code === locale" class="lang-check" aria-hidden="true">✓</span>
               </NuxtLink>
@@ -139,26 +166,56 @@ watch(() => route.fullPath, () => {
       class="mega"
       role="dialog"
       aria-label="Shop navigation"
-      @mouseleave="shopOpen = false"
+      @mouseleave="shopOpen = false; hoveredCat = 'all'"
     >
       <div class="mega-inner">
         <div class="mega-cats">
-          <NuxtLinkLocale to="/collections/all" class="mega-cat-link mega-cat-all" @click="shopOpen = false">
-            {{ $t('nav.all') }}
-          </NuxtLinkLocale>
           <NuxtLinkLocale
-            v-for="c in collections"
-            :key="c.handle"
-            :to="`/collections/${c.handle}`"
-            class="mega-cat-link"
+            to="/collections/all"
+            class="mega-cat-link mega-cat-all"
+            @mouseenter="onCatEnter('all')"
             @click="shopOpen = false"
           >
-            {{ tr(c).title }}
+            {{ $t('nav.all') }}
           </NuxtLinkLocale>
+          <div
+            v-for="c in topCollections"
+            :key="c.handle"
+            class="mega-cat-group"
+            @mouseenter="onCatEnter(c.handle)"
+          >
+            <NuxtLinkLocale
+              :to="`/collections/${c.handle}`"
+              class="mega-cat-link"
+              :class="{ 'has-subs': childCollections(c.handle).length }"
+              @mouseenter="onCatEnter(c.handle)"
+              @click="shopOpen = false"
+            >
+              {{ tr(c).title }}
+              <span
+                v-if="childCollections(c.handle).length"
+                class="mega-cat-arrow"
+                aria-hidden="true"
+              />
+            </NuxtLinkLocale>
+            <!-- 子分类：hover 父级时展开；hover 具体子类时右侧商品跟着切 -->
+            <div v-if="childCollections(c.handle).length" class="mega-cat-children">
+              <NuxtLinkLocale
+                v-for="s in childCollections(c.handle)"
+                :key="s.handle"
+                :to="`/collections/${s.handle}`"
+                class="mega-cat-link mega-cat-sub"
+                @mouseenter="onCatEnter(s.handle)"
+                @click="shopOpen = false"
+              >
+                {{ tr(s).title }}
+              </NuxtLinkLocale>
+            </div>
+          </div>
         </div>
         <div class="mega-products">
           <NuxtLinkLocale
-            v-for="p in menuProducts"
+            v-for="p in megaProducts"
             :key="p.handle"
             :to="`/products/${p.handle}`"
             class="mega-product"
@@ -306,7 +363,13 @@ watch(() => route.fullPath, () => {
 .header:not(.scrolled) .lang-trigger:hover,
 .header:not(.scrolled) .lang.open .lang-trigger { color: #fff; }
 
-.lang-flag { font-size: 14px; line-height: 1; }
+.lang-flag {
+  width: 18px;
+  height: 13px;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
 .lang-code { font-weight: 300; }
 
 .lang-chevron {
@@ -444,14 +507,65 @@ watch(() => route.fullPath, () => {
   white-space: nowrap;
 }
 
-.mega-cat-link:hover { color: #170C02; }
-.mega-cat-link.router-link-active { color: #170C02; border-bottom-color: #554537; }
+.mega-cat-link:hover {
+  color: #170C02;
+  /* 仅移入时显示与文字等长的下划线 */
+  border-bottom-color: rgba(85, 69, 55, 0.35);
+}
+/* 选中态只加深文字，无下划线 */
+.mega-cat-link.router-link-active { color: #170C02; }
+
+/* 带子分类的顶级分类：右侧箭头提示 */
+.mega-cat-link.has-subs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mega-cat-arrow {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+  opacity: 0.45;
+  transition: transform 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.mega-cat-group:hover .mega-cat-arrow,
+.mega-cat-group:focus-within .mega-cat-arrow {
+  transform: rotate(45deg);
+  opacity: 0.9;
+}
+
+/* 子分类：默认收起，hover 父级时展开 */
+.mega-cat-children {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.mega-cat-group:hover .mega-cat-children,
+.mega-cat-group:focus-within .mega-cat-children {
+  max-height: 260px;
+}
+
+/* 子分类（珍珠品种）缩进、字号略小 */
+.mega-cat-sub {
+  padding-left: 16px;
+  font-size: 12px;
+  opacity: 0.82;
+}
 
 .mega-cat-all {
   font-weight: 400;
   color: #170C02;
   margin-bottom: 8px;
   padding-bottom: 12px;
+  align-self: stretch; /* 全部首饰保持整列宽度，下划线不变 */
   border-bottom: 1px solid #e9dcd0 !important;
 }
 
@@ -565,6 +679,13 @@ watch(() => route.fullPath, () => {
 
   .mobile-shop-link:last-child { border-bottom: none; }
   .mobile-shop-link:hover { color: #170C02; }
+
+  /* 珍珠品种子分类 */
+  .mobile-shop-sub {
+    padding-left: 28px;
+    font-size: 10px;
+    opacity: 0.82;
+  }
 
   .mobile-shop-all {
     font-weight: 400;
