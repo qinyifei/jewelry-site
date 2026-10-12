@@ -6,9 +6,9 @@ const c = useLocaleContent({
     seoTitle: 'About Us',
     seoDescription: `The story behind ${site.name}: a decade of sourcing pearls across Asia, from our own farm to your hands.`,
     eyebrow: 'Our Story',
-    title: 'About Pantone Jewelry',
+    title: 'About Panthea Jewelry',
     letterLead:
-      'It began with a single black pearl pendant — "its iridescent glow, round and full of magic." That is how our love for pearls started, and how Pantone Jewelry was born in 2015.',
+      'It began with a single black pearl pendant — "its iridescent glow, round and full of magic." That is how our love for pearls started, and how Panthea Jewelry was born in 2015.',
     letterParas: [
       'In 2013 our founder attended her first pearl auction. She became a professional pearl buyer, and for years she was never not on the road — Indonesia, the Philippines, Japan, Myanmar, Dubai. She flew through earthquakes and typhoons, and watched the most beautiful sunsets over pearl farms.',
       'In 2018 we built our own farm in Indonesia and became pearl growers ourselves. Seeding, tending, harvesting — every step by hand, so that every pearl we sell can be traced back to the water it came from.',
@@ -26,11 +26,11 @@ const c = useLocaleContent({
   },
   zh: {
     seoTitle: '关于我们',
-    seoDescription: '潘通珠宝品牌故事：十年寻珠之旅，从自建养殖场到你的手中。',
+    seoDescription: '潘蒂娅珠宝品牌故事：十年寻珠之旅，从自建养殖场到你的手中。',
     eyebrow: '品牌故事',
-    title: '关于潘通珠宝',
+    title: '关于潘蒂娅珠宝',
     letterLead:
-      '一切始于一条黑珍珠吊坠——"黑珍珠伴着迷人的晕彩，浑圆而充满魔幻"。爱从那一刻开始，潘通珠宝也从那一刻诞生。',
+      '一切始于一条黑珍珠吊坠——"黑珍珠伴着迷人的晕彩，浑圆而充满魔幻"。爱从那一刻开始，潘蒂娅珠宝也从那一刻诞生。',
     letterParas: [
       '2013 年，创始人第一次参加珍珠拍卖会，从此成为专业珍珠买手。不是在寻珠，就是在寻珠的路上——印尼、菲律宾、日本、缅甸、迪拜。途中经历过地震和台风，也见过养殖场上空最美的晚霞。',
       '2018 年，我们在印尼建起自己的养殖基地，从买珠人变成了养珠人。选贝、插核、培育、采收，每一道工序都亲力亲为——只为让每一粒珍珠，都能追溯到它生长的那片海。',
@@ -40,7 +40,7 @@ const c = useLocaleContent({
     letterPs: '（其实，这才是开始。）',
     workTitle: '与我们合作',
     workIntro:
-      '我们专注高品质海水珍珠批发与零售，服务全球精品店、珠宝品牌及零售商，也诚邀每一位珍珠爱好者走进潘通，一起感受珍珠的美好。',
+      '我们专注高品质海水珍珠批发与零售，服务全球精品店、珠宝品牌及零售商，也诚邀每一位珍珠爱好者走进潘蒂娅，一起感受珍珠的美好。',
     workWholesale: '了解批发与 OEM 合作',
     workOr: '，或',
     workContact: '联系我们',

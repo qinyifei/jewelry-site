@@ -1,10 +1,10 @@
 // 品牌信息集中在这里，正式品牌名、域名、联系方式定下来后只改这一个文件。
 export const site = {
-  name: 'Pantone Jewelry',
-  shortName: 'Pantone',
-  url: 'https://www.pantonejewelry.com',
+  name: 'Panthea Jewelry',
+  shortName: 'Panthea',
+  url: 'https://www.pantheajewelry.com',
   // 网站描述、标语等文案在 i18n/locales/*.json 里，按语言分别维护
-  email: 'hello@pantonejewelry.com',
+  email: 'hello@pantheajewelry.com',
   // WhatsApp 号码：国际格式，不带 + 和空格
   whatsapp: '85200000000',
   address: 'Hong Kong',

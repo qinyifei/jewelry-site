@@ -38,7 +38,8 @@ function useSchemaOrg() {
       <slot />
     </main>
     <SiteFooter />
-    <WhatsAppButton />
+    <!-- WhatsApp 悬浮按钮暂时下线，需要时取消注释即可 -->
+    <!-- <WhatsAppButton /> -->
     <CookieBanner />
   </div>
 </template>
