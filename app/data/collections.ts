@@ -1,6 +1,19 @@
 import type { Collection } from './types'
 
 export const collections: Collection[] = [
+  // ── 顶级：珍珠大类（品牌核心，排在通用品类前面）──
+  {
+    handle: 'pearls',
+    title: 'Pearls',
+    description: 'High-quality saltwater pearls sourced directly from farms — South Sea, Tahitian, Akoya and more.',
+    image: '/images/collections/south-sea-pendant.jpg',
+    i18n: {
+      zh: {
+        title: '珍珠',
+        description: '直接源自养殖场的高品质海水珍珠——南洋珠、大溪地、Akoya 等。',
+      },
+    },
+  },
   // ── 顶级：珠宝通用品类 ──
   {
     handle: 'earrings',
@@ -47,19 +60,6 @@ export const collections: Collection[] = [
       zh: {
         title: '手链',
         description: '手链与手镯，从细链到粗链，全部手工精修。',
-      },
-    },
-  },
-  // ── 顶级：珍珠大类 ──
-  {
-    handle: 'pearls',
-    title: 'Pearls',
-    description: 'High-quality saltwater pearls sourced directly from farms — South Sea, Tahitian, Akoya and more.',
-    image: '/images/collections/south-sea-pendant.jpg',
-    i18n: {
-      zh: {
-        title: '珍珠',
-        description: '直接源自养殖场的高品质海水珍珠——南洋珠、大溪地、Akoya 等。',
       },
     },
   },
