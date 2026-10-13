@@ -12,7 +12,8 @@ export function usePageSeo(opts: PageSeo) {
   const { t } = useI18n()
   const route = useRoute()
   const url = site.url + (route.path === '/' ? '' : route.path)
-  const image = site.url + (opts.image ?? '/images/hero.svg')
+  // 社交分享卡默认图：1200×630 的 JPG（Facebook/X 不支持 SVG）
+  const image = site.url + (opts.image ?? '/images/og-image.jpg')
   const description = opts.description ?? t('seo.description')
   const title = opts.title === site.name ? site.name : `${opts.title} | ${site.name}`
 

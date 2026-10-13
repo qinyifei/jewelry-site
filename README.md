@@ -1,8 +1,8 @@
-# Aurelia Jewelry 外贸官网
+# Panthea Jewelry 外贸官网
 
 面向欧美客户的珠宝展示 + 询盘网站。Nuxt 4 静态生成，部署在 Cloudflare Pages，询盘通过 Cloudflare Pages Functions + Resend 发到邮箱。
 
-> 品牌名 "Aurelia Jewelry"、域名、邮箱、WhatsApp、商品和图片都是占位内容，上线前需要替换。
+> 品牌名 "Panthea Jewelry"、域名、邮箱、WhatsApp、商品和图片都是占位内容，上线前需要替换。
 
 ## 本地开发
 

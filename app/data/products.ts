@@ -15,7 +15,7 @@ export const products: Product[] = [
     title: 'Classic Solitaire Ring',
     price: 89,
     collections: ['rings', 'south-sea-white'],
-    images: ['/images/products/澳白吊坠.jpg', '/images/products/ring-2.svg'],
+    images: ['/images/products/south-sea-pendant.jpg', '/images/products/ring-2.svg'],
     summary: 'A timeless 6-prong solitaire set with a brilliant-cut cubic zirconia.',
     description: [
       'Our Classic Solitaire is the ring you will reach for every day. A 1 ct brilliant-cut stone sits in a low-profile six-prong setting that catches the light without snagging.',

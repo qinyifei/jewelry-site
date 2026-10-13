@@ -14,9 +14,9 @@ usePageSeo({ title: site.name });
     <!-- ─── Hero ─── -->
     <section class="hero">
       <picture>
-        <source media="(max-width: 768px)" srcset="/images/home-phone.png" />
+        <source media="(max-width: 768px)" srcset="/images/home-phone.webp" />
         <img
-          src="/images/home.png"
+          src="/images/home.webp"
           alt=""
           aria-hidden="true"
           class="hero-bg"
@@ -24,6 +24,8 @@ usePageSeo({ title: site.name });
           fetchpriority="high"
         />
       </picture>
+      <!-- 首页 h1：视觉上由 logo 呈现，文字版供搜索引擎与读屏软件 -->
+      <h1 class="sr-only">{{ $t("home.heroTitle") }}</h1>
       <div class="hero-overlay" aria-hidden="true" />
       <!-- 居中品牌 logo 图片 -->
       <div class="hero-center">
@@ -33,7 +35,7 @@ usePageSeo({ title: site.name });
           :aria-label="site.name"
         >
           <img
-            src="/images/logo-en.png"
+            src="/images/logo-en.webp"
             :alt="site.name"
             class="hero-logo-img"
           />

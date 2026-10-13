@@ -1,85 +1,100 @@
 <script setup lang="ts">
-import { site } from '~/config/site'
-import { topCollections, childCollections } from '~/data/collections'
-import { products, productsIn } from '~/data/products'
+import { site } from "~/config/site";
+import { topCollections, childCollections } from "~/data/collections";
+import { products, productsIn } from "~/data/products";
 
-const route = useRoute()
+const route = useRoute();
 
-const open = ref(false)
-const shopOpen = ref(false)
-const langOpen = ref(false)
-const langRef = ref<HTMLElement | null>(null)
-const scrolled = ref(false)
+const open = ref(false);
+const shopOpen = ref(false);
+const langOpen = ref(false);
+const langRef = ref<HTMLElement | null>(null);
+const scrolled = ref(false);
 
-const tr = useLocalized()
-const { locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
+const tr = useLocalized();
+const { locale, locales } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
 
-const isHome = computed(() => route.path === '/' || /^\/(zh|sv|da|no)\/?$/.test(route.path))
-const transparent = computed(() => isHome.value && !scrolled.value && !shopOpen.value)
+const isHome = computed(
+  () => route.path === "/" || /^\/(zh|sv|da|no)\/?$/.test(route.path),
+);
+const transparent = computed(
+  () => isHome.value && !scrolled.value && !shopOpen.value,
+);
 
 // 国旗 emoji 在 Windows 上不渲染（只显示字母代码），改用本地 SVG 图片
 const flags: Record<string, string> = {
-  en: '/images/flags/us.svg',
-  zh: '/images/flags/cn.svg',
-  sv: '/images/flags/se.svg',
-  da: '/images/flags/dk.svg',
-  no: '/images/flags/no.svg',
-}
+  en: "/images/flags/us.svg",
+  zh: "/images/flags/cn.svg",
+  sv: "/images/flags/se.svg",
+  da: "/images/flags/dk.svg",
+  no: "/images/flags/no.svg",
+};
 
 // mega 菜单：左侧 hover 哪个分类，右侧就显示哪个分类的商品
-const hoveredCat = ref('all')
+const hoveredCat = ref("all");
 
 const megaProducts = computed(() => {
-  if (hoveredCat.value === 'all') {
-    return products.filter(p => p.featured).slice(0, 3)
+  if (hoveredCat.value === "all") {
+    return products.filter((p) => p.featured).slice(0, 3);
   }
-  return productsIn(hoveredCat.value).slice(0, 3)
-})
+  return productsIn(hoveredCat.value).slice(0, 3);
+});
 
 function onCatEnter(handle: string) {
-  hoveredCat.value = handle
+  hoveredCat.value = handle;
 }
 
 function onScroll() {
-  scrolled.value = window.scrollY > 60
+  scrolled.value = window.scrollY > 60;
 }
 
 function onDocClick(e: MouseEvent) {
-  if (langRef.value && !langRef.value.contains(e.target as Node)) langOpen.value = false
+  if (langRef.value && !langRef.value.contains(e.target as Node))
+    langOpen.value = false;
 }
 
 onMounted(() => {
-  document.addEventListener('mousedown', onDocClick)
-  window.addEventListener('scroll', onScroll, { passive: true })
-  onScroll()
-})
+  document.addEventListener("mousedown", onDocClick);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+});
 
 onUnmounted(() => {
-  document.removeEventListener('mousedown', onDocClick)
-  window.removeEventListener('scroll', onScroll)
-})
+  document.removeEventListener("mousedown", onDocClick);
+  window.removeEventListener("scroll", onScroll);
+});
 
-watch(() => route.fullPath, () => {
-  langOpen.value = false
-  shopOpen.value = false
-  hoveredCat.value = 'all'
-  open.value = false
-})
+watch(
+  () => route.fullPath,
+  () => {
+    langOpen.value = false;
+    shopOpen.value = false;
+    hoveredCat.value = "all";
+    open.value = false;
+  },
+);
 </script>
 
 <template>
   <header class="header" :class="{ scrolled: !transparent }">
     <div class="bar">
       <!-- Mobile burger -->
-      <button class="menu-btn" :aria-expanded="open" aria-controls="site-nav" @click="open = !open">
-        <span class="sr-only">{{ open ? $t('nav.close') : $t('nav.menu') }}</span>
+      <button
+        class="menu-btn"
+        :aria-expanded="open"
+        aria-controls="site-nav"
+        @click="open = !open"
+      >
+        <span class="sr-only">{{
+          open ? $t("nav.close") : $t("nav.menu")
+        }}</span>
         <span class="burger" :class="{ open }" />
       </button>
 
       <!-- Left nav -->
       <nav id="site-nav" class="nav nav-left" :class="{ open }">
-        <NuxtLinkLocale to="/">{{ $t('nav.home') }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="/">{{ $t("nav.home") }}</NuxtLinkLocale>
 
         <button
           class="shop-trigger"
@@ -88,20 +103,34 @@ watch(() => route.fullPath, () => {
           @mouseenter="shopOpen = true"
           @click="shopOpen = !shopOpen"
         >
-          {{ $t('nav.shop') }}
-          <span class="nav-chevron" :class="{ flipped: shopOpen }" aria-hidden="true" />
+          {{ $t("nav.shop") }}
+          <span
+            class="nav-chevron"
+            :class="{ flipped: shopOpen }"
+            aria-hidden="true"
+          />
         </button>
 
         <!-- 移动端内联子菜单（桌面端用 mega menu，这个只在抽屉里显示） -->
         <div v-if="shopOpen" class="mobile-shop-menu">
-          <NuxtLinkLocale to="/collections/all" class="mobile-shop-link mobile-shop-all" @click="shopOpen = false; open = false">
-            {{ $t('nav.all') }}
+          <NuxtLinkLocale
+            to="/collections/all"
+            class="mobile-shop-link mobile-shop-all"
+            @click="
+              shopOpen = false;
+              open = false;
+            "
+          >
+            {{ $t("nav.all") }}
           </NuxtLinkLocale>
           <template v-for="c in topCollections" :key="c.handle">
             <NuxtLinkLocale
               :to="`/collections/${c.handle}`"
               class="mobile-shop-link"
-              @click="shopOpen = false; open = false"
+              @click="
+                shopOpen = false;
+                open = false;
+              "
             >
               {{ tr(c).title }}
             </NuxtLinkLocale>
@@ -110,18 +139,32 @@ watch(() => route.fullPath, () => {
               :key="s.handle"
               :to="`/collections/${s.handle}`"
               class="mobile-shop-link mobile-shop-sub"
-              @click="shopOpen = false; open = false"
+              @click="
+                shopOpen = false;
+                open = false;
+              "
             >
               {{ tr(s).title }}
             </NuxtLinkLocale>
           </template>
         </div>
 
-        <NuxtLinkLocale to="/pages/wholesale">{{ $t('nav.wholesale') }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/pages/materials">{{ $t('materials.nav') }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/pages/about">{{ $t('nav.about') }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/pages/contact">{{ $t('nav.contact') }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="/pages/wholesale">{{
+          $t("nav.wholesale")
+        }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="/pages/materials">{{
+          $t("materials.nav")
+        }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="/pages/about">{{ $t("nav.about") }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="/pages/contact">{{
+          $t("nav.contact")
+        }}</NuxtLinkLocale>
       </nav>
+
+      <!-- Center logo — 跟随 header 卡片一起显隐 -->
+      <NuxtLinkLocale to="/" class="bar-center">
+        <img src="/images/logo-en.webp" :alt="site.name" class="bar-logo" />
+      </NuxtLinkLocale>
 
       <!-- Right controls -->
       <div class="nav-right">
@@ -137,7 +180,11 @@ watch(() => route.fullPath, () => {
           >
             <img :src="flags[locale]" alt="" class="lang-flag" />
             <span class="lang-code">{{ locale.toUpperCase() }}</span>
-            <span class="lang-chevron" :class="{ flipped: langOpen }" aria-hidden="true" />
+            <span
+              class="lang-chevron"
+              :class="{ flipped: langOpen }"
+              aria-hidden="true"
+            />
           </button>
           <ul class="lang-menu" role="menu" @mouseleave="langOpen = false">
             <li v-for="l in locales" :key="l.code" role="none">
@@ -152,7 +199,12 @@ watch(() => route.fullPath, () => {
               >
                 <img :src="flags[l.code]" alt="" class="lang-flag" />
                 <span class="lang-name">{{ l.name }}</span>
-                <span v-if="l.code === locale" class="lang-check" aria-hidden="true">✓</span>
+                <span
+                  v-if="l.code === locale"
+                  class="lang-check"
+                  aria-hidden="true"
+                  >✓</span
+                >
               </NuxtLink>
             </li>
           </ul>
@@ -166,7 +218,10 @@ watch(() => route.fullPath, () => {
       class="mega"
       role="dialog"
       aria-label="Shop navigation"
-      @mouseleave="shopOpen = false; hoveredCat = 'all'"
+      @mouseleave="
+        shopOpen = false;
+        hoveredCat = 'all';
+      "
     >
       <div class="mega-inner">
         <div class="mega-cats">
@@ -176,7 +231,7 @@ watch(() => route.fullPath, () => {
             @mouseenter="onCatEnter('all')"
             @click="shopOpen = false"
           >
-            {{ $t('nav.all') }}
+            {{ $t("nav.all") }}
           </NuxtLinkLocale>
           <div
             v-for="c in topCollections"
@@ -199,7 +254,10 @@ watch(() => route.fullPath, () => {
               />
             </NuxtLinkLocale>
             <!-- 子分类：hover 父级时展开；hover 具体子类时右侧商品跟着切 -->
-            <div v-if="childCollections(c.handle).length" class="mega-cat-children">
+            <div
+              v-if="childCollections(c.handle).length"
+              class="mega-cat-children"
+            >
               <NuxtLinkLocale
                 v-for="s in childCollections(c.handle)"
                 :key="s.handle"
@@ -222,7 +280,13 @@ watch(() => route.fullPath, () => {
             @click="shopOpen = false"
           >
             <div class="mega-product-img">
-              <img :src="p.images[0]" :alt="tr(p).title" loading="eager" width="300" height="300" />
+              <img
+                :src="p.images[0]"
+                :alt="tr(p).title"
+                loading="eager"
+                width="300"
+                height="300"
+              />
             </div>
             <p class="mega-product-name">{{ tr(p).title }}</p>
             <p v-if="p.price" class="mega-product-price">${{ p.price }}</p>
@@ -242,7 +306,9 @@ watch(() => route.fullPath, () => {
   z-index: 50;
   background: transparent;
   border-bottom: none;
-  transition: background 0.3s, border-color 0.3s;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
 }
 
 .header.scrolled {
@@ -251,8 +317,9 @@ watch(() => route.fullPath, () => {
   backdrop-filter: blur(8px);
 }
 
-/* ── Bar layout: left nav | right controls ── */
+/* ── Bar layout: left nav | center logo | right controls ── */
 .bar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -264,12 +331,43 @@ watch(() => route.fullPath, () => {
   gap: 0;
 }
 
+/* ── Center logo：绝对定位保证严格居中，显隐跟随 header 卡片（scrolled）── */
+.bar-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.header.scrolled .bar-center {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bar-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+/* 窄桌面（1081–1249px）左侧导航会伸过中线，与居中 logo 重叠，此时不显示；
+   实测 1100px 下导航右缘 526px，logo 高 60px 时宽约 106px、左缘约 516px，重叠约 10px */
+@media (min-width: 1081px) and (max-width: 1249px) {
+  .bar-center {
+    display: none;
+  }
+}
+
 /* ── Nav (left) ── */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 28px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.13em;
@@ -284,11 +382,23 @@ watch(() => route.fullPath, () => {
   transition: color 0.15s;
 }
 
-.header:not(.scrolled) .nav-left > a { color: rgba(255,255,255,0.85); }
-.nav-left > a:hover { color: #170C02; }
-.header:not(.scrolled) .nav-left > a:hover { color: #fff; }
-.nav-left > a.router-link-active { border-bottom-color: #554537; color: #170C02; }
-.header:not(.scrolled) .nav-left > a.router-link-active { border-bottom-color: rgba(255,255,255,0.6); color: #fff; }
+.header:not(.scrolled) .nav-left > a {
+  color: rgba(255, 255, 255, 0.85);
+}
+.nav-left > a:hover {
+  color: #170c02;
+}
+.header:not(.scrolled) .nav-left > a:hover {
+  color: #fff;
+}
+.nav-left > a.router-link-active {
+  border-bottom-color: #554537;
+  color: #170c02;
+}
+.header:not(.scrolled) .nav-left > a.router-link-active {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
 
 /* ── Shop trigger ── */
 .shop-trigger {
@@ -300,7 +410,7 @@ watch(() => route.fullPath, () => {
   border: none;
   border-bottom: 1px solid transparent;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.13em;
@@ -310,9 +420,15 @@ watch(() => route.fullPath, () => {
   white-space: nowrap;
 }
 
-.header:not(.scrolled) .shop-trigger { color: rgba(255,255,255,0.85); }
-.shop-trigger:hover { color: #170C02; }
-.header:not(.scrolled) .shop-trigger:hover { color: #fff; }
+.header:not(.scrolled) .shop-trigger {
+  color: rgba(255, 255, 255, 0.85);
+}
+.shop-trigger:hover {
+  color: #170c02;
+}
+.header:not(.scrolled) .shop-trigger:hover {
+  color: #fff;
+}
 
 .nav-chevron {
   display: inline-block;
@@ -325,7 +441,9 @@ watch(() => route.fullPath, () => {
   flex-shrink: 0;
 }
 
-.nav-chevron.flipped { transform: rotate(-135deg) translateY(1px); }
+.nav-chevron.flipped {
+  transform: rotate(-135deg) translateY(1px);
+}
 
 /* ── Right controls ── */
 .nav-right {
@@ -348,7 +466,7 @@ watch(() => route.fullPath, () => {
   border: none;
   cursor: pointer;
   color: #554537;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.1em;
@@ -357,11 +475,17 @@ watch(() => route.fullPath, () => {
   white-space: nowrap;
 }
 
-.header:not(.scrolled) .lang-trigger { color: rgba(255,255,255,0.85); }
+.header:not(.scrolled) .lang-trigger {
+  color: rgba(255, 255, 255, 0.85);
+}
 .lang-trigger:hover,
-.lang.open .lang-trigger { color: #170C02; }
+.lang.open .lang-trigger {
+  color: #170c02;
+}
 .header:not(.scrolled) .lang-trigger:hover,
-.header:not(.scrolled) .lang.open .lang-trigger { color: #fff; }
+.header:not(.scrolled) .lang.open .lang-trigger {
+  color: #fff;
+}
 
 .lang-flag {
   width: 18px;
@@ -370,7 +494,9 @@ watch(() => route.fullPath, () => {
   display: block;
   border-radius: 2px;
 }
-.lang-code { font-weight: 300; }
+.lang-code {
+  font-weight: 300;
+}
 
 .lang-chevron {
   display: block;
@@ -383,7 +509,9 @@ watch(() => route.fullPath, () => {
   flex-shrink: 0;
 }
 
-.lang-chevron.flipped { transform: rotate(-135deg) translateY(1px); }
+.lang-chevron.flipped {
+  transform: rotate(-135deg) translateY(1px);
+}
 
 /* Dropdown panel */
 .lang-menu {
@@ -400,7 +528,9 @@ watch(() => route.fullPath, () => {
   z-index: 100;
 }
 
-.lang.open .lang-menu { display: block; }
+.lang.open .lang-menu {
+  display: block;
+}
 
 .lang-menu a {
   display: flex;
@@ -408,25 +538,34 @@ watch(() => route.fullPath, () => {
   gap: 10px;
   padding: 10px 12px;
   color: #554537;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.04em;
-  transition: background 0.12s, color 0.12s;
+  transition:
+    background 0.12s,
+    color 0.12s;
   border-radius: 0;
 }
 
-.lang-menu a:hover { background: #f8f5f2; color: #170C02; }
-.lang-menu a.active { color: #170C02; background: #f1efed; }
+.lang-menu a:hover {
+  background: #f8f5f2;
+  color: #170c02;
+}
+.lang-menu a.active {
+  color: #170c02;
+  background: #f1efed;
+}
 
-.lang-name { flex: 1; }
+.lang-name {
+  flex: 1;
+}
 
 .lang-check {
   font-size: 11px;
   color: #554537;
   opacity: 0.7;
 }
-
 
 /* ── Mobile ── */
 .menu-btn {
@@ -447,21 +586,37 @@ watch(() => route.fullPath, () => {
   display: block;
   width: 20px;
   height: 1px;
-  background: #170C02;
+  background: #170c02;
   position: relative;
   transition: transform 0.2s;
 }
 
 .header:not(.scrolled) .burger,
 .header:not(.scrolled) .burger::before,
-.header:not(.scrolled) .burger::after { background: rgba(255,255,255,0.9); }
+.header:not(.scrolled) .burger::after {
+  background: rgba(255, 255, 255, 0.9);
+}
 
-.burger::before, .burger::after { content: ''; position: absolute; }
-.burger::before { top: -6px; }
-.burger::after { top: 6px; }
-.burger.open { background: transparent; }
-.burger.open::before { transform: translateY(6px) rotate(45deg); }
-.burger.open::after { transform: translateY(-6px) rotate(-45deg); }
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+}
+.burger::before {
+  top: -6px;
+}
+.burger::after {
+  top: 6px;
+}
+.burger.open {
+  background: transparent;
+}
+.burger.open::before {
+  transform: translateY(6px) rotate(45deg);
+}
+.burger.open::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 /* ── Mega menu ── */
 .mega {
@@ -495,7 +650,7 @@ watch(() => route.fullPath, () => {
 
 .mega-cat-link {
   display: block;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.06em;
@@ -508,12 +663,14 @@ watch(() => route.fullPath, () => {
 }
 
 .mega-cat-link:hover {
-  color: #170C02;
+  color: #170c02;
   /* 仅移入时显示与文字等长的下划线 */
   border-bottom-color: rgba(85, 69, 55, 0.35);
 }
 /* 选中态只加深文字，无下划线 */
-.mega-cat-link.router-link-active { color: #170C02; }
+.mega-cat-link.router-link-active {
+  color: #170c02;
+}
 
 /* 带子分类的顶级分类：右侧箭头提示 */
 .mega-cat-link.has-subs {
@@ -531,7 +688,9 @@ watch(() => route.fullPath, () => {
   border-bottom: 1px solid currentColor;
   transform: rotate(-45deg);
   opacity: 0.45;
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
   flex-shrink: 0;
 }
 
@@ -562,7 +721,7 @@ watch(() => route.fullPath, () => {
 
 .mega-cat-all {
   font-weight: 400;
-  color: #170C02;
+  color: #170c02;
   margin-bottom: 8px;
   padding-bottom: 12px;
   align-self: stretch; /* 全部首饰保持整列宽度，下划线不变 */
@@ -585,7 +744,9 @@ watch(() => route.fullPath, () => {
   transition: background 0.15s;
 }
 
-.mega-product:hover { background: #faf8f6; }
+.mega-product:hover {
+  background: #faf8f6;
+}
 
 .mega-product-img {
   aspect-ratio: 1;
@@ -604,11 +765,13 @@ watch(() => route.fullPath, () => {
   transition: transform 0.5s ease;
 }
 
-.mega-product:hover .mega-product-img img { transform: scale(1.03); }
+.mega-product:hover .mega-product-img img {
+  transform: scale(1.03);
+}
 
 .mega-product-name {
   margin: 0 0 4px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.06em;
@@ -619,7 +782,7 @@ watch(() => route.fullPath, () => {
 
 .mega-product-price {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 300;
   color: #554537;
@@ -628,8 +791,12 @@ watch(() => route.fullPath, () => {
 
 /* ── Responsive ── */
 @media (max-width: 1080px) {
-  .mega { display: none; }
-  .menu-btn { display: flex; }
+  .mega {
+    display: none;
+  }
+  .menu-btn {
+    display: flex;
+  }
 
   .nav-left {
     display: none;
@@ -645,8 +812,14 @@ watch(() => route.fullPath, () => {
     padding: 0 24px 16px;
   }
 
-  .nav-left.open { display: flex; }
-  .nav-left > a { padding: 16px 0; border-bottom: 1px solid #e9dcd0; color: #554537 !important; }
+  .nav-left.open {
+    display: flex;
+  }
+  .nav-left > a {
+    padding: 16px 0;
+    border-bottom: 1px solid #e9dcd0;
+    color: #554537 !important;
+  }
 
   .shop-trigger {
     width: 100%;
@@ -668,7 +841,7 @@ watch(() => route.fullPath, () => {
     display: block;
     padding: 12px 0;
     border-bottom: 1px solid #e9dcd0;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 300;
     letter-spacing: 0.1em;
@@ -677,8 +850,12 @@ watch(() => route.fullPath, () => {
     transition: color 0.15s;
   }
 
-  .mobile-shop-link:last-child { border-bottom: none; }
-  .mobile-shop-link:hover { color: #170C02; }
+  .mobile-shop-link:last-child {
+    border-bottom: none;
+  }
+  .mobile-shop-link:hover {
+    color: #170c02;
+  }
 
   /* 珍珠品种子分类 */
   .mobile-shop-sub {
@@ -689,17 +866,26 @@ watch(() => route.fullPath, () => {
 
   .mobile-shop-all {
     font-weight: 400;
-    color: #170C02;
+    color: #170c02;
   }
 }
 
 /* 桌面端隐藏移动端子菜单 */
 @media (min-width: 1081px) {
-  .mobile-shop-menu { display: none; }
+  .mobile-shop-menu {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
-  .bar { height: 52px; }
-  .nav-right { gap: 12px; }
+  .bar {
+    height: 52px;
+  }
+  .bar-logo {
+    height: 52px;
+  }
+  .nav-right {
+    gap: 12px;
+  }
 }
 </style>

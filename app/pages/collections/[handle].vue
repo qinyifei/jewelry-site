@@ -30,7 +30,7 @@ const collection = computed(() =>
         handle: "all",
         title: t("collection.all"),
         description: t("collection.allDescription"),
-        image: "/images/hero.svg",
+        image: "/images/og-image.jpg",
       },
 );
 
