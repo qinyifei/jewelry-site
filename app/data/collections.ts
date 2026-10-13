@@ -55,7 +55,7 @@ export const collections: Collection[] = [
     handle: 'pearls',
     title: 'Pearls',
     description: 'High-quality saltwater pearls sourced directly from farms — South Sea, Tahitian, Akoya and more.',
-    image: '/images/collections/澳白吊坠.jpg',
+    image: '/images/collections/south-sea-pendant.jpg',
     i18n: {
       zh: {
         title: '珍珠',
@@ -69,7 +69,7 @@ export const collections: Collection[] = [
     parent: 'pearls',
     title: 'South Sea Pearls',
     description: 'Lustrous white and silver South Sea pearls harvested from Australian waters. Among the largest and finest pearls in the world, celebrated for their deep mirror-like lustre.',
-    image: '/images/collections/澳白吊坠.jpg',
+    image: '/images/collections/south-sea-pendant.jpg',
     i18n: {
       zh: {
         title: '澳白南洋珠',
@@ -94,7 +94,7 @@ export const collections: Collection[] = [
     parent: 'pearls',
     title: 'Golden South Sea Pearls',
     description: 'Rare golden South Sea pearls from the Philippine and Indonesian archipelago. Their warm champagne-to-deep-gold colour is entirely natural — never treated or dyed.',
-    image: '/images/collections/澳白吊坠.jpg',
+    image: '/images/collections/south-sea-pendant.jpg',
     i18n: {
       zh: {
         title: '金色南洋珠',

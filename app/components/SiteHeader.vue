@@ -163,7 +163,7 @@ watch(
 
       <!-- Center logo — 跟随 header 卡片一起显隐 -->
       <NuxtLinkLocale to="/" class="bar-center">
-        <img src="/images/logo-en.png" :alt="site.name" class="bar-logo" />
+        <img src="/images/logo-en.webp" :alt="site.name" class="bar-logo" />
       </NuxtLinkLocale>
 
       <!-- Right controls -->
