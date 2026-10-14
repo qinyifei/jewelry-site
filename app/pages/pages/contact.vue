@@ -9,9 +9,9 @@ if (!site.features.contact) {
 const c = useLocaleContent({
   en: {
     seoTitle: 'Contact Us',
-    seoDescription: `Get in touch with ${site.name} for orders, wholesale and custom jewelry enquiries.`,
+    seoDescription: `Get in touch with ${site.name} for orders, custom and OEM jewelry enquiries.`,
     title: 'Contact Us',
-    intro: 'Questions about a piece, an order or wholesale? We reply within 1 business day.',
+    intro: 'Questions about a piece, an order or a custom project? We reply within 1 business day.',
     email: 'Email',
     studio: 'Studio',
     hoursTitle: 'Hours',
@@ -19,9 +19,9 @@ const c = useLocaleContent({
   },
   zh: {
     seoTitle: '联系我们',
-    seoDescription: `联系 ${site.name}，咨询订单、批发和定制首饰。`,
+    seoDescription: `联系 ${site.name}，咨询订单、首饰定制与 OEM 合作。`,
     title: '联系我们',
-    intro: '对商品、订单或批发有任何疑问？我们会在 1 个工作日内回复。',
+    intro: '对商品、订单或定制项目有任何疑问？我们会在 1 个工作日内回复。',
     email: '邮箱',
     studio: '工作室',
     hoursTitle: '工作时间',

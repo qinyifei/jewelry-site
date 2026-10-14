@@ -1,16 +1,16 @@
 {
   "seo": {
-    "description": "Håndlavede smykker i 925 sterlingssølv og 18K forgyldt guld. Shop ringe, halskæder, øreringe og armbånd, eller samarbejd med os om engros- og OEM-ordrer."
+    "description": "Håndlavede smykker i 925 sterlingssølv og 18K forgyldt guld. Shop ringe, halskæder, øreringe og armbånd, eller samarbejd med os om skræddersyet smykke- og OEM-produktion."
   },
   "header": {
-    "announcement": "Gratis sporet fragt på ordrer over $80 · Engros minimumskøb {moq} stk",
+    "announcement": "Gratis sporet fragt på ordrer over $80 · Skræddersyet & OEM fra {moq} stk",
     "language": "Sprog"
   },
   "nav": {
     "home": "Hjem",
     "shop": "Shop",
     "all": "Alle smykker",
-    "wholesale": "Engros",
+    "custom": "Skræddersyet",
     "about": "Om os",
     "journal": "Journal",
     "contact": "Kontakt",
@@ -22,16 +22,16 @@
     "heroTitle": "Havets farver, fanget i perler",
     "heroText": "Håndlavede i 925 sterlingssølv og 18K forgyldt guld. Nikkelfri, hypoallergene og bygget til at holde.",
     "shopNow": "Shop kollektionen",
-    "wholesaleCta": "Engrosforespørgsler",
+    "customCta": "Start et skræddersyet projekt",
     "shopByCategory": "Shop efter kategori",
     "featured": "Bestsellere",
     "viewAll": "Se alle",
-    "wholesaleEyebrow": "Til forhandlere og brands",
-    "wholesaleTitle": "Engros & Tilpasset OEM",
-    "wholesaleText": "Butikker, netbutikker og brands samarbejder med os om pålidelig kvalitet, lave minimumskøb og private label-emballage.",
-    "wholesaleMoq": "Minimumskøb fra {moq} stykker pr. design",
-    "wholesalePrivate": "Private label-emballage og tilpasset gravering",
-    "wholesaleLead": "Produktionstid {days} arbejdsdage",
+    "customEyebrow": "Skræddersyede smykker & OEM",
+    "customTitle": "Din design, fra skitse til færdigt smykke",
+    "customText": "Fra et enkelt skræddersyet smykke til en hel produktionsserie – vi gør dine idéer til bærelige smykker med håndfinish, gravering og private label-emballage.",
+    "customMoq": "OEM-produktion fra {moq} stk. pr. design – enkelte bestillinger er velkomne",
+    "customPrivate": "Gravering og private label-emballage",
+    "customLead": "Prøveproduktion på 7–10 dage, produktion på {days} arbejdsdage",
     "learnMore": "Læs mere",
     "viewCases": "Se casestudier"
   },
@@ -51,7 +51,7 @@
     "details": "Detaljer",
     "requestQuote": "Anmod om tilbud",
     "askWhatsapp": "Spørg på WhatsApp",
-    "wholesaleAvailable": "Engros tilgængeligt · Minimumskøb {moq} stk",
+    "customAvailable": "Skræddersyet & OEM · gravering, sten og metaller",
     "related": "Du vil måske også synes om",
     "inquiryTitle": "Forespørg om dette stykke",
     "inquiryText": "Fortæl os de muligheder og den mængde, du har brug for, og vi svarer inden for 1 arbejdsdag.",
@@ -74,8 +74,7 @@
     "country": "Land",
     "type": "Jeg er interesseret i",
     "typeRetail": "Detailkøb",
-    "typeWholesale": "Engros",
-    "typeOem": "Tilpasset / OEM",
+    "typeCustom": "Skræddersyet / OEM-projekt",
     "product": "Produkt",
     "options": "Muligheder (metal, størrelse…)",
     "quantity": "Antal",

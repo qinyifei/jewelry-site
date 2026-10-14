@@ -131,7 +131,7 @@ useHead({
           </a>
         </div>
 
-        <p v-if="site.features.wholesale && p.wholesale" class="wholesale-note">{{ $t('product.wholesaleAvailable', { moq: site.wholesale.moq }) }}</p>
+        <p v-if="site.features.custom && p.custom" class="custom-note">{{ $t('product.customAvailable') }}</p>
 
         <div class="desc">
           <p v-for="(para, i) in p.description" :key="i">{{ para }}</p>
@@ -297,7 +297,7 @@ useHead({
 .cta :deep(.btn:not(.btn-outline)) { background: #554537; color: #fff; border: none; }
 .cta :deep(.btn-outline) { background: transparent; border: 1px solid #554537; color: #554537; }
 
-.wholesale-note {
+.custom-note {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 11px;

@@ -28,7 +28,7 @@ export const products: Product[] = [
       { label: 'Nickel free', value: 'Yes, EU REACH compliant' },
     ],
     options: [metal, ringSize],
-    wholesale: true,
+    custom: true,
     featured: true,
     designImage: '/images/cases/sketch-ring.svg',
     designStory:
@@ -69,7 +69,7 @@ export const products: Product[] = [
       { label: 'Nickel free', value: 'Yes' },
     ],
     options: [metal, ringSize],
-    wholesale: true,
+    custom: true,
     i18n: {
       zh: {
         title: '麻花叠戴指环',
@@ -103,7 +103,7 @@ export const products: Product[] = [
       { label: 'Engraving', value: 'Up to 3 characters' },
     ],
     options: [metal],
-    wholesale: true,
+    custom: true,
     featured: true,
     designImage: '/images/cases/sketch-necklace.svg',
     designStory:
@@ -142,7 +142,7 @@ export const products: Product[] = [
       { label: 'Chain length', value: '18"' },
     ],
     options: [metal],
-    wholesale: true,
+    custom: true,
     i18n: {
       zh: {
         title: '字母横条项链',
@@ -174,7 +174,7 @@ export const products: Product[] = [
       { label: 'Hypoallergenic', value: 'Yes' },
     ],
     options: [metal],
-    wholesale: true,
+    custom: true,
     featured: true,
     i18n: {
       zh: {
@@ -204,7 +204,7 @@ export const products: Product[] = [
       { label: 'Diameter', value: '10 mm' },
     ],
     options: [metal],
-    wholesale: true,
+    custom: true,
     i18n: {
       zh: {
         title: '迷你贴耳圈',
@@ -235,7 +235,7 @@ export const products: Product[] = [
       { label: 'Length', value: '6.5" / 7" / 7.5"' },
     ],
     options: [metal, { name: 'Length', values: ['6.5"', '7"', '7.5"'] }],
-    wholesale: true,
+    custom: true,
     featured: true,
     i18n: {
       zh: {
@@ -266,7 +266,7 @@ export const products: Product[] = [
       { label: 'Length', value: '7" adjustable' },
     ],
     options: [metal],
-    wholesale: true,
+    custom: true,
     i18n: {
       zh: {
         title: '回形针链手链',

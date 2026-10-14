@@ -27,7 +27,7 @@ export interface Product extends ProductText, Translations<ProductText> {
   price?: number
   collections: string[]
   images: string[]
-  wholesale: boolean
+  custom: boolean
   featured?: boolean
   // 设计稿（可选）：低分辨率、加水印、去掉尺寸标注；不填就不显示「设计故事」板块
   designImage?: string

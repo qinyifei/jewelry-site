@@ -36,7 +36,7 @@ interface Inquiry {
   lang?: string
 }
 
-const TYPES: Record<string, string> = { retail: 'Retail', wholesale: 'Wholesale', oem: 'Custom / OEM' }
+const TYPES: Record<string, string> = { retail: 'Retail', custom: 'Custom & OEM' }
 
 const json = (data: unknown, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } })

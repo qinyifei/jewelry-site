@@ -3,72 +3,72 @@ import { site } from '~/config/site'
 import { cases } from '~/data/cases'
 
 // 功能关闭时按 404 处理，防止直接输入网址访问
-if (!site.features.wholesale) {
+if (!site.features.custom) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { moq, leadTimeDays } = site.wholesale
+const { moq, leadTimeDays } = site.custom
 const tr = useLocalized()
 const showcase = cases[0] && tr(cases[0])
 
 const c = useLocaleContent({
   en: {
-    seoTitle: 'Wholesale & Custom OEM Jewelry',
-    seoDescription: `Wholesale sterling silver jewelry from ${site.name}. Low MOQ from ${moq} pcs, private label packaging, custom engraving and OEM design services.`,
-    eyebrow: 'For Retailers & Brands',
-    title: 'Wholesale & Custom OEM',
-    intro: 'Reliable quality, low minimums and private-label service for boutiques, online stores and jewelry brands.',
+    seoTitle: 'Custom & OEM Jewelry',
+    seoDescription: `Bespoke and OEM jewelry from ${site.name} — from a single custom piece to production runs of ${moq}+ pieces, with logo engraving, private-label packaging and worldwide shipping.`,
+    eyebrow: 'For Brands & Individuals',
+    title: 'Custom & OEM Jewelry',
+    intro: 'A one-off bespoke gift or a full collection for your brand — either way we handle design, production and quality control by hand, and keep you updated at every step.',
     highlights: [
-      { title: `MOQ ${moq} pcs`, text: 'Mix colours & sizes' },
-      { title: 'Private Label', text: 'Logo engraving & packaging' },
+      { title: 'Bespoke One-offs', text: 'From a single piece' },
       { title: 'OEM / ODM', text: 'From sketch to production' },
+      { title: 'Private Label', text: 'Logo engraving & packaging' },
       { title: 'Quality Checked', text: 'Every piece inspected by hand' },
     ],
     stepsTitle: 'How it works',
     steps: [
-      { title: 'Send an enquiry', text: 'Tell us about your store, target styles and quantities.' },
-      { title: 'Receive a quote & samples', text: 'We reply within 1 business day with pricing and sample options.' },
-      { title: 'Confirm your order', text: 'Approve samples, packaging and a production schedule.' },
-      { title: 'Production & delivery', text: `Lead time ${leadTimeDays} business days, shipped by DHL / FedEx / UPS.` },
+      { title: 'Share your idea', text: 'Send a sketch, reference images or just a wish — we help you refine it.' },
+      { title: 'Design & quote', text: 'We reply within 1 business day with design drawings, stone options and pricing.' },
+      { title: 'Sample & confirm', text: 'Samples in 7–10 days. Tweak stones, sizes or engraving until it is exactly right.' },
+      { title: 'Production & delivery', text: `Production in ${leadTimeDays} business days, shipped worldwide by DHL / FedEx / UPS.` },
     ],
-    faqTitle: 'Wholesale FAQ',
+    faqTitle: 'Custom FAQ',
     faqs: [
-      { q: 'What is your minimum order quantity?', a: `Our MOQ is ${moq} pieces per design, and you can mix metal colours and sizes.` },
-      { q: 'Can I get samples before ordering?', a: 'Yes. Sample fees are credited back against your first bulk order.' },
-      { q: 'Do you offer private label and custom designs?', a: 'Yes. We can engrave your logo, supply branded packaging, and develop new designs from your sketches or references.' },
-      { q: 'What payment methods do you accept?', a: 'Bank transfer (T/T), PayPal and credit card. Terms are typically 30% deposit and 70% before shipping.' },
+      { q: 'Is there a minimum order?', a: `One-off bespoke pieces start from a single piece. For OEM production runs, minimums start at ${moq} pieces per design.` },
+      { q: 'Can I customize an existing design?', a: 'Yes — stones, metals, sizes and finish can all be changed, and most styles support engraving. Send us the style you like and what you want to change.' },
+      { q: 'Do you offer private label?', a: 'Yes. We engrave your logo and supply branded packaging for stores and brands.' },
+      { q: 'What about payment & shipping?', a: 'Bank transfer (T/T), PayPal and credit card. Finished orders ship worldwide by DHL, FedEx or UPS.' },
     ],
-    formTitle: 'Request wholesale pricing',
-    formText: "Share a few details and we'll send our latest catalog and price list.",
+    formTitle: 'Start your custom project',
+    formText: "Tell us about your idea and we'll reply with a design proposal and quote within 1 business day.",
   },
   zh: {
-    seoTitle: '批发与 OEM 定制首饰',
-    seoDescription: `${site.name} 纯银首饰批发：每款起订量 ${moq} 件，支持贴牌包装、定制刻字和 OEM 设计开发。`,
-    eyebrow: '面向零售商与品牌',
-    title: '批发与 OEM 定制',
-    intro: '为精品店、网店和首饰品牌提供稳定品质、低起订量和贴牌服务。',
+    seoTitle: '首饰定制与 OEM 代工',
+    seoDescription: `${site.name} 提供首饰定制与 OEM 代工：单件专属定制或每款 ${moq} 件起量产，支持 Logo 刻字、贴牌包装，全球发货。`,
+    eyebrow: '面向品牌与个人',
+    title: '首饰定制与 OEM 合作',
+    intro: '无论是一件专属定制的礼物，还是为你的品牌打造整个系列，设计、生产和质检我们都亲力亲为，每个环节都会跟你同步进展。',
     highlights: [
-      { title: `起订 ${moq} 件`, text: '可混搭颜色和尺码' },
-      { title: '贴牌服务', text: 'Logo 刻字与品牌包装' },
+      { title: '单件定制', text: '一件起做' },
       { title: 'OEM / ODM', text: '从设计稿到量产' },
+      { title: '贴牌服务', text: 'Logo 刻字与品牌包装' },
       { title: '逐件质检', text: '每件首饰人工检验' },
     ],
     stepsTitle: '合作流程',
     steps: [
-      { title: '提交询盘', text: '告诉我们你的店铺情况、意向款式和数量。' },
-      { title: '获取报价和样品', text: '我们会在 1 个工作日内回复报价和样品方案。' },
-      { title: '确认订单', text: '确认样品、包装和生产排期。' },
-      { title: '生产与发货', text: `生产周期 ${leadTimeDays} 个工作日，通过 DHL / FedEx / UPS 发货。` },
+      { title: '提出你的想法', text: '发来草图、参考图或只是一个愿望，我们帮你把它完善成型。' },
+      { title: '设计与报价', text: '1 个工作日内回复设计图、宝石方案和报价。' },
+      { title: '打样与确认', text: '7–10 天出样，宝石、尺寸、刻字都可以反复调整到满意。' },
+      { title: '生产与发货', text: `量产 ${leadTimeDays} 个工作日，DHL / FedEx / UPS 全球直发。` },
     ],
-    faqTitle: '批发常见问题',
+    faqTitle: '定制常见问题',
     faqs: [
-      { q: '起订量是多少？', a: `每款起订量 ${moq} 件，可以混搭不同材质颜色和尺码。` },
-      { q: '下单前可以先拿样品吗？', a: '可以。样品费可在首次批量订单中抵扣。' },
-      { q: '支持贴牌和定制设计吗？', a: '支持。可以刻你的 Logo、提供品牌包装，也可以根据你的设计稿或参考图开发新款。' },
-      { q: '支持哪些付款方式？', a: '银行电汇（T/T）、PayPal 和信用卡。一般为 30% 定金，发货前付清 70% 尾款。' },
+      { q: '有起订量吗？', a: `单件定制一件起做；OEM 批量生产每款 ${moq} 件起。` },
+      { q: '可以修改现有款式吗？', a: '可以——宝石、材质、尺寸、表面处理都能调整，大部分款式还支持刻字。把你喜欢的款式和想改的地方发给我们即可。' },
+      { q: '支持贴牌吗？', a: '支持。我们为门店和品牌提供 Logo 刻字和品牌化包装。' },
+      { q: '付款和发货方式？', a: '支持银行电汇（T/T）、PayPal 和信用卡，成品通过 DHL、FedEx 或 UPS 全球发货。' },
     ],
-    formTitle: '获取批发报价',
-    formText: '留下基本信息，我们会把最新的产品目录和价格表发给你。',
+    formTitle: '开启你的定制项目',
+    formText: '告诉我们你的想法，我们会在 1 个工作日内回复设计方案和报价。',
   },
 })
 
@@ -134,7 +134,7 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
         <div>
           <h2>{{ c.formTitle }}</h2>
           <p class="muted">{{ c.formText }}</p>
-          <InquiryForm default-type="wholesale" />
+          <InquiryForm default-type="custom" />
         </div>
       </div>
     </section>

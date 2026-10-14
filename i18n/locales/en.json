@@ -1,16 +1,16 @@
 {
   "seo": {
-    "description": "Handcrafted 925 sterling silver and 18K gold vermeil jewelry. Shop rings, necklaces, earrings and bracelets, or partner with us for wholesale and custom OEM orders."
+    "description": "Handcrafted 925 sterling silver and 18K gold vermeil jewelry. Shop rings, necklaces, earrings and bracelets, or partner with us for custom and OEM jewelry orders."
   },
   "header": {
-    "announcement": "Free tracked shipping on orders over $80 · Wholesale MOQ {moq} pcs",
+    "announcement": "Free tracked shipping on orders over $80 · Custom & OEM from {moq} pcs",
     "language": "Language"
   },
   "nav": {
     "home": "Home",
     "shop": "Shop",
     "all": "All Jewelry",
-    "wholesale": "Wholesale",
+    "custom": "Custom",
     "about": "About",
     "journal": "Journal",
     "contact": "Contact",
@@ -22,16 +22,16 @@
     "heroTitle": "Colours of the sea, captured in pearls",
     "heroText": "Handcrafted in 925 sterling silver and 18K gold vermeil. Nickel free, hypoallergenic and built to last.",
     "shopNow": "Shop the Collection",
-    "wholesaleCta": "Wholesale Enquiries",
+    "customCta": "Start a Custom Project",
     "shopByCategory": "Shop by Category",
     "featured": "Bestsellers",
     "viewAll": "View all",
-    "wholesaleEyebrow": "For Retailers & Brands",
-    "wholesaleTitle": "Wholesale & Custom OEM",
-    "wholesaleText": "Boutiques, online stores and brands work with us for reliable quality, low minimums and private-label packaging.",
-    "wholesaleMoq": "MOQ from {moq} pieces per design",
-    "wholesalePrivate": "Private label packaging & custom engraving",
-    "wholesaleLead": "Production lead time {days} business days",
+    "customEyebrow": "Custom & OEM Jewelry",
+    "customTitle": "Your Design, From Sketch to Finish",
+    "customText": "From a one-off bespoke piece to a full production run, we turn your ideas into wearable pieces with hand-finished quality — with logo engraving and private-label packaging.",
+    "customMoq": "OEM production from {moq} pieces per design — single bespoke pieces welcome",
+    "customPrivate": "Logo engraving & private-label packaging",
+    "customLead": "Sampling in 7–10 days, production in {days} business days",
     "learnMore": "Learn more",
     "viewCases": "View case studies"
   },
@@ -51,7 +51,7 @@
     "details": "Details",
     "requestQuote": "Request a Quote",
     "askWhatsapp": "Ask on WhatsApp",
-    "wholesaleAvailable": "Wholesale available · MOQ {moq} pcs",
+    "customAvailable": "Custom & OEM available · engraving, gems and metals",
     "related": "You may also like",
     "inquiryTitle": "Enquire about this piece",
     "inquiryText": "Tell us the options and quantity you need and we will reply within 1 business day.",
@@ -74,8 +74,7 @@
     "country": "Country",
     "type": "I'm interested in",
     "typeRetail": "Retail purchase",
-    "typeWholesale": "Wholesale",
-    "typeOem": "Custom / OEM",
+    "typeCustom": "Custom & OEM project",
     "product": "Product",
     "options": "Options (metal, size…)",
     "quantity": "Quantity",

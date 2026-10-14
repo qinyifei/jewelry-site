@@ -11,7 +11,7 @@ const routes = [
   ...collections.map(c => `/collections/${c.handle}`),
   ...products.map(p => `/products/${p.handle}`),
   '/pages/about',
-  ...(site.features.wholesale ? ['/pages/wholesale'] : []),
+  ...(site.features.custom ? ['/pages/custom'] : []),
   '/pages/materials',
   ...(site.features.contact ? ['/pages/contact'] : []),
   '/pages/faq',
@@ -25,7 +25,7 @@ const routes = [
 // 功能关闭的页面不进 sitemap，否则搜索引擎会抓到 404
 const sitemapExclude = ['/404', '/200']
 if (!site.features.contact) sitemapExclude.push('/pages/contact')
-if (!site.features.wholesale) sitemapExclude.push('/pages/wholesale')
+if (!site.features.custom) sitemapExclude.push('/pages/custom')
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-01',
@@ -88,9 +88,9 @@ export default defineNuxtConfig({
         ...(site.features.contact
           ? []
           : ['/pages/contact', /^\/(zh|sv|da|no)\/pages\/contact$/]),
-        ...(site.features.wholesale
+        ...(site.features.custom
           ? []
-          : ['/pages/wholesale', /^\/(zh|sv|da|no)\/pages\/wholesale$/]),
+          : ['/pages/custom', /^\/(zh|sv|da|no)\/pages\/custom$/]),
       ],
       routes: [
         ...routes,

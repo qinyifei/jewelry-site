@@ -1,16 +1,16 @@
 {
   "seo": {
-    "description": "Handgjorda smycken i 925 sterlingsilver och 18K förgyllt guld. Handla ringar, halsband, örhängen och armband, eller samarbeta med oss för grossist- och OEM-beställningar."
+    "description": "Handgjorda smycken i 925 sterlingsilver och 18K förgyllt guld. Handla ringar, halsband, örhängen och armband, eller samarbeta med oss för skräddarsydda smycken och OEM-produktion."
   },
   "header": {
-    "announcement": "Fri spårbar frakt på beställningar över $80 · Grossistminimum {moq} st",
+    "announcement": "Fri spårbar frakt på beställningar över $80 · Skräddarsytt & OEM från {moq} st",
     "language": "Språk"
   },
   "nav": {
     "home": "Hem",
     "shop": "Butik",
     "all": "Alla smycken",
-    "wholesale": "Grossist",
+    "custom": "Skräddarsytt",
     "about": "Om oss",
     "journal": "Journal",
     "contact": "Kontakt",
@@ -22,16 +22,16 @@
     "heroTitle": "Havets färger, fångade i pärlor",
     "heroText": "Handgjorda i 925 sterlingsilver och 18K förgyllt guld. Nickelfria, hypoallergena och byggda för att hålla.",
     "shopNow": "Handla kollektionen",
-    "wholesaleCta": "Grossistförfrågningar",
+    "customCta": "Starta ett skräddarsytt projekt",
     "shopByCategory": "Handla efter kategori",
     "featured": "Bästsäljare",
     "viewAll": "Visa alla",
-    "wholesaleEyebrow": "För återförsäljare och varumärken",
-    "wholesaleTitle": "Grossist & Anpassad OEM",
-    "wholesaleText": "Butiker, nätbutiker och varumärken samarbetar med oss för pålitlig kvalitet, låga minimibeställningar och privata etikettförpackningar.",
-    "wholesaleMoq": "Minimibeställning från {moq} stycken per design",
-    "wholesalePrivate": "Privata etikettförpackningar och anpassad gravyr",
-    "wholesaleLead": "Produktionstid {days} arbetsdagar",
+    "customEyebrow": "Skräddarsydda smycken & OEM",
+    "customTitle": "Din design, från skiss till färdig smycke",
+    "customText": "Från ett enda skräddarsytt smycke till en hel produktionsserie – vi förvandlar dina idéer till bärbara smycken med handfinish, gravyr och privata etikettförpackningar.",
+    "customMoq": "OEM-produktion från {moq} st per design – enskilda beställningar välkomna",
+    "customPrivate": "Gravyr och privata etikettförpackningar",
+    "customLead": "Provtillverkning på 7–10 dagar, produktion på {days} arbetsdagar",
     "learnMore": "Läs mer",
     "viewCases": "Visa fallstudier"
   },
@@ -51,7 +51,7 @@
     "details": "Detaljer",
     "requestQuote": "Begär offert",
     "askWhatsapp": "Fråga på WhatsApp",
-    "wholesaleAvailable": "Grossist tillgänglig · Minimum {moq} st",
+    "customAvailable": "Skräddarsytt & OEM · gravyr, stenar och metaller",
     "related": "Du kanske också gillar",
     "inquiryTitle": "Fråga om denna produkt",
     "inquiryText": "Berätta vilka alternativ och vilken kvantitet du behöver så svarar vi inom 1 arbetsdag.",
@@ -74,8 +74,7 @@
     "country": "Land",
     "type": "Jag är intresserad av",
     "typeRetail": "Detaljhandelsköp",
-    "typeWholesale": "Grossist",
-    "typeOem": "Anpassad / OEM",
+    "typeCustom": "Skräddarsytt / OEM-projekt",
     "product": "Produkt",
     "options": "Alternativ (metall, storlek…)",
     "quantity": "Antal",

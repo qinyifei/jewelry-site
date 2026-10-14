@@ -1,16 +1,16 @@
 {
   "seo": {
-    "description": "手工打造的 925 纯银与 18K 金包银首饰。选购戒指、项链、耳饰和手链，或与我们合作批发及 OEM 定制。"
+    "description": "手工打造的 925 纯银与 18K 金包银首饰。选购戒指、项链、耳饰和手链，或与我们合作首饰定制与 OEM 代工。"
   },
   "header": {
-    "announcement": "订单满 $80 免费发货（含物流跟踪）· 批发起订量 {moq} 件",
+    "announcement": "订单满 $80 免费发货（含物流跟踪）· 定制 / OEM 每款 {moq} 件起",
     "language": "语言"
   },
   "nav": {
     "home": "首页",
     "shop": "选购",
     "all": "全部首饰",
-    "wholesale": "批发合作",
+    "custom": "定制合作",
     "about": "关于我们",
     "journal": "博客",
     "contact": "联系我们",
@@ -22,16 +22,16 @@
     "heroTitle": "大海的色彩，凝萃于珍珠",
     "heroText": "采用 925 纯银与 18K 金包银手工打造。无镍、防过敏、经久耐戴。",
     "shopNow": "浏览全部系列",
-    "wholesaleCta": "批发询价",
+    "customCta": "开启定制项目",
     "shopByCategory": "按品类选购",
     "featured": "热销单品",
     "viewAll": "查看全部",
-    "wholesaleEyebrow": "面向零售商与品牌",
-    "wholesaleTitle": "批发与 OEM 定制",
-    "wholesaleText": "精品店、网店和首饰品牌选择与我们合作，看中的是稳定的品质、低起订量和贴牌包装服务。",
-    "wholesaleMoq": "每款起订量 {moq} 件",
-    "wholesalePrivate": "贴牌包装与定制刻字",
-    "wholesaleLead": "生产周期 {days} 个工作日",
+    "customEyebrow": "首饰定制与 OEM",
+    "customTitle": "从设计稿到成品，只做你的专属",
+    "customText": "无论是一件专属定制，还是整批 OEM 生产，我们都以手工精修的品质把你的想法变成可以佩戴的作品，支持刻字与贴牌包装。",
+    "customMoq": "OEM 批量生产每款 {moq} 件起，单件定制同样欢迎",
+    "customPrivate": "Logo 刻字与贴牌包装",
+    "customLead": "打样 7–10 天，量产 {days} 个工作日",
     "learnMore": "了解详情",
     "viewCases": "查看合作案例"
   },
@@ -51,7 +51,7 @@
     "details": "商品参数",
     "requestQuote": "询价",
     "askWhatsapp": "WhatsApp 咨询",
-    "wholesaleAvailable": "支持批发 · 起订量 {moq} 件",
+    "customAvailable": "支持定制与 OEM · 可选刻字、宝石与材质",
     "related": "你可能还喜欢",
     "inquiryTitle": "咨询这款商品",
     "inquiryText": "告诉我们你需要的规格和数量，我们会在 1 个工作日内回复。",
@@ -74,8 +74,7 @@
     "country": "国家 / 地区",
     "type": "咨询类型",
     "typeRetail": "零售购买",
-    "typeWholesale": "批发",
-    "typeOem": "定制 / OEM",
+    "typeCustom": "定制 / OEM 项目合作",
     "product": "商品",
     "options": "规格（材质、尺码等）",
     "quantity": "数量",

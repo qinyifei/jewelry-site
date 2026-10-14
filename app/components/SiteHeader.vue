@@ -149,8 +149,8 @@ watch(
           </template>
         </div>
 
-        <NuxtLinkLocale v-if="site.features.wholesale" to="/pages/wholesale">{{
-          $t("nav.wholesale")
+        <NuxtLinkLocale v-if="site.features.custom" to="/pages/custom">{{
+          $t("nav.custom")
         }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/materials">{{
           $t("materials.nav")
@@ -163,7 +163,7 @@ watch(
 
       <!-- Center logo — 跟随 header 卡片一起显隐 -->
       <NuxtLinkLocale to="/" class="bar-center">
-        <img src="/images/logo-en.webp" :alt="site.name" class="bar-logo" />
+        <img src="/images/logo-en-header.webp" :alt="site.name" class="bar-logo" />
       </NuxtLinkLocale>
 
       <!-- Right controls -->
