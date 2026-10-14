@@ -2,6 +2,11 @@
 import { site } from '~/config/site'
 import { cases } from '~/data/cases'
 
+// 功能关闭时按 404 处理，防止直接输入网址访问
+if (!site.features.wholesale) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+
 const { moq, leadTimeDays } = site.wholesale
 const tr = useLocalized()
 const showcase = cases[0] && tr(cases[0])

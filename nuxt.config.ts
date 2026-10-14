@@ -11,9 +11,9 @@ const routes = [
   ...collections.map(c => `/collections/${c.handle}`),
   ...products.map(p => `/products/${p.handle}`),
   '/pages/about',
-  '/pages/wholesale',
+  ...(site.features.wholesale ? ['/pages/wholesale'] : []),
   '/pages/materials',
-  '/pages/contact',
+  ...(site.features.contact ? ['/pages/contact'] : []),
   '/pages/faq',
   '/blogs/news',
   ...posts.map(p => `/blogs/news/${p.handle}`),
@@ -21,6 +21,11 @@ const routes = [
   ...cases.map(c => `/blogs/cases/${c.handle}`),
   ...policies.map(p => `/policies/${p.handle}`),
 ]
+
+// 功能关闭的页面不进 sitemap，否则搜索引擎会抓到 404
+const sitemapExclude = ['/404', '/200']
+if (!site.features.contact) sitemapExclude.push('/pages/contact')
+if (!site.features.wholesale) sitemapExclude.push('/pages/wholesale')
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-01',
@@ -66,7 +71,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    exclude: ['/404', '/200'],
+    exclude: sitemapExclude,
   },
 
   nitro: {
@@ -78,6 +83,15 @@ export default defineNuxtConfig({
       // 这样 Cloudflare Pages 上的网址不带结尾斜杠，和 Shopify 格式一致
       autoSubfolderIndex: false,
       crawlLinks: true,
+      // 功能关闭的页面：模块扫描页面目录时仍可能发现它们，这里让爬虫直接跳过
+      ignore: [
+        ...(site.features.contact
+          ? []
+          : ['/pages/contact', /^\/(zh|sv|da|no)\/pages\/contact$/]),
+        ...(site.features.wholesale
+          ? []
+          : ['/pages/wholesale', /^\/(zh|sv|da|no)\/pages\/wholesale$/]),
+      ],
       routes: [
         ...routes,
         ...routes.map(r => `/zh${r === '/' ? '' : r}`),

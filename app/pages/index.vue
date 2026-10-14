@@ -88,7 +88,7 @@ usePageSeo({ title: site.name });
     </section>
 
     <!-- ─── Editorial Break ─── -->
-    <section class="dark-section">
+    <section v-if="site.features.wholesale" class="dark-section">
       <div class="editorial-inner">
         <div class="editorial-left">
           <p class="editorial-eyebrow">{{ $t("home.wholesaleEyebrow") }}</p>

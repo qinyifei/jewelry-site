@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { site } from '~/config/site'
 import { cases } from '~/data/cases'
 
 const { t } = useI18n()
@@ -17,7 +18,7 @@ usePageSeo({ title: t('cases.title'), description: t('cases.description'), image
       <CaseCard v-for="c in cases" :key="c.handle" :item="c" />
     </div>
 
-    <section class="section cta">
+    <section v-if="site.features.wholesale" class="section cta">
       <h2>{{ $t('cases.ctaTitle') }}</h2>
       <p class="muted">{{ $t('cases.ctaText') }}</p>
       <NuxtLinkLocale to="/pages/wholesale" class="btn">{{ $t('cases.cta') }}</NuxtLinkLocale>

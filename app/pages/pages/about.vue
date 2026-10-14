@@ -93,9 +93,11 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
       <h2>{{ c.workTitle }}</h2>
       <p>
         {{ c.workIntro }}
-        <NuxtLinkLocale to="/pages/wholesale">{{ c.workWholesale }}</NuxtLinkLocale>
-        {{ c.workOr }}
-        <NuxtLinkLocale to="/pages/contact">{{ c.workContact }}</NuxtLinkLocale>.
+        <template v-if="site.features.wholesale || site.features.contact">
+          <NuxtLinkLocale v-if="site.features.wholesale" to="/pages/wholesale">{{ c.workWholesale }}</NuxtLinkLocale>
+          <template v-if="site.features.wholesale && site.features.contact">{{ c.workOr }}</template>
+          <NuxtLinkLocale v-if="site.features.contact" to="/pages/contact">{{ c.workContact }}</NuxtLinkLocale>.
+        </template>
       </p>
     </div>
   </div>

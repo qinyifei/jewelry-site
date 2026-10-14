@@ -149,14 +149,14 @@ watch(
           </template>
         </div>
 
-        <NuxtLinkLocale to="/pages/wholesale">{{
+        <NuxtLinkLocale v-if="site.features.wholesale" to="/pages/wholesale">{{
           $t("nav.wholesale")
         }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/materials">{{
           $t("materials.nav")
         }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/about">{{ $t("nav.about") }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/pages/contact">{{
+        <NuxtLinkLocale v-if="site.features.contact" to="/pages/contact">{{
           $t("nav.contact")
         }}</NuxtLinkLocale>
       </nav>

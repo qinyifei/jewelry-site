@@ -118,7 +118,7 @@ useHead({
           </div>
         </div>
 
-        <div class="cta">
+        <div v-if="site.features.contact" class="cta">
           <button class="btn btn-block" @click="scrollToForm">{{ $t('product.requestQuote') }}</button>
           <a
             v-if="site.whatsapp"
@@ -131,7 +131,7 @@ useHead({
           </a>
         </div>
 
-        <p v-if="p.wholesale" class="wholesale-note">{{ $t('product.wholesaleAvailable', { moq: site.wholesale.moq }) }}</p>
+        <p v-if="site.features.wholesale && p.wholesale" class="wholesale-note">{{ $t('product.wholesaleAvailable', { moq: site.wholesale.moq }) }}</p>
 
         <div class="desc">
           <p v-for="(para, i) in p.description" :key="i">{{ para }}</p>
@@ -156,7 +156,7 @@ useHead({
       <DesignCompare :sketch="p.designImage" :finished="p.images[0]!" :alt="p.title" />
     </section>
 
-    <section id="inquiry" class="section inquiry">
+    <section v-if="site.features.contact" id="inquiry" class="section inquiry">
       <h2>{{ $t('product.inquiryTitle') }}</h2>
       <p class="muted">{{ $t('product.inquiryText') }}</p>
       <InquiryForm :product="p.title" :sku="p.sku" :options="selectedText" />

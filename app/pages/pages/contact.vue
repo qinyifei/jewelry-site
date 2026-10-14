@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { site } from '~/config/site'
 
+// 功能关闭时按 404 处理，防止直接输入网址访问
+if (!site.features.contact) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+
 const c = useLocaleContent({
   en: {
     seoTitle: 'Contact Us',

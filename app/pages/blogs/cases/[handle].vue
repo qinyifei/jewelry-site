@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { site } from '~/config/site'
 import { cases, findCase } from '~/data/cases'
 
 const route = useRoute()
@@ -64,7 +65,7 @@ usePageSeo({ title: c.title, description: c.summary, image: c.finished, type: 'a
       </p>
     </div>
 
-    <section class="section cta">
+    <section v-if="site.features.wholesale" class="section cta">
       <h2>{{ $t('cases.ctaTitle') }}</h2>
       <p class="muted">{{ $t('cases.ctaText') }}</p>
       <NuxtLinkLocale to="/pages/wholesale" class="btn">{{ $t('cases.cta') }}</NuxtLinkLocale>
