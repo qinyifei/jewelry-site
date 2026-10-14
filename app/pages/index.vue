@@ -88,25 +88,25 @@ usePageSeo({ title: site.name });
     </section>
 
     <!-- ─── Editorial Break ─── -->
-    <section class="dark-section">
+    <section v-if="site.features.custom" class="dark-section">
       <div class="editorial-inner">
         <div class="editorial-left">
-          <p class="editorial-eyebrow">{{ $t("home.wholesaleEyebrow") }}</p>
-          <h2 class="editorial-title">{{ $t("home.wholesaleTitle") }}</h2>
+          <p class="editorial-eyebrow">{{ $t("home.customEyebrow") }}</p>
+          <h2 class="editorial-title">{{ $t("home.customTitle") }}</h2>
         </div>
         <div class="editorial-right">
-          <p class="editorial-text">{{ $t("home.wholesaleText") }}</p>
+          <p class="editorial-text">{{ $t("home.customText") }}</p>
           <ul class="editorial-list">
-            <li>{{ $t("home.wholesaleMoq", { moq: site.wholesale.moq }) }}</li>
-            <li>{{ $t("home.wholesalePrivate") }}</li>
+            <li>{{ $t("home.customMoq", { moq: site.custom.moq }) }}</li>
+            <li>{{ $t("home.customPrivate") }}</li>
             <li>
               {{
-                $t("home.wholesaleLead", { days: site.wholesale.leadTimeDays })
+                $t("home.customLead", { days: site.custom.leadTimeDays })
               }}
             </li>
           </ul>
           <div class="editorial-actions">
-            <NuxtLinkLocale to="/pages/wholesale" class="btn-dark-primary">{{
+            <NuxtLinkLocale to="/pages/custom" class="btn-dark-primary">{{
               $t("home.learnMore")
             }}</NuxtLinkLocale>
             <NuxtLinkLocale to="/blogs/cases" class="btn-dark-outline">{{

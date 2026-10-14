@@ -38,7 +38,7 @@ public/                图片、_headers、_redirects、robots.txt
 |---|---|
 | 商品 | `/products/{handle}` |
 | 分类 | `/collections/{handle}`，全部商品 `/collections/all` |
-| 普通页面 | `/pages/about`、`/pages/wholesale`、`/pages/contact`、`/pages/faq` |
+| 普通页面 | `/pages/about`、`/pages/custom`、`/pages/contact`、`/pages/faq` |
 | 博客 | `/blogs/news/{handle}` |
 | 政策 | `/policies/shipping-policy`、`refund-policy`、`privacy-policy`、`terms-of-service` |
 
@@ -83,7 +83,7 @@ public/                图片、_headers、_redirects、robots.txt
 - [ ] `public/robots.txt`：把域名改成正式域名
 - [ ] 替换 `public/images/` 下的占位图（社交分享图请用 JPG/PNG，Facebook 等不支持 SVG）
 - [ ] 替换 `public/favicon.svg`
-- [ ] 商品、分类、关于我们、批发页面的文案
+- [ ] 商品、分类、关于我们、定制页面的文案
 - [ ] `app/data/policies.ts` 政策页按实际业务修改，建议请律师审核
 - [ ] 配好 Resend 并测试询盘能收到
 - [ ] 在 Google Search Console 提交 `https://你的域名/sitemap_index.xml`
@@ -99,7 +99,7 @@ public/                图片、_headers、_redirects、robots.txt
 |---|---|---|
 | 按钮、菜单等界面文案 | `i18n/locales/en.json`、`zh.json` | 两个文件的键名保持一致 |
 | 商品、分类、博客、政策页 | `app/data/*.ts` | 每条数据的 `i18n.zh` 里写中文，**没写的字段自动显示英文** |
-| 首页、关于、批发、联系、FAQ 的长文案 | 对应的 `app/pages/**.vue` | 页面顶部 `useLocaleContent({ en: {...}, zh: {...} })` |
+| 首页、关于、定制、联系、FAQ 的长文案 | 对应的 `app/pages/**.vue` | 页面顶部 `useLocaleContent({ en: {...}, zh: {...} })` |
 
 商品示例：
 

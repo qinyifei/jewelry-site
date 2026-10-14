@@ -149,21 +149,21 @@ watch(
           </template>
         </div>
 
-        <NuxtLinkLocale to="/pages/wholesale">{{
-          $t("nav.wholesale")
+        <NuxtLinkLocale v-if="site.features.custom" to="/pages/custom">{{
+          $t("nav.custom")
         }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/materials">{{
           $t("materials.nav")
         }}</NuxtLinkLocale>
         <NuxtLinkLocale to="/pages/about">{{ $t("nav.about") }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/pages/contact">{{
+        <NuxtLinkLocale v-if="site.features.contact" to="/pages/contact">{{
           $t("nav.contact")
         }}</NuxtLinkLocale>
       </nav>
 
       <!-- Center logo — 跟随 header 卡片一起显隐 -->
       <NuxtLinkLocale to="/" class="bar-center">
-        <img src="/images/logo-en.webp" :alt="site.name" class="bar-logo" />
+        <img src="/images/logo-en-header.webp" :alt="site.name" class="bar-logo" />
       </NuxtLinkLocale>
 
       <!-- Right controls -->

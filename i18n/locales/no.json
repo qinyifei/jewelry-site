@@ -1,16 +1,16 @@
 {
   "seo": {
-    "description": "Håndlagde smykker i 925 sterlingsølv og 18K forgyllt gull. Handle ringer, halskjeder, øredobber og armbånd, eller samarbeid med oss om engros- og OEM-bestillinger."
+    "description": "Håndlagde smykker i 925 sterlingsølv og 18K forgyllt gull. Handle ringer, halskjeder, øredobber og armbånd, eller samarbeid med oss om skreddersydde smykker og OEM-produksjon."
   },
   "header": {
-    "announcement": "Gratis sporet frakt på bestillinger over $80 · Engros minimumskjøp {moq} stk",
+    "announcement": "Gratis sporet frakt på bestillinger over $80 · Skreddersydd & OEM fra {moq} stk",
     "language": "Språk"
   },
   "nav": {
     "home": "Hjem",
     "shop": "Butikk",
     "all": "Alle smykker",
-    "wholesale": "Engros",
+    "custom": "Skreddersydd",
     "about": "Om oss",
     "journal": "Journal",
     "contact": "Kontakt",
@@ -22,16 +22,16 @@
     "heroTitle": "Havets farger, fanget i perler",
     "heroText": "Håndlaget i 925 sterlingsølv og 18K forgyllt gull. Nikkelfritt, hypoallergent og bygget for å vare.",
     "shopNow": "Handle kolleksjonen",
-    "wholesaleCta": "Engrosforespørsler",
+    "customCta": "Start et skreddersydd prosjekt",
     "shopByCategory": "Handle etter kategori",
     "featured": "Bestselgere",
     "viewAll": "Se alle",
-    "wholesaleEyebrow": "For forhandlere og merkevarer",
-    "wholesaleTitle": "Engros & Tilpasset OEM",
-    "wholesaleText": "Butikker, nettbutikker og merkevarer samarbeider med oss om pålitelig kvalitet, lave minimumskjøp og privat merkevareemballasje.",
-    "wholesaleMoq": "Minimumskjøp fra {moq} stykker per design",
-    "wholesalePrivate": "Privat merkevareemballasje og tilpasset gravering",
-    "wholesaleLead": "Produksjonstid {days} arbeidsdager",
+    "customEyebrow": "Skreddersydde smykker & OEM",
+    "customTitle": "Designen din, fra skisse til ferdig smykke",
+    "customText": "Fra ett enkelt skreddersydd smykke til en hel produksjonsserie – vi gjør ideene dine om til bærbare smykker med håndfinish, gravering og privat merkevareemballasje.",
+    "customMoq": "OEM-produksjon fra {moq} stykker per design – enkeltbestillinger er velkomne",
+    "customPrivate": "Gravering og privat merkevareemballasje",
+    "customLead": "Prøveproduksjon på 7–10 dager, produksjon på {days} arbeidsdager",
     "learnMore": "Lær mer",
     "viewCases": "Se casestudier"
   },
@@ -51,7 +51,7 @@
     "details": "Detaljer",
     "requestQuote": "Be om tilbud",
     "askWhatsapp": "Spør på WhatsApp",
-    "wholesaleAvailable": "Engros tilgjengelig · Minimumskjøp {moq} stk",
+    "customAvailable": "Skreddersydd & OEM · gravering, steiner og metaller",
     "related": "Du vil kanskje også like",
     "inquiryTitle": "Forespør om dette stykket",
     "inquiryText": "Fortell oss alternativene og mengden du trenger, så svarer vi innen 1 arbeidsdag.",
@@ -74,8 +74,7 @@
     "country": "Land",
     "type": "Jeg er interessert i",
     "typeRetail": "Detaljhandelskjøp",
-    "typeWholesale": "Engros",
-    "typeOem": "Tilpasset / OEM",
+    "typeCustom": "Skreddersydd / OEM-prosjekt",
     "product": "Produkt",
     "options": "Alternativer (metall, størrelse…)",
     "quantity": "Antall",

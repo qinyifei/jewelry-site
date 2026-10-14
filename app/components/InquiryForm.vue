@@ -4,7 +4,7 @@ import { site } from '~/config/site'
 const props = defineProps<{
   product?: string
   sku?: string
-  defaultType?: 'retail' | 'wholesale' | 'oem'
+  defaultType?: 'retail' | 'custom'
   options?: string
 }>()
 
@@ -96,8 +96,7 @@ async function submit() {
         <label for="f-type">{{ $t('form.type') }}</label>
         <select id="f-type" v-model="form.type">
           <option value="retail">{{ $t('form.typeRetail') }}</option>
-          <option value="wholesale">{{ $t('form.typeWholesale') }}</option>
-          <option value="oem">{{ $t('form.typeOem') }}</option>
+          <option value="custom">{{ $t('form.typeCustom') }}</option>
         </select>
       </div>
       <div class="field">

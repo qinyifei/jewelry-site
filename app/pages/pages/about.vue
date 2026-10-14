@@ -18,7 +18,7 @@ const c = useLocaleContent({
     letterPs: '(Actually, it has only just begun.)',
     workTitle: 'Work with us',
     workIntro: 'We partner with boutiques, online stores and brands around the world.',
-    workWholesale: 'Learn about wholesale and OEM',
+    workCustom: 'Learn about custom & OEM',
     workOr: 'or',
     workContact: 'get in touch',
     galleryFarm: 'At our pearl farm — seeding, tending and harvesting by hand',
@@ -40,8 +40,8 @@ const c = useLocaleContent({
     letterPs: '（其实，这才是开始。）',
     workTitle: '与我们合作',
     workIntro:
-      '我们专注高品质海水珍珠批发与零售，服务全球精品店、珠宝品牌及零售商，也诚邀每一位珍珠爱好者走进潘蒂娅，一起感受珍珠的美好。',
-    workWholesale: '了解批发与 OEM 合作',
+      '我们为全球精品店、珠宝品牌和每一位珍珠爱好者提供首饰定制与零售服务——从单件专属定制到 OEM 批量生产，也诚邀你走进潘蒂娅，一起感受珍珠的美好。',
+    workCustom: '了解定制与 OEM 合作',
     workOr: '，或',
     workContact: '联系我们',
     galleryFarm: '珍珠养殖现场——插核、培育、采收均亲力亲为',
@@ -93,9 +93,11 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
       <h2>{{ c.workTitle }}</h2>
       <p>
         {{ c.workIntro }}
-        <NuxtLinkLocale to="/pages/wholesale">{{ c.workWholesale }}</NuxtLinkLocale>
-        {{ c.workOr }}
-        <NuxtLinkLocale to="/pages/contact">{{ c.workContact }}</NuxtLinkLocale>.
+        <template v-if="site.features.custom || site.features.contact">
+          <NuxtLinkLocale v-if="site.features.custom" to="/pages/custom">{{ c.workCustom }}</NuxtLinkLocale>
+          <template v-if="site.features.custom && site.features.contact">{{ c.workOr }}</template>
+          <NuxtLinkLocale v-if="site.features.contact" to="/pages/contact">{{ c.workContact }}</NuxtLinkLocale>.
+        </template>
       </p>
     </div>
   </div>

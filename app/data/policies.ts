@@ -24,7 +24,7 @@ export const policies: Policy[] = [
           'For EU orders, VAT is collected at checkout where applicable. For other destinations, import duties or taxes may be charged by your local customs office and are the responsibility of the recipient.',
         ],
       },
-      { heading: 'Wholesale shipments', paragraphs: ['Wholesale orders ship by DHL, FedEx or UPS. Freight is quoted with each order.'] },
+      { heading: 'Custom & OEM orders', paragraphs: ['Custom and OEM orders ship by DHL, FedEx or UPS. Freight is quoted with each order.'] },
     ],
     i18n: {
       zh: {
@@ -39,7 +39,7 @@ export const policies: Policy[] = [
             heading: '关税与税费',
             paragraphs: ['欧盟订单在适用情况下于结账时代收增值税（VAT）。其他地区可能由当地海关征收进口关税或税费，由收件人承担。'],
           },
-          { heading: '批发订单发货', paragraphs: ['批发订单通过 DHL、FedEx 或 UPS 发货，运费随订单单独报价。'] },
+          { heading: '定制与 OEM 订单发货', paragraphs: ['定制与 OEM 订单通过 DHL、FedEx 或 UPS 发货，运费随订单单独报价。'] },
         ],
       },
     },
@@ -169,7 +169,7 @@ export const policies: Policy[] = [
       {
         heading: 'Products & pricing',
         paragraphs: [
-          'Product images are for illustration; slight variations in colour and finish may occur. Prices shown are reference retail prices in USD and may change without notice. Wholesale prices are provided on request.',
+          'Product images are for illustration; slight variations in colour and finish may occur. Prices shown are reference retail prices in USD and may change without notice. Custom and OEM quotes are provided on request.',
         ],
       },
       {
@@ -185,7 +185,7 @@ export const policies: Policy[] = [
           { paragraphs: [`使用本网站即表示你同意以下条款。本网站由 ${site.name} 运营。`] },
           {
             heading: '商品与价格',
-            paragraphs: ['商品图片仅供参考，颜色和表面效果可能略有差异。页面显示的是美元参考零售价，可能随时调整，恕不另行通知。批发价格请询价获取。'],
+            paragraphs: ['商品图片仅供参考，颜色和表面效果可能略有差异。页面显示的是美元参考零售价，可能随时调整，恕不另行通知。定制与 OEM 价格请联系我们获取报价。'],
           },
           { heading: '知识产权', paragraphs: ['本网站所有设计、图片和文字归我们所有，未经许可不得使用。'] },
           { heading: '联系方式', paragraphs: [`对本条款有任何疑问，请发邮件至 ${site.email}。`] },
