@@ -1,9 +1,9 @@
 {
   "seo": {
-    "description": "Håndlagde smykker i 925 sterlingsølv og 18K forgyllt gull. Handle ringer, halskjeder, øredobber og armbånd, eller samarbeid med oss om skreddersydde smykker og OEM-produksjon."
+    "description": "Håndlagde smykker i sterlingsølv og forgyllt gull med kulturperler i fokus — handle ringer, halskjeder, øredobber og armbånd, eller bestill et skreddersydd smykke."
   },
   "header": {
-    "announcement": "Gratis sporet frakt på bestillinger over $80 · Skreddersydd & OEM fra {moq} stk",
+    "announcement": "Gratis standardfrakt i Sverige på bestillinger over 499 SEK · Skreddersydd fra ett enkelt smykke",
     "language": "Språk"
   },
   "nav": {
@@ -18,32 +18,43 @@
     "close": "Lukk"
   },
   "home": {
-    "eyebrow": "925 Sterlingsølv · 18K Forgyllt gull",
-    "heroTitle": "Havets farger, fanget i perler",
-    "heroText": "Håndlaget i 925 sterlingsølv og 18K forgyllt gull. Nikkelfritt, hypoallergent og bygget for å vare.",
-    "shopNow": "Handle kolleksjonen",
-    "customCta": "Start et skreddersydd prosjekt",
-    "shopByCategory": "Handle etter kategori",
-    "featured": "Bestselgere",
-    "viewAll": "Se alle",
-    "customEyebrow": "Skreddersydde smykker & OEM",
-    "customTitle": "Designen din, fra skisse til ferdig smykke",
-    "customText": "Fra ett enkelt skreddersydd smykke til en hel produksjonsserie – vi gjør ideene dine om til bærbare smykker med håndfinish, gravering og privat merkevareemballasje.",
-    "customMoq": "OEM-produksjon fra {moq} stykker per design – enkeltbestillinger er velkomne",
-    "customPrivate": "Gravering og privat merkevareemballasje",
-    "customLead": "Prøveproduksjon på 7–10 dager, produksjon på {days} arbeidsdager",
-    "learnMore": "Lær mer",
-    "viewCases": "Se casestudier"
-  },
-  "usp": {
-    "material": "Massivt 925 Sterlingsølv",
-    "materialText": "Ekte, stemplet og sertifisert",
-    "nickel": "Nikkelfritt",
-    "nickelText": "EU REACH-kompatibelt, skånsomt mot huden",
-    "shipping": "Verdensomspennende frakt",
-    "shippingText": "Sporet levering til USA, UK & EU",
-    "warranty": "1 års garanti",
-    "warrantyText": "Mot produksjonsfeil"
+    "slogan": "Naturens farger, skapt til å bæres.",
+    "shopPearl": "Handle perlekolleksjonen",
+    "exploreAll": "Utforsk alle smykker",
+    "pearlEyebrow": "Perlekolleksjonen",
+    "pearlTitle": "Havets farger, fanget i perler.",
+    "pearlNote": "Alle perler er kulturperler. Type og opprinnelse oppgis på hver produktside.",
+    "bespokeEyebrow": "Skreddersydd & Samarbeid",
+    "bespokeTitle": "Smykker skapt for historien og visjonen din.",
+    "bespokeSub": "For privatpersoner og merker — fra minnesmykker til samarbeid.",
+    "bespokeStepsTitle": "Slik fungerer det",
+    "bespokeSteps": {
+      "idea": { "title": "Del ideen din", "text": "En skisse, et bilde, et minne — ethvert utgangspunkt fungerer." },
+      "design": { "title": "Design & pristilbud", "text": "Vi former ideen din til et design og blir enige om en tydelig pris." },
+      "sample": { "title": "Prøve & godkjenning", "text": "En håndlaget prøve lages for din godkjenning." },
+      "production": { "title": "Produksjon & levering", "text": "Smykket ditt finpusses for hånd og leveres." }
+    },
+    "bespokeStory1": "Vi lager unike smykker for privatkunder og merker, med kulturperler, edelstener og resirkulerte edelmetaller. Du er med oss i hvert steg: konseptskisse, materialvalg, håndverk og siste finish.",
+    "bespokeStory2": "Hvert smykke lages i små serier, med gjennomsiktig materialsporing og nøye håndfinish. Enten det er et personlig minnesmykke, en årsdagsgave, et eget vedheng eller et kreativt merkevaresamarbeid, følger vi deg fra idé til ferdig verk.",
+    "bespokeCta": "Start din forespørsel",
+    "bespokeReply": "Vi svarer vanligvis innen 2 virkedager.",
+    "bespokeFaqTitle": "Ofte stilte spørsmål om skreddersydd",
+    "bespokeFaqs": {
+      "time": { "q": "Hvor lang tid tar et skreddersydd smykke?", "a": "Vanligvis 3–6 uker fra bekreftet design." },
+      "brands": { "q": "Samarbeider dere med merkevarer?", "a": "Ja — samarbeid, begrensede utgaver og gaveprogrammer." },
+      "materials": { "q": "Hvilke materialer kan jeg velge?", "a": "Kulturperler, edelstener, sterlingsølv og forgyllt gull; resirkulerte metaller etter ønske." },
+      "sample": { "q": "Kan jeg se en prøve før produksjon?", "a": "Ja, en prøve lages og godkjennes først." },
+      "pricing": { "q": "Hvordan fungerer prissettingen?", "a": "En fast pris etter designfasen, uten skjulte kostnader." },
+      "shipping": { "q": "Sender dere internasjonalt?", "a": "Ja, vi sender fra Sverige med sporet levering." }
+    },
+    "aboutTitle": "Om Panthea Jewelry",
+    "aboutTeaser": "Et tiår med perlejakt i Asia — fra vår egen farm til dine hender.",
+    "aboutLink": "Les vår historie",
+    "contactTitle": "Kontakt",
+    "contactEmail": "E-post",
+    "contactStudio": "Studio",
+    "contactHours": "Åpningstider",
+    "hoursValue": "Mandag – fredag, 9:00 – 18:00 (GMT+8)"
   },
   "product": {
     "sku": "Varenr.",
@@ -51,7 +62,7 @@
     "details": "Detaljer",
     "requestQuote": "Be om tilbud",
     "askWhatsapp": "Spør på WhatsApp",
-    "customAvailable": "Skreddersydd & OEM · gravering, steiner og metaller",
+    "customAvailable": "Skreddersydd mulig · gravering, steiner og metaller",
     "related": "Du vil kanskje også like",
     "inquiryTitle": "Forespør om dette stykket",
     "inquiryText": "Fortell oss alternativene og mengden du trenger, så svarer vi innen 1 arbeidsdag.",
@@ -59,7 +70,7 @@
   },
   "collection": {
     "all": "Alle smykker",
-    "allDescription": "Bla gjennom vår fulle kollektion av sterlingsølv og forgyllt gull smykker.",
+    "allDescription": "Utforsk hele PANTHEA-utvalget — sterlingsølv og forgyllt gull, med kulturperler i sentrum.",
     "count": "{n} stykke | {n} stykker",
     "empty": "Ingen produkter i denne kolleksjonen ennå.",
     "filterAll": "Alle",
@@ -74,7 +85,7 @@
     "country": "Land",
     "type": "Jeg er interessert i",
     "typeRetail": "Detaljhandelskjøp",
-    "typeCustom": "Skreddersydd / OEM-prosjekt",
+    "typeCustom": "Skreddersydd & samarbeidsprosjekt",
     "product": "Produkt",
     "options": "Alternativer (metall, størrelse…)",
     "quantity": "Antall",
@@ -98,13 +109,13 @@
     "learnMore": "Personvernregler"
   },
   "footer": {
-    "tagline": "Havets farger, fanget i perler.",
+    "tagline": "Naturens farger, skapt til å bæres.",
     "shop": "Butikk",
     "company": "Selskap",
     "help": "Hjelp",
     "faq": "FAQ",
     "shipping": "Fraktpolicy",
-    "refund": "Returer & refusjoner",
+    "refund": "Retur & refusjon",
     "privacy": "Personvernregler",
     "terms": "Tjenestevilkår",
     "rights": "Alle rettigheter forbeholdt.",
@@ -145,7 +156,7 @@
     "service": "Tjeneste",
     "seeProduct": "Se produktet",
     "ctaTitle": "Har du en designidé?",
-    "ctaText": "Send oss skissen din eller referansebilder, og vi svarer med et tilbud og prøveplan innen 1 arbeidsdag.",
+    "ctaText": "Send oss skissen din eller referansebilder, så svarer vi med tilbud og prøveplan innen 2 virkedager.",
     "cta": "Start prosjektet ditt",
     "back": "Tilbake til casestudier",
     "client": "Kunde"

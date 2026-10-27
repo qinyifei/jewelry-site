@@ -14,52 +14,52 @@ export const collections: Collection[] = [
       },
     },
   },
-  // ── 顶级：珠宝通用品类 ──
-  {
-    handle: 'earrings',
-    title: 'Earrings',
-    description: 'Earrings for every occasion — from everyday studs and huggies to statement drops.',
-    image: '/images/collections/earrings.svg',
-    i18n: {
-      zh: {
-        title: '耳环',
-        description: '适合各种场合的耳饰——从日常耳钉、贴耳圈到垂坠耳环。',
-      },
-    },
-  },
+  // ── 顶级：珠宝通用品类（顺序与官网布局文档一致）──
   {
     handle: 'necklaces',
     title: 'Necklaces',
-    description: 'Necklaces and pendants in delicate chains and bold silhouettes, layerable and lasting.',
+    description: 'Necklaces and pendants in delicate chains and bold silhouettes — layerable, lasting, made for everyday.',
     image: '/images/collections/necklaces.svg',
     i18n: {
       zh: {
         title: '项链',
-        description: '从纤细链条到大胆造型的项链与吊坠，可叠戴、耐久。',
+        description: '从纤细链条到大胆造型的项链与吊坠——适合叠戴、经久耐看，为日常而生。',
+      },
+    },
+  },
+  {
+    handle: 'earrings',
+    title: 'Earrings',
+    description: 'Earrings for every occasion — everyday studs and huggies to sculptural statement drops.',
+    image: '/images/collections/earrings.svg',
+    i18n: {
+      zh: {
+        title: '耳环',
+        description: '适合各种场合的耳饰——从日常耳钉、贴耳圈到雕塑感垂坠耳环。',
       },
     },
   },
   {
     handle: 'rings',
     title: 'Rings',
-    description: 'Rings to stack, gift and wear every day — bands, solitaires and statement pieces.',
+    description: 'Rings to stack, gift and wear every day — slim bands, solitaires and statement pieces.',
     image: '/images/collections/rings.svg',
     i18n: {
       zh: {
         title: '戒指',
-        description: '适合叠戴、送礼和日常佩戴的戒指——指环、单钻与造型款。',
+        description: '适合叠戴、送礼与日常佩戴的戒指——纤细指环、单珠款与造型款。',
       },
     },
   },
   {
     handle: 'bracelets',
     title: 'Bracelets',
-    description: 'Bracelets and bangles, from fine chains to bold links, finished by hand.',
+    description: 'Bracelets and bangles from fine chains to bold links — finished by hand, made to be layered.',
     image: '/images/collections/bracelets.svg',
     i18n: {
       zh: {
         title: '手链',
-        description: '手链与手镯，从细链到粗链，全部手工精修。',
+        description: '从细链到粗链的手链与手镯——手工精修，为叠戴而生。',
       },
     },
   },
@@ -67,7 +67,7 @@ export const collections: Collection[] = [
   {
     handle: 'south-sea-white',
     parent: 'pearls',
-    title: 'South Sea Pearls',
+    title: 'White South Sea Pearls',
     description: 'Lustrous white and silver South Sea pearls harvested from Australian waters. Among the largest and finest pearls in the world, celebrated for their deep mirror-like lustre.',
     image: '/images/collections/south-sea-pendant.jpg',
     i18n: {

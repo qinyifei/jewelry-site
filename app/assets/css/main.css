@@ -9,6 +9,9 @@
   --c-filled-bg: #554537;   /* warm brown filled sections */
   --c-muted:     #8a7060;   /* derived muted text */
   --c-line:      #d8cfc8;   /* derived border */
+  --c-gold:      #b08d57;   /* gold accent (hero slogan, numerals, links) */
+  --c-gold-light:#d8b98a;   /* lighter gold for dark/photo backgrounds */
+  --c-soft:      #f6f1ec;   /* warm soft section background */
 
   /* ── Letter-spacing tokens ── */
   --ls-sm: 0.06em;

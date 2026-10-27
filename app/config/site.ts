@@ -14,12 +14,6 @@ export const site = {
     facebook: 'https://www.facebook.com/',
   },
   currency: 'USD',
-  // 定制合作（原批发合作）：OEM 起订量与生产周期
-  custom: {
-    moq: 30,
-    // 生产周期（工作日）
-    leadTimeDays: '15–25',
-  },
   // 功能开关：询盘与定制合作入口。
   // 改成 false 即可整体收起：页头/页脚链接、首页板块、商品页表单和对应页面会一起隐藏。
   features: {

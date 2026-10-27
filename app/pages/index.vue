@@ -1,17 +1,49 @@
 <script setup lang="ts">
 import { site } from "~/config/site";
-import { topCollections as collections } from "~/data/collections";
-import { products } from "~/data/products";
+import { findCollection, topCollections } from "~/data/collections";
 
-const featured = products.filter((p) => p.featured);
 const tr = useLocalized();
+const { t } = useI18n();
+
+// 珍珠品种卡片顺序与官网布局文档一致：
+// Keshi · White South Sea · Golden South Sea · Tahitian · Akoya · Mabé
+const pearlHandles = [
+  "keshi",
+  "south-sea-white",
+  "golden-south-sea",
+  "tahitian",
+  "akoya",
+  "mabe",
+];
+const pearlTypes = pearlHandles
+  .map(h => findCollection(h))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+// Shop 板块：通用品类（珍珠系列有独立板块，不在这里重复出现）
+const shopCollections = topCollections.filter(c => c.handle !== "pearls");
+
+const bespokeSteps = computed(() => [
+  { title: t("home.bespokeSteps.idea.title"), text: t("home.bespokeSteps.idea.text") },
+  { title: t("home.bespokeSteps.design.title"), text: t("home.bespokeSteps.design.text") },
+  { title: t("home.bespokeSteps.sample.title"), text: t("home.bespokeSteps.sample.text") },
+  { title: t("home.bespokeSteps.production.title"), text: t("home.bespokeSteps.production.text") },
+]);
+
+const bespokeFaqs = computed(() => [
+  { q: t("home.bespokeFaqs.time.q"), a: t("home.bespokeFaqs.time.a") },
+  { q: t("home.bespokeFaqs.brands.q"), a: t("home.bespokeFaqs.brands.a") },
+  { q: t("home.bespokeFaqs.materials.q"), a: t("home.bespokeFaqs.materials.a") },
+  { q: t("home.bespokeFaqs.sample.q"), a: t("home.bespokeFaqs.sample.a") },
+  { q: t("home.bespokeFaqs.pricing.q"), a: t("home.bespokeFaqs.pricing.a") },
+  { q: t("home.bespokeFaqs.shipping.q"), a: t("home.bespokeFaqs.shipping.a") },
+]);
 
 usePageSeo({ title: site.name });
 </script>
 
 <template>
   <div>
-    <!-- ─── Hero ─── -->
+    <!-- ─── Hero：logo 居中，图面中下部留白处放金色 slogan 与双 CTA ─── -->
     <section class="hero">
       <picture>
         <source media="(max-width: 768px)" srcset="/images/home-phone.webp" />
@@ -24,8 +56,8 @@ usePageSeo({ title: site.name });
           fetchpriority="high"
         />
       </picture>
-      <!-- 首页 h1：视觉上由 logo 呈现，文字版供搜索引擎与读屏软件 -->
-      <h1 class="sr-only">{{ $t("home.heroTitle") }}</h1>
+      <!-- 首页 h1：视觉上由 slogan 呈现，文字版供搜索引擎与读屏软件 -->
+      <h1 class="sr-only">{{ $t("home.slogan") }}</h1>
       <div class="hero-overlay" aria-hidden="true" />
       <!-- 居中品牌 logo 图片 -->
       <div class="hero-center">
@@ -41,78 +73,162 @@ usePageSeo({ title: site.name });
           />
         </NuxtLinkLocale>
       </div>
-    </section>
-
-    <!-- ─── USP Strip ─── -->
-    <div class="usp-strip">
-      <span>{{ $t("usp.material") }}</span>
-      <span class="usp-dot" aria-hidden="true">·</span>
-      <span>{{ $t("usp.nickel") }}</span>
-      <span class="usp-dot" aria-hidden="true">·</span>
-      <span>{{ $t("usp.shipping") }}</span>
-      <span class="usp-dot" aria-hidden="true">·</span>
-      <span>{{ $t("usp.warranty") }}</span>
-    </div>
-
-    <!-- ─── Categories ─── -->
-    <section class="cat-grid">
-      <NuxtLinkLocale
-        v-for="c in collections"
-        :key="c.handle"
-        :to="`/collections/${c.handle}`"
-        class="cat-item"
-      >
-        <div class="cat-media">
-          <img
-            :src="c.image"
-            :alt="tr(c).title"
-            loading="lazy"
-            width="800"
-            height="1067"
-          />
-        </div>
-        <div class="cat-label">
-          <span>{{ tr(c).title }}</span>
-        </div>
-      </NuxtLinkLocale>
-    </section>
-
-    <!-- ─── Featured Products ─── -->
-    <section class="featured-section">
-      <div class="container">
-        <h2 class="featured-heading">{{ $t("home.featured") }}</h2>
-        <div class="product-grid">
-          <ProductCard v-for="p in featured" :key="p.handle" :product="p" />
+      <!-- 中下部：金色小字 slogan + 双 CTA（与导航逻辑一致：主按钮珍珠系列，次按钮全部首饰） -->
+      <div class="hero-lower">
+        <p class="hero-slogan">{{ $t("home.slogan") }}</p>
+        <div class="hero-ctas">
+          <NuxtLinkLocale to="/collections/pearls" class="hero-btn primary">{{
+            $t("home.shopPearl")
+          }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/collections/all" class="hero-btn ghost">{{
+            $t("home.exploreAll")
+          }}</NuxtLinkLocale>
         </div>
       </div>
     </section>
 
-    <!-- ─── Editorial Break ─── -->
-    <section v-if="site.features.custom" class="dark-section">
-      <div class="editorial-inner">
-        <div class="editorial-left">
-          <p class="editorial-eyebrow">{{ $t("home.customEyebrow") }}</p>
-          <h2 class="editorial-title">{{ $t("home.customTitle") }}</h2>
-        </div>
-        <div class="editorial-right">
-          <p class="editorial-text">{{ $t("home.customText") }}</p>
-          <ul class="editorial-list">
-            <li>{{ $t("home.customMoq", { moq: site.custom.moq }) }}</li>
-            <li>{{ $t("home.customPrivate") }}</li>
-            <li>
-              {{
-                $t("home.customLead", { days: site.custom.leadTimeDays })
-              }}
-            </li>
-          </ul>
-          <div class="editorial-actions">
-            <NuxtLinkLocale to="/pages/custom" class="btn-dark-primary">{{
-              $t("home.learnMore")
-            }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/blogs/cases" class="btn-dark-outline">{{
-              $t("home.viewCases")
-            }}</NuxtLinkLocale>
+    <!-- ─── Pearl Collection ─── -->
+    <section class="pearl-section">
+      <div class="pearl-head">
+        <p class="section-eyebrow">{{ $t("home.pearlEyebrow") }}</p>
+        <h2 class="section-title">{{ $t("home.pearlTitle") }}</h2>
+      </div>
+      <div class="cat-grid">
+        <NuxtLinkLocale
+          v-for="c in pearlTypes"
+          :key="c.handle"
+          :to="`/collections/${c.handle}`"
+          class="cat-item"
+        >
+          <div class="cat-media">
+            <img
+              :src="c.image"
+              :alt="tr(c).title"
+              loading="lazy"
+              width="800"
+              height="1067"
+            />
           </div>
+          <div class="cat-label">
+            <span>{{ tr(c).title }}</span>
+          </div>
+        </NuxtLinkLocale>
+      </div>
+      <p class="pearl-note">{{ $t("home.pearlNote") }}</p>
+    </section>
+
+    <!-- ─── Shop ─── -->
+    <section class="shop-section">
+      <div class="container">
+        <h2 class="section-title">{{ $t("nav.shop") }}</h2>
+        <div class="shop-grid">
+          <NuxtLinkLocale to="/collections/all" class="shop-item shop-item-all">
+            <div class="shop-media">
+              <img
+                src="/images/collections/south-sea-pendant.jpg"
+                :alt="$t('nav.all')"
+                loading="lazy"
+                width="800"
+                height="534"
+              />
+            </div>
+            <div class="shop-text">
+              <h3>{{ $t("nav.all") }}</h3>
+              <p>{{ $t("collection.allDescription") }}</p>
+            </div>
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
+            v-for="c in shopCollections"
+            :key="c.handle"
+            :to="`/collections/${c.handle}`"
+            class="shop-item"
+          >
+            <div class="shop-media">
+              <img
+                :src="c.image"
+                :alt="tr(c).title"
+                loading="lazy"
+                width="800"
+                height="1067"
+              />
+            </div>
+            <div class="shop-text">
+              <h3>{{ tr(c).title }}</h3>
+              <p>{{ tr(c).description }}</p>
+            </div>
+          </NuxtLinkLocale>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Bespoke & Collaborations ─── -->
+    <section v-if="site.features.custom" class="bespoke-section">
+      <div class="container">
+        <p class="section-eyebrow">{{ $t("home.bespokeEyebrow") }}</p>
+        <h2 class="section-title">{{ $t("home.bespokeTitle") }}</h2>
+        <p class="bespoke-sub">{{ $t("home.bespokeSub") }}</p>
+
+        <div class="bespoke-block">
+          <h3 class="bespoke-heading">{{ $t("home.bespokeStepsTitle") }}</h3>
+          <ol class="bespoke-steps">
+            <li v-for="(s, i) in bespokeSteps" :key="s.title">
+              <span class="num">0{{ i + 1 }}</span>
+              <h4>{{ s.title }}</h4>
+              <p>{{ s.text }}</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="bespoke-block bespoke-story">
+          <h3 class="bespoke-heading">{{ $t("design.title") }}</h3>
+          <p>{{ $t("home.bespokeStory1") }}</p>
+          <p>{{ $t("home.bespokeStory2") }}</p>
+          <div class="bespoke-actions">
+            <NuxtLinkLocale to="/pages/custom" class="bespoke-btn">{{
+              $t("home.bespokeCta")
+            }}</NuxtLinkLocale>
+            <span class="bespoke-reply">{{ $t("home.bespokeReply") }}</span>
+          </div>
+        </div>
+
+        <div class="bespoke-block">
+          <h3 class="bespoke-heading">{{ $t("home.bespokeFaqTitle") }}</h3>
+          <div class="bespoke-faq">
+            <details v-for="f in bespokeFaqs" :key="f.q">
+              <summary>{{ f.q }}</summary>
+              <p>{{ f.a }}</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── About & Contact ─── -->
+    <section class="end-section">
+      <div class="container end-grid">
+        <div class="end-about">
+          <h2>{{ $t("home.aboutTitle") }}</h2>
+          <p>{{ $t("home.aboutTeaser") }}</p>
+          <NuxtLinkLocale to="/pages/about" class="link-underline">{{
+            $t("home.aboutLink")
+          }}</NuxtLinkLocale>
+        </div>
+        <div class="end-contact">
+          <h2>{{ $t("home.contactTitle") }}</h2>
+          <dl>
+            <div>
+              <dt>{{ $t("home.contactEmail") }}</dt>
+              <dd><a :href="`mailto:${site.email}`">{{ site.email }}</a></dd>
+            </div>
+            <div>
+              <dt>{{ $t("home.contactStudio") }}</dt>
+              <dd>{{ site.address }}</dd>
+            </div>
+            <div>
+              <dt>{{ $t("home.contactHours") }}</dt>
+              <dd>{{ $t("home.hoursValue") }}</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>
@@ -166,6 +282,8 @@ usePageSeo({ title: site.name });
 .hero-logo-link {
   display: block;
   pointer-events: auto;
+  /* logo 区域整体上移，给下方 slogan 与 CTA 留出中下部留白 */
+  transform: translateY(-9vh);
 }
 
 .hero-logo-img {
@@ -180,41 +298,120 @@ usePageSeo({ title: site.name });
   opacity: 0.88;
 }
 
-/* ─── USP Strip ─── */
-.usp-strip {
+/* 中下部：金色小字 slogan + 双 CTA */
+.hero-lower {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  padding: 0 24px 7vh;
+}
+
+.hero-slogan {
+  margin: 0 0 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--c-gold-light, #d8b98a);
+}
+
+.hero-ctas {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0;
-  padding: 14px 0;
-  border-top: 1px solid #e9dcd0;
-  border-bottom: 1px solid #e9dcd0;
+  gap: 14px;
+}
+
+.hero-btn {
+  display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 11px;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #554537;
+  padding: 14px 32px;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 
-.usp-strip span {
-  padding: 0 18px;
+.hero-btn.primary {
+  background: rgba(85, 69, 55, 0.94);
+  color: #fff;
 }
 
-.usp-dot {
-  color: #e9dcd0;
-  padding: 0 !important;
-  flex-shrink: 0;
-  font-size: 14px;
-  line-height: 1;
+.hero-btn.primary:hover {
+  background: #6b5747;
 }
 
-/* ─── Categories ─── */
+.hero-btn.ghost {
+  background: rgba(25, 21, 21, 0.2);
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.hero-btn.ghost:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ─── 通用板块标题 ─── */
+.section-eyebrow {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin: 0 0 14px;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 4.6vw, 3.2rem);
+  color: var(--c-ink);
+  margin: 0;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Pearl Collection（低饱和冷调背景）─── */
+.pearl-section {
+  padding: 72px 0 64px;
+  background: linear-gradient(180deg, #f2f4f6 0%, #ffffff 220px);
+}
+
+.pearl-head {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.pearl-note {
+  max-width: 1400px;
+  margin: 28px auto 0;
+  padding: 0 24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+  text-align: center;
+}
+
 .cat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .cat-item {
@@ -226,6 +423,7 @@ usePageSeo({ title: site.name });
 .cat-media {
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  background: #f8f5f2;
 }
 
 .cat-media img {
@@ -262,131 +460,292 @@ usePageSeo({ title: site.name });
   display: block;
 }
 
-/* ─── Featured Products ─── */
-.featured-section {
-  padding: 80px 0;
+/* ─── Shop ─── */
+.shop-section {
+  padding: 88px 0;
   background: #ffffff;
 }
 
-.featured-heading {
+.shop-section .section-title {
+  margin-bottom: 40px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+}
+
+.shop-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-item-all {
+  grid-column: span 2;
+}
+
+.shop-media {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f8f5f2;
+  margin-bottom: 18px;
+}
+
+.shop-item-all .shop-media {
+  aspect-ratio: 16 / 10;
+}
+
+.shop-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.shop-item:hover .shop-media img {
+  transform: scale(1.03);
+}
+
+.shop-text h3 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
-  font-size: clamp(3rem, 7.2vw, 4.5rem);
-  color: #554537;
-  margin: 0 0 48px;
-  line-height: 1;
-  letter-spacing: 0.01em;
+  font-size: 1.45rem;
+  letter-spacing: 0.06em;
+  color: var(--c-ink);
+  margin: 0 0 6px;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-/* ─── Dark Section (Editorial) ─── */
-.dark-section {
-  background: #191515;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
-}
-
-.editorial-inner {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 88px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.editorial-eyebrow {
+.shop-text p {
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--c-muted);
+  margin: 0;
+}
+
+/* ─── Bespoke & Collaborations（暖色浅景深基调）─── */
+.bespoke-section {
+  padding: 88px 0;
+  background: var(--c-soft, #f6f1ec);
+}
+
+.bespoke-sub {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--c-muted);
+  margin: 14px 0 0;
+}
+
+.bespoke-block {
+  margin-top: 64px;
+}
+
+.bespoke-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #e9dcd0;
-  margin: 0 0 24px;
+  color: var(--c-text);
+  margin: 0 0 28px;
 }
 
-.editorial-title {
+.bespoke-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.bespoke-steps .num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.9rem;
+  color: var(--c-gold, #b08d57);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.bespoke-steps h4 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
-  font-size: clamp(3rem, 7.2vw, 4.5rem);
-  color: #fff;
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  color: var(--c-ink);
+  margin: 0 0 8px;
+}
+
+.bespoke-steps p {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--c-muted);
   margin: 0;
-  line-height: 1.05;
-  letter-spacing: 0.01em;
 }
 
-.editorial-text {
+.bespoke-story {
+  max-width: 760px;
+}
+
+.bespoke-story p {
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.8;
-  margin: 0 0 24px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--c-text);
+  margin: 0 0 16px;
 }
 
-.editorial-list {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 2.2;
-  margin: 0 0 40px;
-  padding-left: 1.2em;
-}
-
-.editorial-actions {
+.bespoke-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 18px;
+  margin-top: 28px;
 }
 
-.btn-dark-primary {
+.bespoke-btn {
   display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  background: #554537;
+  background: var(--c-filled-bg);
   color: #fff;
-  padding: 12px 28px;
-  border: none;
+  padding: 14px 32px;
   text-decoration: none;
   transition: background 0.2s;
 }
 
-.btn-dark-primary:hover {
+.bespoke-btn:hover {
   background: #6b5747;
 }
 
-.btn-dark-outline {
-  display: inline-block;
+.bespoke-reply {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 12px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  transition:
-    border-color 0.2s,
-    color 0.2s;
+  color: var(--c-muted);
 }
 
-.btn-dark-outline:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: rgba(255, 255, 255, 0.85);
+.bespoke-faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 56px;
+}
+
+.bespoke-faq details {
+  border-bottom: 1px solid var(--c-line);
+  padding: 16px 0;
+}
+
+.bespoke-faq summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--c-ink);
+  font-size: 13px;
+}
+
+.bespoke-faq details p {
+  margin: 10px 0 0;
+  color: var(--c-muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* ─── About & Contact ─── */
+.end-section {
+  padding: 88px 0;
+  background: #ffffff;
+}
+
+.end-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.end-grid h2 {
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  margin-bottom: 20px;
+}
+
+.end-about > p {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--c-muted);
+  margin: 0 0 20px;
+}
+
+.end-contact dl {
+  margin: 0;
+}
+
+.end-contact dl > div {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.end-contact dl > div:last-child {
+  border-bottom: none;
+}
+
+.end-contact dt {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  flex-shrink: 0;
+  width: 88px;
+}
+
+.end-contact dd {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--c-ink);
+}
+
+.end-contact dd a {
+  border-bottom: 1px solid var(--c-gold, #b08d57);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .bespoke-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .shop-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 20px;
+  }
+  .shop-item-all {
+    grid-column: span 2;
+  }
+  .bespoke-faq {
+    grid-template-columns: 1fr;
+  }
+  .end-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -396,7 +755,26 @@ usePageSeo({ title: site.name });
   .hero-logo-img {
     width: clamp(120px, 40vw, 200px);
   }
-  .featured-section {
+  .hero-logo-link {
+    transform: translateY(-11vh);
+  }
+  .hero-lower {
+    padding-bottom: 10vh;
+  }
+  .hero-slogan {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+  }
+  .hero-btn {
+    padding: 12px 24px;
+  }
+  .pearl-section {
+    padding: 52px 0 48px;
+  }
+  .shop-section,
+  .bespoke-section,
+  .end-section {
     padding: 56px 0;
   }
 }
@@ -408,12 +786,18 @@ usePageSeo({ title: site.name });
   .cat-grid {
     grid-template-columns: 1fr;
   }
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  .shop-grid {
+    grid-template-columns: 1fr;
   }
-  .editorial-inner {
-    padding: 56px 24px;
+  .shop-item-all {
+    grid-column: auto;
+  }
+  .shop-item-all .shop-media {
+    aspect-ratio: 3 / 4;
+  }
+  .bespoke-steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 </style>

@@ -1,9 +1,9 @@
 {
   "seo": {
-    "description": "Handgjorda smycken i 925 sterlingsilver och 18K förgyllt guld. Handla ringar, halsband, örhängen och armband, eller samarbeta med oss för skräddarsydda smycken och OEM-produktion."
+    "description": "Handgjorda smycken i sterlingsilver och förgyllt guld med odlade pärlor i fokus — handla ringar, halsband, örhängen och armband, eller beställ ett skräddarsytt smycke."
   },
   "header": {
-    "announcement": "Fri spårbar frakt på beställningar över $80 · Skräddarsytt & OEM från {moq} st",
+    "announcement": "Fri standardfrakt i Sverige på beställningar över 499 SEK · Skräddarsytt från ett enda smycke",
     "language": "Språk"
   },
   "nav": {
@@ -18,32 +18,43 @@
     "close": "Stäng"
   },
   "home": {
-    "eyebrow": "925 Sterlingsilver · 18K Förgyllt guld",
-    "heroTitle": "Havets färger, fångade i pärlor",
-    "heroText": "Handgjorda i 925 sterlingsilver och 18K förgyllt guld. Nickelfria, hypoallergena och byggda för att hålla.",
-    "shopNow": "Handla kollektionen",
-    "customCta": "Starta ett skräddarsytt projekt",
-    "shopByCategory": "Handla efter kategori",
-    "featured": "Bästsäljare",
-    "viewAll": "Visa alla",
-    "customEyebrow": "Skräddarsydda smycken & OEM",
-    "customTitle": "Din design, från skiss till färdig smycke",
-    "customText": "Från ett enda skräddarsytt smycke till en hel produktionsserie – vi förvandlar dina idéer till bärbara smycken med handfinish, gravyr och privata etikettförpackningar.",
-    "customMoq": "OEM-produktion från {moq} st per design – enskilda beställningar välkomna",
-    "customPrivate": "Gravyr och privata etikettförpackningar",
-    "customLead": "Provtillverkning på 7–10 dagar, produktion på {days} arbetsdagar",
-    "learnMore": "Läs mer",
-    "viewCases": "Visa fallstudier"
-  },
-  "usp": {
-    "material": "Massivt 925 Sterlingsilver",
-    "materialText": "Äkta, stämplat och certifierat",
-    "nickel": "Nickelfritt",
-    "nickelText": "EU REACH-kompatibelt, skonsamt mot huden",
-    "shipping": "Världsomspännande frakt",
-    "shippingText": "Spårbar leverans till USA, UK & EU",
-    "warranty": "1 års garanti",
-    "warrantyText": "Mot tillverkningsfel"
+    "slogan": "Naturens nyanser, skapade att bäras.",
+    "shopPearl": "Handla pärlkollektionen",
+    "exploreAll": "Utforska alla smycken",
+    "pearlEyebrow": "Pärlkollektionen",
+    "pearlTitle": "Havets färger, fångade i pärlor.",
+    "pearlNote": "Alla pärlor är odlade. Sort och ursprung anges på varje produktsida.",
+    "bespokeEyebrow": "Skräddarsytt & Samarbeten",
+    "bespokeTitle": "Smycken skapade för din berättelse och din vision.",
+    "bespokeSub": "För privatpersoner och varumärken — från minnessmycken till samarbeten.",
+    "bespokeStepsTitle": "Så fungerar det",
+    "bespokeSteps": {
+      "idea": { "title": "Dela din idé", "text": "En skiss, ett foto, ett minne — vilken utgångspunkt som helst fungerar." },
+      "design": { "title": "Design & offert", "text": "Vi formar din idé till en design och kommer överens om en tydlig offert." },
+      "sample": { "title": "Prov & godkännande", "text": "Ett handgjort prov tillverkas för ditt godkännande." },
+      "production": { "title": "Produktion & leverans", "text": "Ditt smycke finslipas för hand och levereras." }
+    },
+    "bespokeStory1": "Vi skapar unika smycken för privatkunder och varumärken, med odlade pärlor, ädelstenar och återvunna ädelmetaller. Du är med oss i varje steg: konceptskiss, materialval, hantverk och slutlig finish.",
+    "bespokeStory2": "Varje smycke tillverkas i små serier, med spårbara material och noggrann handfinish. Oavsett om det är ett personligt minnessmycke, en årsdagsgåva, en egen hänge eller ett kreativt varumärkessamarbete följer vi med dig från idé till färdigt verk.",
+    "bespokeCta": "Starta din förfrågan",
+    "bespokeReply": "Vi svarar vanligtvis inom 2 arbetsdagar.",
+    "bespokeFaqTitle": "Vanliga frågor om skräddarsytt",
+    "bespokeFaqs": {
+      "time": { "q": "Hur lång tid tar ett skräddarsytt smycke?", "a": "Vanligtvis 3–6 veckor från bekräftad design." },
+      "brands": { "q": "Samarbetar ni med varumärken?", "a": "Ja — samarbeten, limiterade upplagor och gåvoprogram." },
+      "materials": { "q": "Vilka material kan jag välja?", "a": "Odlade pärlor, ädelstenar, sterlingsilver och förgyllt guld; återvunna metaller på begäran." },
+      "sample": { "q": "Kan jag se ett prov innan produktion?", "a": "Ja, ett prov tillverkas och godkänns först." },
+      "pricing": { "q": "Hur fungerar prissättningen?", "a": "Ett fast pris efter designskedet, utan dolda kostnader." },
+      "shipping": { "q": "Skickar ni internationellt?", "a": "Ja, vi skickar från Sverige med spårbar leverans." }
+    },
+    "aboutTitle": "Om Panthea Jewelry",
+    "aboutTeaser": "Ett decennium av pärljakt i Asien — från vår egen farm till dina händer.",
+    "aboutLink": "Läs vår berättelse",
+    "contactTitle": "Kontakt",
+    "contactEmail": "E-post",
+    "contactStudio": "Studio",
+    "contactHours": "Öppettider",
+    "hoursValue": "Måndag – fredag, 9:00 – 18:00 (GMT+8)"
   },
   "product": {
     "sku": "Artikelnr",
@@ -51,7 +62,7 @@
     "details": "Detaljer",
     "requestQuote": "Begär offert",
     "askWhatsapp": "Fråga på WhatsApp",
-    "customAvailable": "Skräddarsytt & OEM · gravyr, stenar och metaller",
+    "customAvailable": "Skräddarsytt möjligt · gravering, stenar och metaller",
     "related": "Du kanske också gillar",
     "inquiryTitle": "Fråga om denna produkt",
     "inquiryText": "Berätta vilka alternativ och vilken kvantitet du behöver så svarar vi inom 1 arbetsdag.",
@@ -59,7 +70,7 @@
   },
   "collection": {
     "all": "Alla smycken",
-    "allDescription": "Bläddra i vår hela kollektion av sterlingsilver och förgyllt guld smycken.",
+    "allDescription": "Utforska hela PANTHEA-utbudet — sterlingsilver och förgyllt guld, med odlade pärlor i centrum.",
     "count": "{n} smycke | {n} smycken",
     "empty": "Inga produkter i denna kollektion ännu.",
     "filterAll": "Alla",
@@ -74,7 +85,7 @@
     "country": "Land",
     "type": "Jag är intresserad av",
     "typeRetail": "Detaljhandelsköp",
-    "typeCustom": "Skräddarsytt / OEM-projekt",
+    "typeCustom": "Skräddarsytt & samarbetsprojekt",
     "product": "Produkt",
     "options": "Alternativ (metall, storlek…)",
     "quantity": "Antal",
@@ -98,13 +109,13 @@
     "learnMore": "Integritetspolicy"
   },
   "footer": {
-    "tagline": "Havets färger, fångade i pärlor.",
+    "tagline": "Naturens nyanser, skapade att bäras.",
     "shop": "Butik",
     "company": "Företag",
     "help": "Hjälp",
     "faq": "Vanliga frågor",
     "shipping": "Fraktpolicy",
-    "refund": "Returer & återbetalningar",
+    "refund": "Retur & återbetalning",
     "privacy": "Integritetspolicy",
     "terms": "Användarvillkor",
     "rights": "Alla rättigheter förbehållna.",
@@ -145,7 +156,7 @@
     "service": "Tjänst",
     "seeProduct": "Se produkten",
     "ctaTitle": "Har du en designidé?",
-    "ctaText": "Skicka din skiss eller referensbilder så svarar vi med en offert och provplan inom 1 arbetsdag.",
+    "ctaText": "Skicka din skiss eller referensbilder så svarar vi med offert och provplan inom 2 arbetsdagar.",
     "cta": "Starta ditt projekt",
     "back": "Tillbaka till fallstudier",
     "client": "Kund"

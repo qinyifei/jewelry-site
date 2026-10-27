@@ -24,7 +24,7 @@ app/
   data/products.ts     商品
   data/collections.ts  分类
   data/posts.ts        博客文章
-  data/policies.ts     政策页（运费、退换货、隐私、条款）⚠️ 模板文字，需按实际修改
+  data/policies.ts     政策页（运费、退换货、隐私、条款），内容来自《Panthea合规政策文档》，英文版为准
   pages/               页面，路径与 Shopify 保持一致（见下）
   components/          页头、页脚、商品卡片、询盘表单、WhatsApp 按钮、Cookie 横幅
 i18n/locales/en.json   界面文案（以后加语言在这里加文件）

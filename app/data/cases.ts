@@ -15,7 +15,7 @@ export const cases: CaseStudy[] = [
     product: 'classic-solitaire-ring',
     title: 'A 12-piece birthstone ring collection, from sketch to launch',
     client: 'Online jewelry brand · California, USA',
-    service: 'OEM · New design development',
+    service: 'Bespoke · New design development',
     summary: 'We turned a founder’s hand-drawn sketches into a production-ready birthstone ring line in under a month.',
     challenge:
       'The client had strong design ideas but no manufacturing partner. They needed 12 birthstone variations with consistent sizing, a nickel-free finish for US customers, and stock ready before the holiday season.',
@@ -30,7 +30,7 @@ export const cases: CaseStudy[] = [
       zh: {
         title: '12 款生日石戒指系列，从手绘稿到上市',
         client: '首饰网店品牌 · 美国加州',
-        service: 'OEM · 新款开发',
+        service: '定制 · 新款开发',
         summary: '不到一个月，我们把创始人的手绘草图变成了可量产的生日石戒指系列。',
         challenge: '客户有很好的设计想法，但没有生产合作方。需要 12 款不同生日石、尺码统一、符合美国市场的无镍工艺，并且要赶在节日季前备好货。',
         solution: '我们的设计团队把草图转成 3D 模型，5 天内出蜡版样品供确认，并按客户的色卡逐一匹配每款生日石颜色。全部镀铑，并通过 Prop 65 检测。',
@@ -79,7 +79,7 @@ export const cases: CaseStudy[] = [
     product: 'pearl-drop-earrings',
     title: 'A bridal pearl earring design for a wedding retailer',
     client: 'Bridal retailer · United Kingdom',
-    service: 'ODM · Design adaptation',
+    service: 'Bespoke · Design adaptation',
     summary: 'We reworked a classic pearl drop into a lighter, more comfortable bridal design.',
     challenge:
       'The client’s brides found existing pearl drops too heavy for a full wedding day. They wanted the same look, lighter weight and a matching bridesmaid version at a lower price point.',
@@ -94,7 +94,7 @@ export const cases: CaseStudy[] = [
       zh: {
         title: '为婚庆零售商设计的新娘珍珠耳坠',
         client: '婚庆零售商 · 英国',
-        service: 'ODM · 设计改良',
+        service: '定制 · 设计改良',
         summary: '我们把经典珍珠耳坠改良成更轻、更舒适的新娘款。',
         challenge: '客户反馈新娘觉得现有珍珠耳坠太重，戴一整天不舒服。希望外观不变、重量更轻，同时再出一款价格更低的伴娘款。',
         solution: '我们把实心耳圈改成空心结构来减轻重量，挑选配对的淡水珍珠，并按同一风格做了尺寸更小的伴娘款。',
