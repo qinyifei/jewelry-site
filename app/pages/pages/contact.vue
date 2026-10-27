@@ -1,35 +1,51 @@
 <script setup lang="ts">
-import { site } from '~/config/site'
+import { site } from "~/config/site";
 
 // 功能关闭时按 404 处理，防止直接输入网址访问
 if (!site.features.contact) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Page not found",
+    fatal: true,
+  });
 }
+
+// 工作室地址：单独做多语言（街道主体保持一致，楼层/地区按语言习惯表述）
+const addresses: Record<string, string> = {
+  en: "Flat F, 30/F, 8 Hart Avenue, Tsim Sha Tsui, Hong Kong",
+  zh: "尖沙咀赫德道八号30楼F室",
+  sv: "Flat F, 30 tr., 8 Hart Avenue, Tsim Sha Tsui, Hongkong",
+  da: "Flat F, 30. sal, 8 Hart Avenue, Tsim Sha Tsui, Hongkong",
+  no: "Flat F, 30. etg., 8 Hart Avenue, Tsim Sha Tsui, Hongkong",
+};
+const { locale } = useI18n();
+const address = computed(() => addresses[locale.value] ?? addresses.en);
 
 const c = useLocaleContent({
   en: {
-    seoTitle: 'Contact Us',
+    seoTitle: "Contact Us",
     seoDescription: `Get in touch with ${site.name} for orders and bespoke jewellery enquiries.`,
-    title: 'Contact Us',
-    intro: 'Questions about a piece, an order or a custom project? We reply within 1 business day.',
-    email: 'Email',
-    studio: 'Studio',
-    hoursTitle: 'Hours',
-    hours: 'Monday – Friday, 9:00 – 18:00 (GMT+8)',
+    title: "Contact Us",
+    intro:
+      "Questions about a piece, an order or a custom project? We reply within 1 business day.",
+    email: "Email",
+    studio: "Studio",
+    hoursTitle: "Hours",
+    hours: "Monday – Friday, 9:00 – 18:00 (GMT+8)",
   },
   zh: {
-    seoTitle: '联系我们',
+    seoTitle: "联系我们",
     seoDescription: `联系 ${site.name}，咨询订单与首饰定制合作。`,
-    title: '联系我们',
-    intro: '对商品、订单或定制项目有任何疑问？我们会在 1 个工作日内回复。',
-    email: '邮箱',
-    studio: '工作室',
-    hoursTitle: '工作时间',
-    hours: '周一至周五 9:00 – 18:00（北京时间）',
+    title: "联系我们",
+    intro: "对商品、订单或定制项目有任何疑问？我们会在 1 个工作日内回复。",
+    email: "邮箱",
+    studio: "工作室",
+    hoursTitle: "工作时间",
+    hours: "周一至周五 9:00 – 18:00（北京时间）",
   },
-})
+});
 
-usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
+usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription });
 </script>
 
 <template>
@@ -42,13 +58,15 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
     <div class="two">
       <aside>
         <h3>{{ c.email }}</h3>
-        <p><a :href="`mailto:${site.email}`">{{ site.email }}</a></p>
-        <template v-if="site.whatsapp">
+        <p>
+          <a :href="`mailto:${site.email}`">{{ site.email }}</a>
+        </p>
+        <!-- <template v-if="site.whatsapp">
           <h3>WhatsApp</h3>
           <p><a :href="`https://wa.me/${site.whatsapp}`" target="_blank" rel="noopener">+{{ site.whatsapp }}</a></p>
-        </template>
+        </template> -->
         <h3>{{ c.studio }}</h3>
-        <p>{{ site.address }}</p>
+        <p>{{ address }}</p>
         <h3>{{ c.hoursTitle }}</h3>
         <p>{{ c.hours }}</p>
       </aside>
@@ -66,10 +84,18 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
   margin: 0 auto;
 }
 
-aside h3 { font-size: 1.2rem; margin-bottom: 4px; }
-aside a { border-bottom: 1px solid var(--c-gold); }
+aside h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+aside a {
+  border-bottom: 1px solid var(--c-gold);
+}
 
 @media (max-width: 760px) {
-  .two { grid-template-columns: 1fr; gap: 32px; }
+  .two {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 </style>

@@ -13,19 +13,86 @@ const form = reactive({
   email: '',
   company: '',
   country: '',
+  // 咨询类型不再展示：联系页默认零售，定制合作页由 default-type 指定
   type: props.defaultType ?? 'retail',
   product: props.product ? `${props.product}${props.sku ? ` (${props.sku})` : ''}` : '',
   options: props.options ?? '',
-  quantity: '',
   message: '',
   consent: false,
   // 防垃圾提交的隐藏字段，真人不会填写
   website: '',
 })
 
+// 国家/地区下拉：存 ISO 代码 + 英文规范名（提交值统一英文），
+// 显示名走 i18n 的 countries.* 键，常用市场排最前，其余按当前语言排序
+const countries = [
+  { code: 'CN', value: 'China' },
+  { code: 'HK', value: 'Hong Kong SAR' },
+  { code: 'TW', value: 'Taiwan' },
+  { code: 'JP', value: 'Japan' },
+  { code: 'KR', value: 'South Korea' },
+  { code: 'SG', value: 'Singapore' },
+  { code: 'US', value: 'United States' },
+  { code: 'GB', value: 'United Kingdom' },
+  { code: 'AU', value: 'Australia' },
+  { code: 'CA', value: 'Canada' },
+  { code: 'FR', value: 'France' },
+  { code: 'DE', value: 'Germany' },
+  { code: 'IT', value: 'Italy' },
+  { code: 'ES', value: 'Spain' },
+  { code: 'NL', value: 'Netherlands' },
+  { code: 'SE', value: 'Sweden' },
+  { code: 'DK', value: 'Denmark' },
+  { code: 'NO', value: 'Norway' },
+  { code: 'FI', value: 'Finland' },
+  { code: 'CH', value: 'Switzerland' },
+  { code: 'AT', value: 'Austria' },
+  { code: 'BE', value: 'Belgium' },
+  { code: 'IE', value: 'Ireland' },
+  { code: 'AE', value: 'United Arab Emirates' },
+  { code: 'SA', value: 'Saudi Arabia' },
+  { code: 'QA', value: 'Qatar' },
+  { code: 'KW', value: 'Kuwait' },
+  { code: 'MY', value: 'Malaysia' },
+  { code: 'TH', value: 'Thailand' },
+  { code: 'VN', value: 'Vietnam' },
+  { code: 'ID', value: 'Indonesia' },
+  { code: 'PH', value: 'Philippines' },
+  { code: 'IN', value: 'India' },
+  { code: 'AR', value: 'Argentina' },
+  { code: 'BR', value: 'Brazil' },
+  { code: 'CL', value: 'Chile' },
+  { code: 'CO', value: 'Colombia' },
+  { code: 'CZ', value: 'Czechia' },
+  { code: 'GR', value: 'Greece' },
+  { code: 'HU', value: 'Hungary' },
+  { code: 'IL', value: 'Israel' },
+  { code: 'LU', value: 'Luxembourg' },
+  { code: 'MX', value: 'Mexico' },
+  { code: 'NZ', value: 'New Zealand' },
+  { code: 'PL', value: 'Poland' },
+  { code: 'PT', value: 'Portugal' },
+  { code: 'RO', value: 'Romania' },
+  { code: 'ZA', value: 'South Africa' },
+  { code: 'TR', value: 'Turkey' },
+  { code: 'UA', value: 'Ukraine' },
+  { code: 'OTHER', value: 'Other' },
+]
+
+const PRIORITY = ['CN', 'HK', 'TW', 'JP', 'KR', 'SG']
+const { t, locale } = useI18n()
+
+const countryOptions = computed(() => {
+  const labeled = countries.map(c => ({ ...c, label: t(`countries.${c.code}`) }))
+  const pri = labeled.filter(c => PRIORITY.includes(c.code))
+  const rest = labeled
+    .filter(c => !PRIORITY.includes(c.code))
+    .sort((a, b) => a.label.localeCompare(b.label, locale.value))
+  return [...pri, ...rest]
+})
+
 watch(() => props.options, v => (form.options = v ?? ''))
 
-const { locale } = useI18n()
 const status = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
 const turnstileEl = ref<HTMLElement>()
 let turnstileToken = ''
@@ -87,21 +154,10 @@ async function submit() {
       </div>
       <div class="field">
         <label for="f-country">{{ $t('form.country') }} *</label>
-        <input id="f-country" v-model="form.country" required autocomplete="country-name" maxlength="100" />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="field">
-        <label for="f-type">{{ $t('form.type') }}</label>
-        <select id="f-type" v-model="form.type">
-          <option value="retail">{{ $t('form.typeRetail') }}</option>
-          <option value="custom">{{ $t('form.typeCustom') }}</option>
+        <select id="f-country" v-model="form.country" required autocomplete="country-name">
+          <option value="" disabled>{{ $t('form.countryPlaceholder') }}</option>
+          <option v-for="c in countryOptions" :key="c.code" :value="c.value">{{ c.label }}</option>
         </select>
-      </div>
-      <div class="field">
-        <label for="f-qty">{{ $t('form.quantity') }}</label>
-        <input id="f-qty" v-model="form.quantity" inputmode="numeric" maxlength="20" />
       </div>
     </div>
 

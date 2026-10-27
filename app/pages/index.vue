@@ -3,7 +3,6 @@ import { site } from "~/config/site";
 import { findCollection, topCollections } from "~/data/collections";
 
 const tr = useLocalized();
-const { t } = useI18n();
 
 // 珍珠品种卡片顺序与官网布局文档一致：
 // Keshi · White South Sea · Golden South Sea · Tahitian · Akoya · Mabé
@@ -16,27 +15,11 @@ const pearlHandles = [
   "mabe",
 ];
 const pearlTypes = pearlHandles
-  .map(h => findCollection(h))
+  .map((h) => findCollection(h))
   .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
 // Shop 板块：通用品类（珍珠系列有独立板块，不在这里重复出现）
-const shopCollections = topCollections.filter(c => c.handle !== "pearls");
-
-const bespokeSteps = computed(() => [
-  { title: t("home.bespokeSteps.idea.title"), text: t("home.bespokeSteps.idea.text") },
-  { title: t("home.bespokeSteps.design.title"), text: t("home.bespokeSteps.design.text") },
-  { title: t("home.bespokeSteps.sample.title"), text: t("home.bespokeSteps.sample.text") },
-  { title: t("home.bespokeSteps.production.title"), text: t("home.bespokeSteps.production.text") },
-]);
-
-const bespokeFaqs = computed(() => [
-  { q: t("home.bespokeFaqs.time.q"), a: t("home.bespokeFaqs.time.a") },
-  { q: t("home.bespokeFaqs.brands.q"), a: t("home.bespokeFaqs.brands.a") },
-  { q: t("home.bespokeFaqs.materials.q"), a: t("home.bespokeFaqs.materials.a") },
-  { q: t("home.bespokeFaqs.sample.q"), a: t("home.bespokeFaqs.sample.a") },
-  { q: t("home.bespokeFaqs.pricing.q"), a: t("home.bespokeFaqs.pricing.a") },
-  { q: t("home.bespokeFaqs.shipping.q"), a: t("home.bespokeFaqs.shipping.a") },
-]);
+const shopCollections = topCollections.filter((c) => c.handle !== "pearls");
 
 usePageSeo({ title: site.name });
 </script>
@@ -73,17 +56,9 @@ usePageSeo({ title: site.name });
           />
         </NuxtLinkLocale>
       </div>
-      <!-- 中下部：金色小字 slogan + 双 CTA（与导航逻辑一致：主按钮珍珠系列，次按钮全部首饰） -->
+      <!-- 中下部：金色小字 slogan -->
       <div class="hero-lower">
         <p class="hero-slogan">{{ $t("home.slogan") }}</p>
-        <div class="hero-ctas">
-          <NuxtLinkLocale to="/collections/pearls" class="hero-btn primary">{{
-            $t("home.shopPearl")
-          }}</NuxtLinkLocale>
-          <NuxtLinkLocale to="/collections/all" class="hero-btn ghost">{{
-            $t("home.exploreAll")
-          }}</NuxtLinkLocale>
-        </div>
       </div>
     </section>
 
@@ -115,122 +90,6 @@ usePageSeo({ title: site.name });
         </NuxtLinkLocale>
       </div>
       <p class="pearl-note">{{ $t("home.pearlNote") }}</p>
-    </section>
-
-    <!-- ─── Shop ─── -->
-    <section class="shop-section">
-      <div class="container">
-        <h2 class="section-title">{{ $t("nav.shop") }}</h2>
-        <div class="shop-grid">
-          <NuxtLinkLocale to="/collections/all" class="shop-item shop-item-all">
-            <div class="shop-media">
-              <img
-                src="/images/collections/south-sea-pendant.jpg"
-                :alt="$t('nav.all')"
-                loading="lazy"
-                width="800"
-                height="534"
-              />
-            </div>
-            <div class="shop-text">
-              <h3>{{ $t("nav.all") }}</h3>
-              <p>{{ $t("collection.allDescription") }}</p>
-            </div>
-          </NuxtLinkLocale>
-          <NuxtLinkLocale
-            v-for="c in shopCollections"
-            :key="c.handle"
-            :to="`/collections/${c.handle}`"
-            class="shop-item"
-          >
-            <div class="shop-media">
-              <img
-                :src="c.image"
-                :alt="tr(c).title"
-                loading="lazy"
-                width="800"
-                height="1067"
-              />
-            </div>
-            <div class="shop-text">
-              <h3>{{ tr(c).title }}</h3>
-              <p>{{ tr(c).description }}</p>
-            </div>
-          </NuxtLinkLocale>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Bespoke & Collaborations ─── -->
-    <section v-if="site.features.custom" class="bespoke-section">
-      <div class="container">
-        <p class="section-eyebrow">{{ $t("home.bespokeEyebrow") }}</p>
-        <h2 class="section-title">{{ $t("home.bespokeTitle") }}</h2>
-        <p class="bespoke-sub">{{ $t("home.bespokeSub") }}</p>
-
-        <div class="bespoke-block">
-          <h3 class="bespoke-heading">{{ $t("home.bespokeStepsTitle") }}</h3>
-          <ol class="bespoke-steps">
-            <li v-for="(s, i) in bespokeSteps" :key="s.title">
-              <span class="num">0{{ i + 1 }}</span>
-              <h4>{{ s.title }}</h4>
-              <p>{{ s.text }}</p>
-            </li>
-          </ol>
-        </div>
-
-        <div class="bespoke-block bespoke-story">
-          <h3 class="bespoke-heading">{{ $t("design.title") }}</h3>
-          <p>{{ $t("home.bespokeStory1") }}</p>
-          <p>{{ $t("home.bespokeStory2") }}</p>
-          <div class="bespoke-actions">
-            <NuxtLinkLocale to="/pages/custom" class="bespoke-btn">{{
-              $t("home.bespokeCta")
-            }}</NuxtLinkLocale>
-            <span class="bespoke-reply">{{ $t("home.bespokeReply") }}</span>
-          </div>
-        </div>
-
-        <div class="bespoke-block">
-          <h3 class="bespoke-heading">{{ $t("home.bespokeFaqTitle") }}</h3>
-          <div class="bespoke-faq">
-            <details v-for="f in bespokeFaqs" :key="f.q">
-              <summary>{{ f.q }}</summary>
-              <p>{{ f.a }}</p>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── About & Contact ─── -->
-    <section class="end-section">
-      <div class="container end-grid">
-        <div class="end-about">
-          <h2>{{ $t("home.aboutTitle") }}</h2>
-          <p>{{ $t("home.aboutTeaser") }}</p>
-          <NuxtLinkLocale to="/pages/about" class="link-underline">{{
-            $t("home.aboutLink")
-          }}</NuxtLinkLocale>
-        </div>
-        <div class="end-contact">
-          <h2>{{ $t("home.contactTitle") }}</h2>
-          <dl>
-            <div>
-              <dt>{{ $t("home.contactEmail") }}</dt>
-              <dd><a :href="`mailto:${site.email}`">{{ site.email }}</a></dd>
-            </div>
-            <div>
-              <dt>{{ $t("home.contactStudio") }}</dt>
-              <dd>{{ site.address }}</dd>
-            </div>
-            <div>
-              <dt>{{ $t("home.contactHours") }}</dt>
-              <dd>{{ $t("home.hoursValue") }}</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
     </section>
   </div>
 </template>
@@ -298,7 +157,7 @@ usePageSeo({ title: site.name });
   opacity: 0.88;
 }
 
-/* 中下部：金色小字 slogan + 双 CTA */
+/* 中下部：金色小字 slogan */
 .hero-lower {
   position: relative;
   z-index: 1;
@@ -308,56 +167,13 @@ usePageSeo({ title: site.name });
 }
 
 .hero-slogan {
-  margin: 0 0 22px;
+  margin: 0;
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--c-gold-light, #d8b98a);
-}
-
-.hero-ctas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.hero-btn {
-  display: inline-block;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 14px 32px;
-  text-decoration: none;
-  transition:
-    background 0.2s,
-    border-color 0.2s,
-    color 0.2s;
-}
-
-.hero-btn.primary {
-  background: rgba(85, 69, 55, 0.94);
-  color: #fff;
-}
-
-.hero-btn.primary:hover {
-  background: #6b5747;
-}
-
-.hero-btn.ghost {
-  background: rgba(25, 21, 21, 0.2);
-  color: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-}
-
-.hero-btn.ghost:hover {
-  border-color: #fff;
-  color: #fff;
 }
 
 /* ─── 通用板块标题 ─── */
@@ -526,225 +342,14 @@ usePageSeo({ title: site.name });
   margin: 0;
 }
 
-/* ─── Bespoke & Collaborations（暖色浅景深基调）─── */
-.bespoke-section {
-  padding: 88px 0;
-  background: var(--c-soft, #f6f1ec);
-}
-
-.bespoke-sub {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 0.03em;
-  color: var(--c-muted);
-  margin: 14px 0 0;
-}
-
-.bespoke-block {
-  margin-top: 64px;
-}
-
-.bespoke-heading {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--c-text);
-  margin: 0 0 28px;
-}
-
-.bespoke-steps {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding: 0;
-  margin: 0;
-}
-
-.bespoke-steps .num {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.9rem;
-  color: var(--c-gold, #b08d57);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.bespoke-steps h4 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
-  color: var(--c-ink);
-  margin: 0 0 8px;
-}
-
-.bespoke-steps p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.75;
-  color: var(--c-muted);
-  margin: 0;
-}
-
-.bespoke-story {
-  max-width: 760px;
-}
-
-.bespoke-story p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 1.9;
-  color: var(--c-text);
-  margin: 0 0 16px;
-}
-
-.bespoke-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.bespoke-btn {
-  display: inline-block;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  background: var(--c-filled-bg);
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.bespoke-btn:hover {
-  background: #6b5747;
-}
-
-.bespoke-reply {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  color: var(--c-muted);
-}
-
-.bespoke-faq {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 56px;
-}
-
-.bespoke-faq details {
-  border-bottom: 1px solid var(--c-line);
-  padding: 16px 0;
-}
-
-.bespoke-faq summary {
-  cursor: pointer;
-  font-weight: 500;
-  color: var(--c-ink);
-  font-size: 13px;
-}
-
-.bespoke-faq details p {
-  margin: 10px 0 0;
-  color: var(--c-muted);
-  font-size: 12px;
-  line-height: 1.75;
-}
-
-/* ─── About & Contact ─── */
-.end-section {
-  padding: 88px 0;
-  background: #ffffff;
-}
-
-.end-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.end-grid h2 {
-  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
-  margin-bottom: 20px;
-}
-
-.end-about > p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 1.85;
-  color: var(--c-muted);
-  margin: 0 0 20px;
-}
-
-.end-contact dl {
-  margin: 0;
-}
-
-.end-contact dl > div {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--c-line);
-}
-
-.end-contact dl > div:last-child {
-  border-bottom: none;
-}
-
-.end-contact dt {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--c-muted);
-  flex-shrink: 0;
-  width: 88px;
-}
-
-.end-contact dd {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  color: var(--c-ink);
-}
-
-.end-contact dd a {
-  border-bottom: 1px solid var(--c-gold, #b08d57);
-}
-
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
-  .bespoke-steps {
-    grid-template-columns: 1fr 1fr;
-  }
   .shop-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px 20px;
   }
   .shop-item-all {
     grid-column: span 2;
-  }
-  .bespoke-faq {
-    grid-template-columns: 1fr;
-  }
-  .end-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
   }
 }
 
@@ -764,17 +369,11 @@ usePageSeo({ title: site.name });
   .hero-slogan {
     font-size: 11px;
     letter-spacing: 0.2em;
-    margin-bottom: 18px;
-  }
-  .hero-btn {
-    padding: 12px 24px;
   }
   .pearl-section {
     padding: 52px 0 48px;
   }
-  .shop-section,
-  .bespoke-section,
-  .end-section {
+  .shop-section {
     padding: 56px 0;
   }
 }
@@ -794,10 +393,6 @@ usePageSeo({ title: site.name });
   }
   .shop-item-all .shop-media {
     aspect-ratio: 3 / 4;
-  }
-  .bespoke-steps {
-    grid-template-columns: 1fr;
-    gap: 28px;
   }
 }
 </style>
