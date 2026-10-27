@@ -36,7 +36,7 @@ export interface Product extends ProductText, Translations<ProductText> {
 export interface CaseText {
   title: string
   client: string // 客户类型和所在地，例如 "Online boutique · California, USA"
-  service: string // 服务类型，例如 "Private label / OEM"
+  service: string // 服务类型，例如 "Bespoke · New design development"
   summary: string
   challenge: string
   solution: string

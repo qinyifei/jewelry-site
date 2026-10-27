@@ -1,16 +1,16 @@
 {
   "seo": {
-    "description": "Handcrafted 925 sterling silver and 18K gold vermeil jewelry. Shop rings, necklaces, earrings and bracelets, or partner with us for custom and OEM jewelry orders."
+    "description": "Handcrafted sterling silver and gold vermeil jewellery with cultured pearls at its heart — shop rings, necklaces, earrings and bracelets, or commission a bespoke piece."
   },
   "header": {
-    "announcement": "Free tracked shipping on orders over $80 · Custom & OEM from {moq} pcs",
+    "announcement": "Free standard shipping in Sweden on orders over 499 SEK · Bespoke from a single piece",
     "language": "Language"
   },
   "nav": {
     "home": "Home",
     "shop": "Shop",
     "all": "All Jewelry",
-    "custom": "Custom",
+    "custom": "Bespoke",
     "about": "About",
     "journal": "Journal",
     "contact": "Contact",
@@ -18,32 +18,43 @@
     "close": "Close"
   },
   "home": {
-    "eyebrow": "925 Sterling Silver · 18K Gold Vermeil",
-    "heroTitle": "Colours of the sea, captured in pearls",
-    "heroText": "Handcrafted in 925 sterling silver and 18K gold vermeil. Nickel free, hypoallergenic and built to last.",
-    "shopNow": "Shop the Collection",
-    "customCta": "Start a Custom Project",
-    "shopByCategory": "Shop by Category",
-    "featured": "Bestsellers",
-    "viewAll": "View all",
-    "customEyebrow": "Custom & OEM Jewelry",
-    "customTitle": "Your Design, From Sketch to Finish",
-    "customText": "From a one-off bespoke piece to a full production run, we turn your ideas into wearable pieces with hand-finished quality — with logo engraving and private-label packaging.",
-    "customMoq": "OEM production from {moq} pieces per design — single bespoke pieces welcome",
-    "customPrivate": "Logo engraving & private-label packaging",
-    "customLead": "Sampling in 7–10 days, production in {days} business days",
-    "learnMore": "Learn more",
-    "viewCases": "View case studies"
-  },
-  "usp": {
-    "material": "Solid 925 Sterling Silver",
-    "materialText": "Genuine, stamped and certified",
-    "nickel": "Nickel Free",
-    "nickelText": "EU REACH compliant, gentle on skin",
-    "shipping": "Worldwide Shipping",
-    "shippingText": "Tracked delivery to the US, UK & EU",
-    "warranty": "1-Year Warranty",
-    "warrantyText": "Against manufacturing defects"
+    "slogan": "Hues of nature, crafted to wear.",
+    "shopPearl": "Shop Pearl Collection",
+    "exploreAll": "Explore All Jewelry",
+    "pearlEyebrow": "Pearl Collection",
+    "pearlTitle": "Colours of the sea, captured in pearls.",
+    "pearlNote": "All pearls are cultured. Type and origin are stated on each product page.",
+    "bespokeEyebrow": "Bespoke & Collaborations",
+    "bespokeTitle": "Jewellery crafted for your story and vision.",
+    "bespokeSub": "For individuals and brands — from keepsakes to collaborations.",
+    "bespokeStepsTitle": "How it works",
+    "bespokeSteps": {
+      "idea": { "title": "Share your idea", "text": "A sketch, a photo, a memory — any starting point works." },
+      "design": { "title": "Design & quote", "text": "We shape your idea into a design and agree a clear quote." },
+      "sample": { "title": "Sample & confirm", "text": "A handmade sample is crafted for your approval." },
+      "production": { "title": "Production & delivery", "text": "Your piece is hand-finished and delivered." }
+    },
+    "bespokeStory1": "We create one-of-a-kind jewellery for private clients and brands, using cultured pearls, gemstones and recycled precious metals. You join us at every stage: concept sketch, material selection, hand-crafting and final finishing.",
+    "bespokeStory2": "Every piece is made in small batches, with transparent sourcing and meticulous hand-finishing. Whether it is a heartfelt keepsake, anniversary gift, personal pendant or creative brand collaboration, we walk with you from initial concept to finished artwork.",
+    "bespokeCta": "Start Your Enquiry",
+    "bespokeReply": "We usually reply within 2 business days.",
+    "bespokeFaqTitle": "Custom FAQ",
+    "bespokeFaqs": {
+      "time": { "q": "How long does a bespoke piece take?", "a": "Typically 3–6 weeks from design confirmation." },
+      "brands": { "q": "Do you work with brands?", "a": "Yes — collaborations, limited editions and gifting programmes." },
+      "materials": { "q": "What materials can I choose?", "a": "Cultured pearls, gemstones, sterling silver and gold vermeil; recycled metals on request." },
+      "sample": { "q": "Can I see a sample before production?", "a": "Yes, a sample is made and approved first." },
+      "pricing": { "q": "How does pricing work?", "a": "A fixed quote after the design stage, no hidden costs." },
+      "shipping": { "q": "Do you ship internationally?", "a": "Yes, we ship from Sweden with tracked delivery." }
+    },
+    "aboutTitle": "About Panthea Jewelry",
+    "aboutTeaser": "A decade of sourcing pearls across Asia — from our own farm to your hands.",
+    "aboutLink": "Read our story",
+    "contactTitle": "Contact",
+    "contactEmail": "Email",
+    "contactStudio": "Studio",
+    "contactHours": "Hours",
+    "hoursValue": "Monday – Friday, 9:00 – 18:00 (GMT+8)"
   },
   "product": {
     "sku": "SKU",
@@ -51,7 +62,7 @@
     "details": "Details",
     "requestQuote": "Request a Quote",
     "askWhatsapp": "Ask on WhatsApp",
-    "customAvailable": "Custom & OEM available · engraving, gems and metals",
+    "customAvailable": "Bespoke available · engraving, gems and metals",
     "related": "You may also like",
     "inquiryTitle": "Enquire about this piece",
     "inquiryText": "Tell us the options and quantity you need and we will reply within 1 business day.",
@@ -59,7 +70,7 @@
   },
   "collection": {
     "all": "All Jewelry",
-    "allDescription": "Browse our full collection of sterling silver and gold vermeil jewelry.",
+    "allDescription": "Browse the full PANTHEA edit — sterling silver and gold vermeil, with cultured pearls at the heart.",
     "count": "{n} piece | {n} pieces",
     "empty": "No products in this collection yet.",
     "filterAll": "All",
@@ -74,7 +85,7 @@
     "country": "Country",
     "type": "I'm interested in",
     "typeRetail": "Retail purchase",
-    "typeCustom": "Custom & OEM project",
+    "typeCustom": "Bespoke & collaboration project",
     "product": "Product",
     "options": "Options (metal, size…)",
     "quantity": "Quantity",
@@ -98,13 +109,13 @@
     "learnMore": "Privacy Policy"
   },
   "footer": {
-    "tagline": "Colours of the sea, captured in pearls.",
+    "tagline": "Hues of nature, crafted to wear.",
     "shop": "Shop",
     "company": "Company",
     "help": "Help",
     "faq": "FAQ",
     "shipping": "Shipping Policy",
-    "refund": "Returns & Refunds",
+    "refund": "Return & Refund Policy",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "rights": "All rights reserved.",
@@ -145,7 +156,7 @@
     "service": "Service",
     "seeProduct": "See the product",
     "ctaTitle": "Have a design in mind?",
-    "ctaText": "Send us your sketch or reference images and we will reply with a quote and sample plan within 1 business day.",
+    "ctaText": "Send us your sketch or reference images and we will reply with a quote and sample plan within 2 business days.",
     "cta": "Start your project",
     "back": "Back to Case Studies",
     "client": "Client"

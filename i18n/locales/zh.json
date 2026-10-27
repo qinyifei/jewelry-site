@@ -1,9 +1,9 @@
 {
   "seo": {
-    "description": "手工打造的 925 纯银与 18K 金包银首饰。选购戒指、项链、耳饰和手链，或与我们合作首饰定制与 OEM 代工。"
+    "description": "以养殖珍珠为核心的 925 纯银与 Gold Vermeil 手工首饰——选购戒指、项链、耳饰与手链，或定制一件专属之作。"
   },
   "header": {
-    "announcement": "订单满 $80 免费发货（含物流跟踪）· 定制 / OEM 每款 {moq} 件起",
+    "announcement": "瑞典境内订单满 499 SEK 享标准免邮 · 定制单件起做",
     "language": "语言"
   },
   "nav": {
@@ -18,32 +18,43 @@
     "close": "关闭"
   },
   "home": {
-    "eyebrow": "925 纯银 · 18K 金包银",
-    "heroTitle": "大海的色彩，凝萃于珍珠",
-    "heroText": "采用 925 纯银与 18K 金包银手工打造。无镍、防过敏、经久耐戴。",
-    "shopNow": "浏览全部系列",
-    "customCta": "开启定制项目",
-    "shopByCategory": "按品类选购",
-    "featured": "热销单品",
-    "viewAll": "查看全部",
-    "customEyebrow": "首饰定制与 OEM",
-    "customTitle": "从设计稿到成品，只做你的专属",
-    "customText": "无论是一件专属定制，还是整批 OEM 生产，我们都以手工精修的品质把你的想法变成可以佩戴的作品，支持刻字与贴牌包装。",
-    "customMoq": "OEM 批量生产每款 {moq} 件起，单件定制同样欢迎",
-    "customPrivate": "Logo 刻字与贴牌包装",
-    "customLead": "打样 7–10 天，量产 {days} 个工作日",
-    "learnMore": "了解详情",
-    "viewCases": "查看合作案例"
-  },
-  "usp": {
-    "material": "925 纯银",
-    "materialText": "真材实料，带 925 印记",
-    "nickel": "无镍",
-    "nickelText": "符合欧盟 REACH 标准，亲肤不过敏",
-    "shipping": "全球配送",
-    "shippingText": "美国、英国、欧盟全程物流跟踪",
-    "warranty": "一年质保",
-    "warrantyText": "非人为质量问题免费处理"
+    "slogan": "撷自然之色，成可戴之美。",
+    "shopPearl": "选购珍珠系列",
+    "exploreAll": "浏览全部首饰",
+    "pearlEyebrow": "珍珠系列",
+    "pearlTitle": "大海的色彩，凝萃于珍珠。",
+    "pearlNote": "所有珍珠均为养殖珍珠。品类与产地均在各产品页面标明。",
+    "bespokeEyebrow": "定制与合作",
+    "bespokeTitle": "为你的故事与愿景，量身打造首饰。",
+    "bespokeSub": "面向个人与品牌——从纪念之作到跨界合作。",
+    "bespokeStepsTitle": "合作流程",
+    "bespokeSteps": {
+      "idea": { "title": "分享你的想法", "text": "草图、照片或一段回忆——任何起点都可以。" },
+      "design": { "title": "设计与报价", "text": "我们把你的想法塑造成设计，并确定清晰报价。" },
+      "sample": { "title": "打样与确认", "text": "为你手工制作样品，经你确认。" },
+      "production": { "title": "生产与交付", "text": "你的首饰经手工精修后交付。" }
+    },
+    "bespokeStory1": "我们为私人客户与品牌打造独一无二的首饰，选用养殖珍珠、宝石与再生贵金属。每一个环节你都在场：概念草图、材质挑选、手工制作与最终精修。",
+    "bespokeStory2": "每一件作品都小批量制作，选材透明、手工精修。无论是饱含心意的纪念首饰、周年礼物、个人吊坠，还是创意品牌合作，我们都陪你从最初概念走到最终成品。",
+    "bespokeCta": "开始咨询",
+    "bespokeReply": "我们通常在 2 个工作日内回复。",
+    "bespokeFaqTitle": "定制常见问题",
+    "bespokeFaqs": {
+      "time": { "q": "定制一件需要多久？", "a": "通常自设计确认起 3–6 周。" },
+      "brands": { "q": "与品牌合作吗？", "a": "合作——联名系列、限量版与礼赠项目。" },
+      "materials": { "q": "可以选择哪些材质？", "a": "养殖珍珠、宝石、925 纯银与 Gold Vermeil 镀金；可选再生金属。" },
+      "sample": { "q": "生产前能看到样品吗？", "a": "可以，先制作样品并经你确认。" },
+      "pricing": { "q": "价格如何计算？", "a": "设计阶段后一口报价，无隐藏费用。" },
+      "shipping": { "q": "支持国际配送吗？", "a": "支持，从瑞典发货，全程物流跟踪。" }
+    },
+    "aboutTitle": "关于 Panthea Jewelry",
+    "aboutTeaser": "十年寻珠之旅——从自建养殖场到你的手中。",
+    "aboutLink": "阅读品牌故事",
+    "contactTitle": "联系我们",
+    "contactEmail": "邮箱",
+    "contactStudio": "工作室",
+    "contactHours": "工作时间",
+    "hoursValue": "周一至周五 9:00 – 18:00（GMT+8）"
   },
   "product": {
     "sku": "货号",
@@ -51,7 +62,7 @@
     "details": "商品参数",
     "requestQuote": "询价",
     "askWhatsapp": "WhatsApp 咨询",
-    "customAvailable": "支持定制与 OEM · 可选刻字、宝石与材质",
+    "customAvailable": "支持定制 · 可选刻字、宝石与材质",
     "related": "你可能还喜欢",
     "inquiryTitle": "咨询这款商品",
     "inquiryText": "告诉我们你需要的规格和数量，我们会在 1 个工作日内回复。",
@@ -59,7 +70,7 @@
   },
   "collection": {
     "all": "全部首饰",
-    "allDescription": "浏览我们全部的纯银与金包银首饰。",
+    "allDescription": "浏览 PANTHEA 全部单品——925 纯银与 Gold Vermeil 镀金，以养殖珍珠为核心。",
     "count": "共 {n} 件",
     "empty": "这个分类暂时还没有商品。",
     "filterAll": "全部",
@@ -74,7 +85,7 @@
     "country": "国家 / 地区",
     "type": "咨询类型",
     "typeRetail": "零售购买",
-    "typeCustom": "定制 / OEM 项目合作",
+    "typeCustom": "定制 / 合作项目",
     "product": "商品",
     "options": "规格（材质、尺码等）",
     "quantity": "数量",
@@ -98,7 +109,7 @@
     "learnMore": "隐私政策"
   },
   "footer": {
-    "tagline": "大海的色彩，凝萃于珍珠。",
+    "tagline": "撷自然之色，成可戴之美。",
     "shop": "选购",
     "company": "关于",
     "help": "帮助",
@@ -145,7 +156,7 @@
     "service": "服务类型",
     "seeProduct": "查看同款商品",
     "ctaTitle": "有自己的设计想法？",
-    "ctaText": "把草图或参考图发给我们，我们会在 1 个工作日内回复报价和打样方案。",
+    "ctaText": "把草图或参考图发给我们，我们会在 2 个工作日内回复报价和打样方案。",
     "cta": "开始你的项目",
     "back": "返回合作案例",
     "client": "客户"
