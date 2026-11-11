@@ -395,9 +395,10 @@ usePageSeo({
 .collection-hero h1 {
   font-family: "Cormorant", Georgia, serif;
   font-weight: 400;
-  font-size: clamp(3rem, 7.2vw, 4.5rem);
-  letter-spacing: 0.03em;
-  line-height: 1.1;
+  /* 与全站页头统一字号 */
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  letter-spacing: 0.04em;
+  line-height: 1.15;
   margin: 0 0 16px;
 }
 

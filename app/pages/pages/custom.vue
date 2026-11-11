@@ -81,9 +81,9 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
 <template>
   <div>
     <section class="container page-hero">
-      <p class="eyebrow">{{ c.eyebrow }}</p>
-      <h1>{{ c.title }}</h1>
-      <p>{{ c.intro }}</p>
+      <h1>{{ c.eyebrow }}</h1>
+      <p class="page-subtitle">{{ c.title }}</p>
+      <p class="page-intro">{{ c.intro }}</p>
     </section>
 
     <section class="container grid grid-4 highlights">
@@ -134,10 +134,28 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
 </template>
 
 <style scoped>
-/* ── 字号层级：页头主标题 > 板块标题 > 正文，序号作为视觉锚点 ── */
-/* 主标题：比全站默认 h1（2.5rem）更大，确立页面主视觉 */
-.page-hero h1 {
-  font-size: clamp(2.8rem, 6vw, 4rem);
+/* ── 页头层级按参考稿：主标题 > 衬线副标题 > 弱化导语，整体居中；主标题用全站统一规范 ── */
+.page-hero {
+  text-align: center;
+}
+
+/* 副标题：衬线、比主标题小一号 */
+.page-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.6;
+  color: #554537;
+  margin: 0 auto 14px;
+}
+
+/* 导语：小字弱化 */
+.page-hero .page-intro {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #9a8d81;
+  margin: 0 auto;
 }
 
 /* 板块标题：从全站通用的 7.2vw 收敛到内容层级，避免与主标题抢 */

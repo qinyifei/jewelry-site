@@ -133,15 +133,15 @@ const parasRest = computed(() => c.value.letterParas.slice(1));
   border-bottom: 1px solid #e3d9cf;
   padding-bottom: 28px;
   margin-bottom: 36px;
+  text-align: center;
 }
 
 .letter-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(2.6rem, 6vw, 4rem);
+  /* 与全站页头统一：衬线大写、居中 */
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
   color: #170c02;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .letter-lead {
