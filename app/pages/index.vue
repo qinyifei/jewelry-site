@@ -62,20 +62,21 @@ usePageSeo({ title: site.name });
       </div>
     </section>
 
-    <!-- ─── Pearl Collection ─── -->
+    <!-- ─── Pearl Collections（杂志编辑风：大图 + 编号 + 名称 + 一句气质描述）─── -->
     <section class="pearl-section">
       <div class="pearl-head">
         <p class="section-eyebrow">{{ $t("home.pearlEyebrow") }}</p>
         <h2 class="section-title">{{ $t("home.pearlTitle") }}</h2>
+        <p class="pearl-intro">{{ $t("home.pearlIntro") }}</p>
       </div>
-      <div class="cat-grid">
+      <div class="pearl-grid">
         <NuxtLinkLocale
-          v-for="c in pearlTypes"
+          v-for="(c, i) in pearlTypes"
           :key="c.handle"
           :to="`/collections/${c.handle}`"
-          class="cat-item"
+          class="pearl-card"
         >
-          <div class="cat-media">
+          <div class="pearl-media">
             <img
               :src="c.image"
               :alt="tr(c).title"
@@ -84,9 +85,23 @@ usePageSeo({ title: site.name });
               height="1067"
             />
           </div>
-          <div class="cat-label">
-            <span>{{ tr(c).title }}</span>
+          <div class="pearl-caption">
+            <span class="pearl-index" aria-hidden="true">{{
+              String(i + 1).padStart(2, "0")
+            }}</span>
+            <div class="pearl-meta">
+              <h3 class="pearl-name">{{ tr(c).title }}</h3>
+              <p v-if="tr(c).tagline" class="pearl-tagline">
+                {{ tr(c).tagline }}
+              </p>
+            </div>
           </div>
+        </NuxtLinkLocale>
+      </div>
+      <div class="pearl-foot">
+        <NuxtLinkLocale to="/collections/pearls" class="pearl-cta">
+          {{ $t("home.pearlCta") }}
+          <span aria-hidden="true">→</span>
         </NuxtLinkLocale>
       </div>
       <p class="pearl-note">{{ $t("home.pearlNote") }}</p>
@@ -157,20 +172,20 @@ usePageSeo({ title: site.name });
   opacity: 0.88;
 }
 
-/* 中下部：金色小字 slogan */
+/* 中下部：金色小字 slogan（桌面端字号更大、位置更高；移动端在下方媒体查询单独调） */
 .hero-lower {
   position: relative;
   z-index: 1;
   width: 100%;
   text-align: center;
-  padding: 0 24px 7vh;
+  padding: 0 24px 11vh;
 }
 
 .hero-slogan {
   margin: 0;
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--c-gold-light, #d8b98a);
@@ -205,9 +220,118 @@ usePageSeo({ title: site.name });
 
 .pearl-head {
   max-width: 1400px;
-  margin: 0 auto 40px;
+  margin: 0 auto 48px;
   padding: 0 24px;
   text-align: center;
+}
+
+/* 编辑导语：衬线斜体，窄栏居中 */
+.pearl-intro {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--c-muted);
+  max-width: 620px;
+  margin: 20px auto 0;
+}
+
+/* 杂志编辑网格：两列、留白充足，图片下方是编号 + 名称 + 气质描述 */
+.pearl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px 48px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pearl-card {
+  display: block;
+  text-decoration: none;
+}
+
+.pearl-media {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f8f5f2;
+  margin-bottom: 18px;
+}
+
+.pearl-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.pearl-card:hover .pearl-media img {
+  transform: scale(1.03);
+}
+
+.pearl-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 0 4px;
+}
+
+/* 编号：衬线金色小字，杂志页码感 */
+.pearl-index {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  color: var(--c-gold, #b8925a);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.pearl-name {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 1.55rem;
+  letter-spacing: 0.04em;
+  color: var(--c-ink, #554537);
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.pearl-card:hover .pearl-name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.pearl-tagline {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--c-muted);
+  margin: 0;
+}
+
+/* 板块尾部：Read more → 跳转选购-珍珠 */
+.pearl-foot {
+  text-align: center;
+  margin: 64px 0 0;
+}
+
+.pearl-cta {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-ink, #554537);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(85, 69, 55, 0.45);
+  padding-bottom: 4px;
+  transition: border-color 0.2s;
+}
+
+.pearl-cta:hover {
+  border-color: #554537;
 }
 
 .pearl-note {
@@ -222,134 +346,11 @@ usePageSeo({ title: site.name });
   text-align: center;
 }
 
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.cat-item {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.cat-media {
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  background: #f8f5f2;
-}
-
-.cat-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: block;
-}
-
-.cat-item:hover .cat-media img {
-  transform: scale(1.03);
-}
-
-.cat-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px 20px 20px;
-  background: linear-gradient(
-    to top,
-    rgba(25, 21, 21, 0.55) 0%,
-    transparent 100%
-  );
-}
-
-.cat-label span {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: 1.4rem;
-  letter-spacing: 0.08em;
-  color: #fff;
-  display: block;
-}
-
-/* ─── Shop ─── */
-.shop-section {
-  padding: 88px 0;
-  background: #ffffff;
-}
-
-.shop-section .section-title {
-  margin-bottom: 40px;
-}
-
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 32px;
-}
-
-.shop-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.shop-item-all {
-  grid-column: span 2;
-}
-
-.shop-media {
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  background: #f8f5f2;
-  margin-bottom: 18px;
-}
-
-.shop-item-all .shop-media {
-  aspect-ratio: 16 / 10;
-}
-
-.shop-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: block;
-}
-
-.shop-item:hover .shop-media img {
-  transform: scale(1.03);
-}
-
-.shop-text h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: 1.45rem;
-  letter-spacing: 0.06em;
-  color: var(--c-ink);
-  margin: 0 0 6px;
-}
-
-.shop-text p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--c-muted);
-  margin: 0;
-}
-
 /* ─── Responsive ─── */
+/* 中屏：杂志网格降为紧凑双列 */
 @media (max-width: 900px) {
-  .shop-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px 20px;
-  }
-  .shop-item-all {
-    grid-column: span 2;
+  .pearl-grid {
+    gap: 40px 24px;
   }
 }
 
@@ -373,26 +374,23 @@ usePageSeo({ title: site.name });
   .pearl-section {
     padding: 52px 0 48px;
   }
-  .shop-section {
-    padding: 56px 0;
+}
+
+@media (max-width: 640px) {
+  /* 移动端：单列杂志卡片 */
+  .pearl-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .pearl-name {
+    font-size: 1.35rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-bg {
+    /* 更小的屏幕上锚定点再抬高一些，避免主体被裁 */
     object-position: 65% 30%;
-  }
-  .cat-grid {
-    grid-template-columns: 1fr;
-  }
-  .shop-grid {
-    grid-template-columns: 1fr;
-  }
-  .shop-item-all {
-    grid-column: auto;
-  }
-  .shop-item-all .shop-media {
-    aspect-ratio: 3 / 4;
   }
 }
 </style>

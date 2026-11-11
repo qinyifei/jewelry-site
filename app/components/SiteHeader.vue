@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { site } from "~/config/site";
-import { topCollections, childCollections } from "~/data/collections";
+import { topCollections } from "~/data/collections";
 import { products, productsIn } from "~/data/products";
 
 const route = useRoute();
@@ -33,6 +33,9 @@ const flags: Record<string, string> = {
 
 // mega 菜单：左侧 hover 哪个分类，右侧就显示哪个分类的商品
 const hoveredCat = ref("all");
+
+// 下拉菜单分类：不展示珍珠大类及其子类（珍珠系列由首页板块与珍珠指南承载）
+const menuCollections = topCollections.filter((c) => c.handle !== "pearls");
 
 const megaProducts = computed(() => {
   if (hoveredCat.value === "all") {
@@ -94,7 +97,8 @@ watch(
 
       <!-- Left nav -->
       <nav id="site-nav" class="nav nav-left" :class="{ open }">
-        <NuxtLinkLocale to="/">{{ $t("nav.home") }}</NuxtLinkLocale>
+        <!-- 品牌字标取代 HOME：点击回首页，强化品牌记忆点（中英文版都显示品牌名） -->
+        <NuxtLinkLocale to="/" class="brand-link">{{ site.shortName }}</NuxtLinkLocale>
 
         <button
           class="shop-trigger"
@@ -123,30 +127,18 @@ watch(
           >
             {{ $t("nav.all") }}
           </NuxtLinkLocale>
-          <template v-for="c in topCollections" :key="c.handle">
-            <NuxtLinkLocale
-              :to="`/collections/${c.handle}`"
-              class="mobile-shop-link"
-              @click="
-                shopOpen = false;
-                open = false;
-              "
-            >
-              {{ tr(c).title }}
-            </NuxtLinkLocale>
-            <NuxtLinkLocale
-              v-for="s in childCollections(c.handle)"
-              :key="s.handle"
-              :to="`/collections/${s.handle}`"
-              class="mobile-shop-link mobile-shop-sub"
-              @click="
-                shopOpen = false;
-                open = false;
-              "
-            >
-              {{ tr(s).title }}
-            </NuxtLinkLocale>
-          </template>
+          <NuxtLinkLocale
+            v-for="c in menuCollections"
+            :key="c.handle"
+            :to="`/collections/${c.handle}`"
+            class="mobile-shop-link"
+            @click="
+              shopOpen = false;
+              open = false;
+            "
+          >
+            {{ tr(c).title }}
+          </NuxtLinkLocale>
         </div>
 
         <NuxtLinkLocale v-if="site.features.custom" to="/pages/custom">{{
@@ -234,7 +226,7 @@ watch(
             {{ $t("nav.all") }}
           </NuxtLinkLocale>
           <div
-            v-for="c in topCollections"
+            v-for="c in menuCollections"
             :key="c.handle"
             class="mega-cat-group"
             @mouseenter="onCatEnter(c.handle)"
@@ -242,33 +234,11 @@ watch(
             <NuxtLinkLocale
               :to="`/collections/${c.handle}`"
               class="mega-cat-link"
-              :class="{ 'has-subs': childCollections(c.handle).length }"
               @mouseenter="onCatEnter(c.handle)"
               @click="shopOpen = false"
             >
               {{ tr(c).title }}
-              <span
-                v-if="childCollections(c.handle).length"
-                class="mega-cat-arrow"
-                aria-hidden="true"
-              />
             </NuxtLinkLocale>
-            <!-- 子分类：hover 父级时展开；hover 具体子类时右侧商品跟着切 -->
-            <div
-              v-if="childCollections(c.handle).length"
-              class="mega-cat-children"
-            >
-              <NuxtLinkLocale
-                v-for="s in childCollections(c.handle)"
-                :key="s.handle"
-                :to="`/collections/${s.handle}`"
-                class="mega-cat-link mega-cat-sub"
-                @mouseenter="onCatEnter(s.handle)"
-                @click="shopOpen = false"
-              >
-                {{ tr(s).title }}
-              </NuxtLinkLocale>
-            </div>
           </div>
         </div>
         <div class="mega-products">
@@ -380,6 +350,12 @@ watch(
   border-bottom: 1px solid transparent;
   white-space: nowrap;
   transition: color 0.15s;
+}
+
+/* 品牌字标：比普通导航项略重，字距更宽 */
+.nav-left > a.brand-link {
+  font-weight: 400;
+  letter-spacing: 0.2em;
 }
 
 .header:not(.scrolled) .nav-left > a {
@@ -672,53 +648,6 @@ watch(
   color: #170c02;
 }
 
-/* 带子分类的顶级分类：右侧箭头提示 */
-.mega-cat-link.has-subs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.mega-cat-arrow {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-right: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
-  transform: rotate(-45deg);
-  opacity: 0.45;
-  transition:
-    transform 0.2s,
-    opacity 0.2s;
-  flex-shrink: 0;
-}
-
-.mega-cat-group:hover .mega-cat-arrow,
-.mega-cat-group:focus-within .mega-cat-arrow {
-  transform: rotate(45deg);
-  opacity: 0.9;
-}
-
-/* 子分类：默认收起，hover 父级时展开 */
-.mega-cat-children {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease;
-}
-
-.mega-cat-group:hover .mega-cat-children,
-.mega-cat-group:focus-within .mega-cat-children {
-  max-height: 260px;
-}
-
-/* 子分类（珍珠品种）缩进、字号略小 */
-.mega-cat-sub {
-  padding-left: 16px;
-  font-size: 12px;
-  opacity: 0.82;
-}
-
 .mega-cat-all {
   font-weight: 400;
   color: #170c02;
@@ -732,7 +661,8 @@ watch(
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: #e9dcd0;
+  /* 商品不足三列时，空位保持全白（原米色间隙底会露出大块色块） */
+  background: #ffffff;
   margin: 0 0 0 1px;
   align-self: stretch;
 }
@@ -855,13 +785,6 @@ watch(
   }
   .mobile-shop-link:hover {
     color: #170c02;
-  }
-
-  /* 珍珠品种子分类 */
-  .mobile-shop-sub {
-    padding-left: 28px;
-    font-size: 10px;
-    opacity: 0.82;
   }
 
   .mobile-shop-all {

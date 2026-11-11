@@ -23,6 +23,8 @@
     "exploreAll": "Utforska alla smycken",
     "pearlEyebrow": "Pärlkollektionen",
     "pearlTitle": "Havets färger, fångade i pärlor.",
+    "pearlIntro": "Varje pärltyp har sin egen karaktär, formad av ett annat ostron i ett annat hav.",
+    "pearlCta": "Läs mer",
     "pearlNote": "Alla pärlor är odlade. Sort och ursprung anges på varje produktsida.",
     "bespokeEyebrow": "Skräddarsytt & Samarbeten",
     "bespokeTitle": "Smycken skapade för din berättelse och din vision.",
@@ -223,6 +225,30 @@
     "heroText": "Varje pärltyp har sin egen karaktär, bildad av ett annat ostron i ett annat hav. Den här guiden hjälper dig förstå vad som gör varje sort speciell.",
     "nav": "Pärlguide",
     "traits": "Viktiga egenskaper",
-    "shopCollection": "Handla denna kollektion"
+    "shopCollection": "Handla denna kollektion",
+    "south-sea-white": {
+      "what": "Vita sydhavsperlor odlas i Pinctada maxima-ostronet utanför Australiens och Indonesiens kuster och hör till världens största saltvattensperlor. Deras tjocka pärlemor byggs upp långsamt under två till fyra år och ger en djup, spegelliknande lyster som ingen annan pärla kan matcha.",
+      "traits": "Storlek 10–18 mm · Färg vit till silver · Lyster djup och satinmjuk · Pärlemor mycket tjock"
+    },
+    "golden-south-sea": {
+      "what": "Den sällsynta färgen i sydhavsperlornas familj. Gyllene sydhavsperlor får sin varma, naturliga färg från den gyllenläppade Pinctada maxima-ostronet som finns i Filippinerna och Indonesien. Färgen behandlas aldrig — det du ser är ren pärlemor.",
+      "traits": "Storlek 10–18 mm · Färg champagne till djupguld · Lyster varm och glödande · Pärlemor mycket tjock"
+    },
+    "tahitian": {
+      "what": "Odlas i det svartläppade Pinctada margaritifera-ostronet i lagunerna i Franska Polynesien. Tahitiperlor är världens enda naturligt mörka pärlor. Varje pärla är unik — samma ostron kan en säsong ge en kolsvart pärla och nästa säsong en djupt påfågelsgrön.",
+      "traits": "Storlek 8–16 mm · Färg svart, påfågel, aubergine, silvergrå · Lyster skarp och metallisk · Pärlemor tjock"
+    },
+    "akoya": {
+      "what": "Pärlan som satt standarden för hur en pärla ska se ut. Akoyaperlor odlas i Pinctada fucata-ostronet i de kalla vattnen utanför Japan och Kina och är högt värderade för sin nästan perfekta rundhet, sin klara vita färg och den skarpaste, mest reflekterande lustern av alla pärlor.",
+      "traits": "Storlek 6–9 mm · Färg vit till krämig med rosa eller silvertoner · Lyster ljus och spegelskarp · Pärlemor fin"
+    },
+    "keshi": {
+      "what": "Keshiperlor uppstår av en slump. När ett transplanterat ostron stöter ut sin kärna under odlingsprocessen fortsätter det ibland att avsätta pärlemor kring den kvarvarande vävnaden — resultatet blir en pärla som är 100 % pärlemor, helt utan kärna. Detta ger en extraordinär lyster i oförutsägbara barockformer.",
+      "traits": "Storlek 3–10 mm · Färg varierar med värdostronet · Lyster exceptionellt hög · Form barock, inga två är lika"
+    },
+    "mabe": {
+      "what": "Till skillnad från runda pärlor, som växer fritt inuti ostronets kropp, växer Mabéperlor tilltryckta mot skalets insida. Ostron klä ett halvklotformat implantat med pärlemor, vilket ger en plattbakad blisterpärla med stor yta och livliga övertoner — perfekt för ringar och örhängen där den platta baksidan är en fördel.",
+      "traits": "Storlek 12–20 mm · Färg vit, krämig eller silver · Lyster livlig med kraftiga övertoner · Form plattbakad kupol"
+    }
   }
 }

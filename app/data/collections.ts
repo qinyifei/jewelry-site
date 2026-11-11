@@ -63,28 +63,45 @@ export const collections: Collection[] = [
       },
     },
   },
+  {
+    handle: 'brooches',
+    title: 'Brooches',
+    description: 'Hand-finished pearl brooches — sculptural, one-of-a-kind pins.',
+    image: '/images/collections/brooches.svg',
+    i18n: {
+      zh: {
+        title: '胸针',
+        description: '手工精修的珍珠胸针——独一款的造型胸针。',
+      },
+    },
+  },
   // ── 珍珠子类：品种 ──
   {
     handle: 'south-sea-white',
     parent: 'pearls',
     title: 'White South Sea Pearls',
+    tagline: 'Silvery, luminous glow',
     description: 'Lustrous white and silver South Sea pearls harvested from Australian waters. Among the largest and finest pearls in the world, celebrated for their deep mirror-like lustre.',
     image: '/images/collections/south-sea-pendant.jpg',
     i18n: {
       zh: {
         title: '澳白南洋珠',
+        tagline: '银白莹润的光辉',
         description: '产自澳大利亚海域的白色与银白色南洋珠。珠径大、光泽深邃如镜，是全球品质最高的珍珠品类之一。',
       },
       sv: {
-        title: 'Vita Sydhavsperl or',
-        description: 'Lysterrika vita och silvriga sydhavsperl or från australiensiska vatten. Bland de största och finaste perln a i världen, kända för sin djupa spegelliknande lyster.',
+        title: 'Vita Sydhavsperlor',
+        tagline: 'Silvrigt, lysande skimmer',
+        description: 'Lysterrika vita och silvriga sydhavsperlor från australiensiska vatten. Bland de största och finaste perlorna i världen, kända för sin djupa spegelliknande lyster.',
       },
       da: {
         title: 'Hvide Sydhavsperler',
+        tagline: 'Sølvagtig, lysende glans',
         description: 'Skinnende hvide og sølvfarvede sydhavsperler fra australske farvande. Blandt de største og fineste perler i verden, fejret for deres dybe spejlagtige glans.',
       },
       no: {
         title: 'Hvite Sydhavsperler',
+        tagline: 'Sølvaktig, lysende glans',
         description: 'Glinsende hvite og sølvfargede sydhavsperler fra australske farvann. Blant de største og fineste perlene i verden, kjent for sin dype speillignende glans.',
       },
     },
@@ -93,23 +110,28 @@ export const collections: Collection[] = [
     handle: 'golden-south-sea',
     parent: 'pearls',
     title: 'Golden South Sea Pearls',
+    tagline: 'Warm honey-gold sheen',
     description: 'Rare golden South Sea pearls from the Philippine and Indonesian archipelago. Their warm champagne-to-deep-gold colour is entirely natural — never treated or dyed.',
     image: '/images/collections/south-sea-pendant.jpg',
     i18n: {
       zh: {
         title: '金色南洋珠',
+        tagline: '温润的蜜金色泽',
         description: '产自菲律宾和印度尼西亚群岛的稀有金色南洋珠。从浅香槟色到深金色，颜色完全天然，从不染色或优化处理。',
       },
       sv: {
-        title: 'Gyllene Sydhavsperl or',
-        description: 'Sällsynta gyllene sydhavsperln a från det filippinska och indonesiska arkipelagen. Deras varma champagne-till-djupguldiga färg är helt naturlig — aldrig behandlad eller färgad.',
+        title: 'Gyllene Sydhavsperlor',
+        tagline: 'Varm honungsgyllene glans',
+        description: 'Sällsynta gyllene sydhavsperlor från det filippinska och indonesiska arkipelagen. Deras varma champagne-till-djupguldiga färg är helt naturlig — aldrig behandlad eller färgad.',
       },
       da: {
         title: 'Gyldne Sydhavsperler',
+        tagline: 'Varm honninggylden skær',
         description: 'Sjældne gyldne sydhavsperler fra det filippinske og indonesiske archipelag. Deres varme champagne-til-dybguld-farve er helt naturlig — aldrig behandlet eller farvet.',
       },
       no: {
         title: 'Gylne Sydhavsperler',
+        tagline: 'Varm honninggylden glans',
         description: 'Sjeldne gylne sydhavsperler fra det filippinske og indonesiske øyhavet. Deres varme champagne-til-dypgull-farge er helt naturlig — aldri behandlet eller farget.',
       },
     },
@@ -118,23 +140,28 @@ export const collections: Collection[] = [
     handle: 'tahitian',
     parent: 'pearls',
     title: 'Tahitian Pearls',
+    tagline: 'Deep iridescent dark tones',
     description: 'Exotic dark pearls from the black-lipped oyster of French Polynesia. Each pearl is unique, ranging from jet black and peacock green to deep aubergine and silver-grey.',
-    image: '/images/collections/tahitian.svg',
+    image: '/images/collections/tahitian.svg?v=2',
     i18n: {
       zh: {
         title: '大溪地珍珠',
+        tagline: '深邃变幻的晕彩暗调',
         description: '产自法属波利尼西亚黑唇贝的深色异域珍珠。每颗颜色独一无二，从墨黑、孔雀绿到深茄紫与银灰，变幻多端。',
       },
       sv: {
-        title: 'Tahitiperln or',
-        description: 'Exotiska mörka perln a från svartläppade ostron i Franska Polynesien. Varje perla är unik och spänner från kolsvart och påfågelsgrönt till djup aubergine och silvergrått.',
+        title: 'Tahitiperlor',
+        tagline: 'Djupa, skiftande mörka toner',
+        description: 'Exotiska mörka perlor från svartläppade ostron i Franska Polynesien. Varje perla är unik och spänner från kolsvart och påfågelsgrönt till djup aubergine och silvergrått.',
       },
       da: {
         title: 'Tahitiperler',
+        tagline: 'Dybe, skiftende mørke toner',
         description: 'Eksotiske mørke perler fra den sortlæbede østers i Fransk Polynesien. Hver perle er unik og spænder fra kulsorte og påfuglegrønne til dybe aubergine- og sølvgrå nuancer.',
       },
       no: {
         title: 'Tahitiperler',
+        tagline: 'Dype, skiftende mørke toner',
         description: 'Eksotiske mørke perler fra den svartleppede østers i Fransk Polynesia. Hver perle er unik og varierer fra kullsort og påfuglegrønn til dyp aubergine og sølvgrå.',
       },
     },
@@ -143,23 +170,28 @@ export const collections: Collection[] = [
     handle: 'akoya',
     parent: 'pearls',
     title: 'Akoya Pearls',
+    tagline: 'Delicate rose-pink overtones',
     description: 'The classic saltwater pearl. Akoya pearls from Pinctada fucata oysters are prized for their exceptional roundness, bright white body colour and sharp, reflective lustre.',
-    image: '/images/collections/akoya.svg',
+    image: '/images/collections/akoya.svg?v=2',
     i18n: {
       zh: {
         title: 'Akoya 珍珠',
+        tagline: '细腻的玫瑰粉伴彩',
         description: '阿古屋珍珠是最经典的海水珍珠品种，以极高的正圆率、明亮白色体色和锋利如镜的强光著称，是珍珠中的标准美人。',
       },
       sv: {
-        title: 'Akoyaperln or',
-        description: 'Den klassiska saltvattenperlan. Akoyaperln a från Pinctada fucata-ostron är eftertraktade för sin exceptionella rundhet, lysande vit grundfärg och skarp, reflekterande lyster.',
+        title: 'Akoyaperlor',
+        tagline: 'Delikata rosenrosa övertoner',
+        description: 'Den klassiska saltvattenperlan. Akoyaperlor från Pinctada fucata-ostron är eftertraktade för sin exceptionella rundhet, lysande vit grundfärg och skarp, reflekterande lyster.',
       },
       da: {
         title: 'Akoyaperler',
+        tagline: 'Delikate rosenrøde overtoner',
         description: 'Den klassiske saltvandperle. Akoyaperler fra Pinctada fucata-østers er værdsat for deres enestående rundethed, klar hvid grundfarve og skarp, reflekterende glans.',
       },
       no: {
         title: 'Akoyaperler',
+        tagline: 'Delikate rosenrosa overtoner',
         description: 'Den klassiske saltvannsperlene. Akoyaperler fra Pinctada fucata-østers er verdsatt for sin eksepsjonelle rundhet, klar hvit grunnfarge og skarp, reflekterende glans.',
       },
     },
@@ -168,23 +200,28 @@ export const collections: Collection[] = [
     handle: 'keshi',
     parent: 'pearls',
     title: 'Keshi Pearls',
+    tagline: 'Natural free-form luster',
     description: 'Keshi pearls form without a nucleus as a by-product of culturing. Entirely nacre, they display extraordinary lustre in organic baroque shapes — no two are alike.',
-    image: '/images/collections/keshi.svg',
+    image: '/images/collections/keshi.svg?v=2',
     i18n: {
       zh: {
         title: 'Keshi 珍珠',
+        tagline: '随形天成的自然光泽',
         description: 'Keshi 珍珠在养殖过程中自然脱核形成，全部由珍珠层构成，光泽极强。每颗形态各异，天然巴洛克造型，绝无重复。',
       },
       sv: {
-        title: 'Keshiperln or',
-        description: 'Keshiperln a bildas utan kärna som en biprodukt av pärlaodling. De består helt av pärlemor och visar extraordinär lyster i organiska barockformer — inga två är lika.',
+        title: 'Keshiperlor',
+        tagline: 'Naturlig lyster i fri form',
+        description: 'Keshiperlan bildas utan kärna som en biprodukt av pärlaodling. De består helt av pärlemor och visar extraordinär lyster i organiska barockformer — inga två är lika.',
       },
       da: {
         title: 'Keshiperler',
+        tagline: 'Naturlig glans i fri form',
         description: 'Keshiperler dannes uden kerne som et biprodukt af perledyrkning. Helt fremstillet af perlemor viser de en ekstraordinær glans i organiske barokformer — ingen to er ens.',
       },
       no: {
         title: 'Keshiperler',
+        tagline: 'Naturlig glans i fri form',
         description: 'Keshiperler dannes uten kjerne som et biprodukt av perledyrking. Helt laget av perlemor viser de ekstraordinær glans i organiske barokkformer — ingen to er like.',
       },
     },
@@ -193,24 +230,29 @@ export const collections: Collection[] = [
     handle: 'mabe',
     parent: 'pearls',
     title: 'Mabé Pearls',
+    tagline: 'Bold dome-shaped pearl',
     description: 'Mabé pearls grow against the inner shell of the oyster, producing a flat-backed dome of solid nacre. Their large surface and vivid overtones make them ideal for rings and earrings.',
-    image: '/images/collections/mabe.svg',
+    image: '/images/collections/mabe.svg?v=2',
     i18n: {
       zh: {
         title: '马贝珍珠',
+        tagline: '饱满大气的穹形珍珠',
         description: '马贝珍珠紧贴贝壳内壁生长，形成平底半圆形纯珍珠层结构。宽大的表面面积和鲜明的伴色让它非常适合镶嵌戒指和耳饰。',
       },
       sv: {
-        title: 'Mabéperln or',
-        description: 'Mabéperln a växer mot ostronets inre skal och bildar en plattsidigt välvd kupol av massivt pärlemor. Deras stora yta och livliga övertoner gör dem idealiska för ringar och örhängen.',
+        title: 'Mabéperlor',
+        tagline: 'Uttrycksfull kupolformad pärla',
+        description: 'Mabéperlan växer mot ostronets inre skal och bildar en plattsidigt välvd kupol av massivt pärlemor. Deras stora yta och livliga övertoner gör dem idealiska för ringar och örhängen.',
       },
       da: {
         title: 'Mabéperler',
+        tagline: 'Udtalt kuppelformet perle',
         description: 'Mabéperler vokser mod østersens indre skal og danner en fladbundet kuppel af massivt perlemor. Deres store overflade og levende overtoner gør dem ideelle til ringe og øreringe.',
       },
       no: {
         title: 'Mabéperler',
-        description: 'Mabéperler vokser mot innsiden av østerskallet og danner en flatbunnet kuppel av massivt perlemor. Deres store overflate og levende overtoner gjør dem ideelle for ringer og øredobber.',
+        tagline: 'Uttrykksfull kuppelformet perle',
+        description: 'Mabéperler vokser mot innsiden av østerskallet og danner en flatbunnet kuppel av massivt perlemor. Deres store overflate og livlige overtoner gjør dem ideelle for ringer og øredobber.',
       },
     },
   },

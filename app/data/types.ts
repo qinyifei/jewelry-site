@@ -58,6 +58,8 @@ export interface CaseStudy extends CaseText, Translations<CaseText> {
 
 export interface CollectionText {
   title: string
+  // 一句话气质描述（首页珍珠杂志板块用），可选
+  tagline?: string
   description: string
 }
 

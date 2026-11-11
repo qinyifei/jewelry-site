@@ -109,19 +109,8 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
           <p class="eyebrow">{{ showcase.service }}</p>
           <h2>{{ $t('design.title') }}</h2>
           <p class="muted">{{ showcase.summary }}</p>
-          <NuxtLinkLocale :to="`/blogs/cases/${showcase.handle}`" class="link-underline">{{ $t('cases.view') }}</NuxtLinkLocale>
         </div>
         <DesignCompare :sketch="showcase.sketch" :finished="showcase.finished" :alt="showcase.title" />
-      </div>
-    </section>
-
-    <section class="section container">
-      <div class="section-head">
-        <h2>{{ $t('cases.title') }}</h2>
-        <NuxtLinkLocale to="/blogs/cases" class="link-underline">{{ $t('cases.viewAll') }}</NuxtLinkLocale>
-      </div>
-      <div class="grid grid-3">
-        <CaseCard v-for="item in cases.slice(0, 3)" :key="item.handle" :item="item" />
       </div>
     </section>
 
@@ -145,6 +134,18 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
 </template>
 
 <style scoped>
+/* ── 字号层级：页头主标题 > 板块标题 > 正文，序号作为视觉锚点 ── */
+/* 主标题：比全站默认 h1（2.5rem）更大，确立页面主视觉 */
+.page-hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4rem);
+}
+
+/* 板块标题：从全站通用的 7.2vw 收敛到内容层级，避免与主标题抢 */
+.section h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  line-height: 1.15;
+}
+
 .highlights > div {
   display: flex;
   flex-direction: column;
@@ -157,7 +158,22 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription })
 .highlights span { font-size: 13px; color: var(--c-muted); }
 
 .steps { list-style: none; padding: 0; margin: 32px 0 0; }
-.num { font-family: var(--f-serif); font-size: 2rem; color: var(--c-gold); }
+/* 步骤序号：加大加粗，作为每个步骤的视觉锚点 */
+.num {
+  display: block;
+  font-family: var(--f-serif);
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--c-gold);
+  margin-bottom: 10px;
+}
+.steps h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  font-weight: 400;
+}
 
 .soft { background: var(--c-soft); }
 
