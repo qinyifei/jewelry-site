@@ -23,6 +23,8 @@
     "exploreAll": "Udforsk alle smykker",
     "pearlEyebrow": "Perlekollektionen",
     "pearlTitle": "Havets farver, fanget i perler.",
+    "pearlIntro": "Hver perltype har sin egen karakter, formet af en anden østers i et andet hav.",
+    "pearlCta": "Læs mere",
     "pearlNote": "Alle perler er kulturperler. Type og oprindelse angives på hver produktside.",
     "bespokeEyebrow": "Skræddersyet & Samarbejder",
     "bespokeTitle": "Smykker skabt til din historie og din vision.",
@@ -223,6 +225,30 @@
     "heroText": "Hver perletype har sin egen karakter, dannet af en anden østers i et andet ocean. Denne guide hjælper dig med at forstå, hvad der gør hver sort særlig.",
     "nav": "Perleguide",
     "traits": "Vigtige egenskaber",
-    "shopCollection": "Shop denne kollektion"
+    "shopCollection": "Shop denne kollektion",
+    "south-sea-white": {
+      "what": "Hvide sydhavsperler dyrkes i Pinctada maxima-østersen ud for Australiens og Indonesiens kyster og hører til verdens største saltvandsperler. Deres tykke perlemor opbygges langsomt over to til fire år og giver en dyb, spejllignende glans, som ingen anden perle kan matche.",
+      "traits": "Størrelse 10–18 mm · Farve hvid til sølv · Glans dyb og satinetblød · Perlemor meget tyk"
+    },
+    "golden-south-sea": {
+      "what": "Den sjældne farve i sydhavsperlernes familie. Gyldne sydhavsperler får deres varme, naturlige farve fra den gyldenlæppede Pinctada maxima-østers, der findes på Filippinerne og i Indonesien. Farven behandles aldrig — det, du ser, er ren perlemor.",
+      "traits": "Størrelse 10–18 mm · Farve champagne til dyb guld · Glans varm og glødende · Perlemor meget tyk"
+    },
+    "tahitian": {
+      "what": "Dyrkes i den sortlæppede Pinctada margaritifera-østers i lagunerne i Fransk Polynesien. Tahitiperler er verdens eneste naturligt mørke perler. Hver perle er unik — den samme østers kan den ene sæson give en kulsort perle og den næste en dyb påfuglegrøn.",
+      "traits": "Størrelse 8–16 mm · Farve sort, påfugl, aubergine, sølvgrå · Glans skarp og metallisk · Perlemor tyk"
+    },
+    "akoya": {
+      "what": "Perlen, der satte standarden for, hvordan en perle skal se ud. Akoyaperler dyrkes i Pinctada fucata-østersen i de kolde farvande ved Japan og Kina og er højt værdsat for deres næsten perfekte rundhed, klare hvide farve og den skarpeste, mest reflekterende glans af alle perler.",
+      "traits": "Størrelse 6–9 mm · Farve hvid til cremehvid med rosa eller sølvtoner · Glans lys og spejlskarp · Perlemor fin"
+    },
+    "keshi": {
+      "what": "Keshiperler opstår ved et tilfælde. Når en transplanteret østers støder sin kerne ud under opdrættet, fortsætter den nogle gange med at afsætte perlemor omkring det resterende væv — resultatet er en perle, der er 100 % perlemor og helt uden kerne. Det giver en enestående glans i uforudsigelige barokformer.",
+      "traits": "Størrelse 3–10 mm · Farve varierer efter værtøstersen · Glans enestående høj · Form barok, ingen to er ens"
+    },
+    "mabe": {
+      "what": "I modsætning til runde perler, som vokser frit inde i østersens krop, vokser Mabéperler trykket mod skalens inderside. Østersen klæder et halvkugleformet implantat i perlemor og danner en fladbundet blisterperle med stor overflade og levende overtoner — perfekt til ringe og øreringe, hvor den flade bagside er en fordel.",
+      "traits": "Størrelse 12–20 mm · Farve hvid, cremehvid eller sølv · Glans livlig med kraftige overtoner · Form fladbundet kuppel"
+    }
   }
 }

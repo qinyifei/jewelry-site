@@ -94,7 +94,8 @@ watch(
 
       <!-- Left nav -->
       <nav id="site-nav" class="nav nav-left" :class="{ open }">
-        <NuxtLinkLocale to="/">{{ $t("nav.home") }}</NuxtLinkLocale>
+        <!-- 品牌字标取代 HOME：点击回首页，强化品牌记忆点（中英文版都显示品牌名） -->
+        <NuxtLinkLocale to="/" class="brand-link">{{ site.shortName }}</NuxtLinkLocale>
 
         <button
           class="shop-trigger"
@@ -380,6 +381,12 @@ watch(
   border-bottom: 1px solid transparent;
   white-space: nowrap;
   transition: color 0.15s;
+}
+
+/* 品牌字标：比普通导航项略重，字距更宽 */
+.nav-left > a.brand-link {
+  font-weight: 400;
+  letter-spacing: 0.2em;
 }
 
 .header:not(.scrolled) .nav-left > a {

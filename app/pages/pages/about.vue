@@ -23,7 +23,10 @@ const c = useLocaleContent({
     workOr: "or",
     workContact: "get in touch",
     galleryFarm: "At our pearl farm — seeding, tending and harvesting by hand",
-    galleryStore: `${site.name} boutique`,
+    galleryStore: "Hong Kong office",
+    ctaText:
+      "Born of the sea, we craft jewellery with soul — cultured pearls, recycled metals and natural gemstones. Transparent sourcing, hand-finished, and every bespoke piece carries a story that is yours alone.",
+    ctaLink: "Let us create your one-of-a-kind piece",
   },
   zh: {
     seoTitle: "关于我们",
@@ -47,58 +50,89 @@ const c = useLocaleContent({
     workOr: "，或",
     workContact: "联系我们",
     galleryFarm: "珍珠养殖现场——插核、培育、采收均亲力亲为",
-    galleryStore: `${site.name} 门店`,
+    galleryStore: "香港办公室",
+    ctaText:
+      "源于深海，我们以养殖珍珠、再生金属与天然宝石打造有温度的珠宝。坚持透明溯源与手工精修，我们的定制作品，承载你的独一份故事。",
+    ctaLink: "让我们打造专属于你的信物 >>",
   },
 });
 
 usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription });
+
+// 参考稿排版：第一段全宽，其余段落与养殖小图并排
+const parasLead = computed(() => c.value.letterParas[0]);
+const parasRest = computed(() => c.value.letterParas.slice(1));
 </script>
 
 <template>
   <div class="container">
-    <!-- 信件式品牌故事 -->
+    <!-- 信件式品牌故事：标题 + 分隔线 + 引言 + 首段全宽，其余段落与养殖小图并排 -->
     <article class="letter">
-      <h1 class="letter-title">{{ c.title }}</h1>
+      <header class="letter-head">
+        <h1 class="letter-title">{{ c.title }}</h1>
+      </header>
       <p class="letter-lead">{{ c.letterLead }}</p>
       <div class="letter-body">
-        <p v-for="(para, i) in c.letterParas" :key="i">{{ para }}</p>
+        <p>{{ parasLead }}</p>
       </div>
-      <p class="letter-end">{{ c.letterEnd }}</p>
-      <p class="letter-ps">{{ c.letterPs }}</p>
+      <div class="letter-split">
+        <figure class="letter-figure">
+          <img
+            src="/images/about/farm.png"
+            :alt="c.galleryFarm"
+            loading="lazy"
+            width="1316"
+            height="1195"
+          />
+          <figcaption>{{ c.galleryFarm }}</figcaption>
+        </figure>
+        <div class="letter-body letter-body-side">
+          <p v-for="(para, i) in parasRest" :key="i">{{ para }}</p>
+          <p class="letter-end">{{ c.letterEnd }}</p>
+          <p class="letter-ps">{{ c.letterPs }}</p>
+        </div>
+      </div>
     </article>
 
-    <!-- 品牌图片：养殖场 / 门店 -->
-    <div class="about-gallery">
-      <figure class="about-shot">
+    <!-- 香港办公室：双图并排，共享说明文字 -->
+    <figure class="about-gallery">
+      <div class="about-gallery-imgs">
         <img
-          src="/images/about/farm.png"
-          :alt="c.galleryFarm"
-          loading="lazy"
-          width="1316"
-          height="1195"
-        />
-        <figcaption>{{ c.galleryFarm }}</figcaption>
-      </figure>
-      <figure class="about-shot">
-        <img
-          src="/images/about/store.jpg"
+          src="/images/about/office-1.jpg"
           :alt="c.galleryStore"
           loading="lazy"
-          width="1628"
-          height="1383"
         />
-        <figcaption>{{ c.galleryStore }}</figcaption>
-      </figure>
-    </div>
+        <img
+          src="/images/about/office-2.jpg"
+          :alt="c.galleryStore"
+          loading="lazy"
+        />
+      </div>
+      <figcaption>{{ c.galleryStore }}</figcaption>
+    </figure>
+
+    <!-- 定制合作 CTA：浅灰底色块、左对齐，跳转定制页 -->
+    <section class="about-cta">
+      <p class="cta-text">{{ c.ctaText }}</p>
+      <NuxtLinkLocale to="/pages/custom" class="cta-link">{{
+        c.ctaLink
+      }}</NuxtLinkLocale>
+    </section>
   </div>
 </template>
 
 <style scoped>
-/* 信件式排版：左对齐、大标题、斜体引言、正文窄栏 */
+/* 信件式排版：左对齐、大标题带分隔细线、斜体引言 */
 .letter {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 80px 0 24px;
+  padding: 80px 0 8px;
+}
+
+.letter-head {
+  border-bottom: 1px solid #e3d9cf;
+  padding-bottom: 28px;
+  margin-bottom: 36px;
 }
 
 .letter-title {
@@ -106,7 +140,7 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription });
   font-weight: 500;
   font-size: clamp(2.6rem, 6vw, 4rem);
   color: #170c02;
-  margin: 0 0 40px;
+  margin: 0;
   line-height: 1.1;
 }
 
@@ -125,7 +159,39 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription });
   font-size: 14px;
   line-height: 2.1;
   color: #6b5d51;
-  margin: 0 0 24px;
+  margin: 0;
+}
+
+/* 图文混排：左养殖小图、右剩余段落与结尾 */
+.letter-split {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.letter-figure {
+  margin: 0;
+}
+
+.letter-figure img {
+  width: 100%;
+  display: block;
+}
+
+.letter-figure figcaption {
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #b3a89e;
+  text-align: center;
+}
+
+.letter-body-side p {
+  margin: 0 0 22px;
 }
 
 .letter-end {
@@ -134,7 +200,7 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription });
   font-size: 13px;
   letter-spacing: 0.08em;
   color: #170c02;
-  margin: 40px 0 0;
+  margin: 32px 0 0;
 }
 
 .letter-ps {
@@ -145,42 +211,90 @@ usePageSeo({ title: c.value.seoTitle, description: c.value.seoDescription });
   margin: 8px 0 0;
 }
 
-/* 品牌图片：双列网格，移动端单列 */
+/* 香港办公室：双图并排，共享说明 */
 .about-gallery {
+  max-width: 760px;
+  margin: 56px auto 0;
+}
+
+.about-gallery-imgs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 56px auto;
+  gap: 16px;
 }
 
-.about-shot {
-  margin: 0;
-}
-
-.about-shot img {
+.about-gallery-imgs img {
   width: 100%;
-  /* 统一裁成 4:3，两张图等宽等高 */
+  /* 统一裁成 4:3，两张等宽等高 */
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
 }
 
-.about-shot figcaption {
+.about-gallery figcaption {
   margin-top: 12px;
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #b3a89e;
   text-align: center;
 }
 
+/* 定制合作 CTA：浅灰底色块、左对齐，边框式链接 */
+.about-cta {
+  max-width: 760px;
+  margin: 48px auto 0;
+  padding: 36px 40px 40px;
+  background: var(--c-soft, #f5f2ee);
+}
+
+.cta-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 2;
+  color: #554537;
+  margin: 0 0 20px;
+}
+
+.cta-link {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #170c02;
+  border: 1px solid #c3b6aa;
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cta-link:hover {
+  border-color: #170c02;
+  background: rgba(255, 255, 255, 0.5);
+}
+
 @media (max-width: 640px) {
-  .about-gallery {
+  .letter {
+    padding-top: 56px;
+  }
+
+  /* 图文混排转单列 */
+  .letter-split {
     grid-template-columns: 1fr;
-    margin: 40px auto;
+    gap: 24px;
+  }
+
+  .letter-figure {
+    max-width: 340px;
+  }
+
+  /* 双图在窄屏仍保持并排，等高小图 */
+  .about-gallery {
+    margin-top: 40px;
   }
 }
 </style>
