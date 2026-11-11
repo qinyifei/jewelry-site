@@ -26,16 +26,20 @@ const tr = useLocalized()
       <div>
         <h4>{{ $t('footer.shop') }}</h4>
         <NuxtLinkLocale to="/collections/all">{{ $t('nav.all') }}</NuxtLinkLocale>
-        <NuxtLinkLocale v-for="c in topCollections" :key="c.handle" :to="`/collections/${c.handle}`">
-          {{ tr(c).title }}
-        </NuxtLinkLocale>
+        <!-- 珍珠系列跳转暂时隐藏 -->
+        <template v-for="c in topCollections" :key="c.handle">
+          <NuxtLinkLocale v-if="c.handle !== 'pearls'" :to="`/collections/${c.handle}`">
+            {{ tr(c).title }}
+          </NuxtLinkLocale>
+        </template>
       </div>
 
       <div>
         <h4>{{ $t('footer.company') }}</h4>
         <NuxtLinkLocale to="/pages/about">{{ $t('nav.about') }}</NuxtLinkLocale>
         <NuxtLinkLocale v-if="site.features.custom" to="/pages/custom">{{ $t('nav.custom') }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/blogs/cases">{{ $t('footer.cases') }}</NuxtLinkLocale>
+        <!-- 合作案例跳转暂时隐藏 -->
+        <!-- <NuxtLinkLocale to="/blogs/cases">{{ $t('footer.cases') }}</NuxtLinkLocale> -->
         <NuxtLinkLocale to="/blogs/news">{{ $t('nav.journal') }}</NuxtLinkLocale>
         <NuxtLinkLocale v-if="site.features.contact" to="/pages/contact">{{ $t('nav.contact') }}</NuxtLinkLocale>
       </div>
