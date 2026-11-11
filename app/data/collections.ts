@@ -63,6 +63,18 @@ export const collections: Collection[] = [
       },
     },
   },
+  {
+    handle: 'brooches',
+    title: 'Brooches',
+    description: 'Hand-finished pearl brooches — sculptural, one-of-a-kind pins.',
+    image: '/images/collections/brooches.svg',
+    i18n: {
+      zh: {
+        title: '胸针',
+        description: '手工精修的珍珠胸针——独一款的造型胸针。',
+      },
+    },
+  },
   // ── 珍珠子类：品种 ──
   {
     handle: 'south-sea-white',
@@ -130,7 +142,7 @@ export const collections: Collection[] = [
     title: 'Tahitian Pearls',
     tagline: 'Deep iridescent dark tones',
     description: 'Exotic dark pearls from the black-lipped oyster of French Polynesia. Each pearl is unique, ranging from jet black and peacock green to deep aubergine and silver-grey.',
-    image: '/images/collections/tahitian.svg',
+    image: '/images/collections/tahitian.svg?v=2',
     i18n: {
       zh: {
         title: '大溪地珍珠',
@@ -160,7 +172,7 @@ export const collections: Collection[] = [
     title: 'Akoya Pearls',
     tagline: 'Delicate rose-pink overtones',
     description: 'The classic saltwater pearl. Akoya pearls from Pinctada fucata oysters are prized for their exceptional roundness, bright white body colour and sharp, reflective lustre.',
-    image: '/images/collections/akoya.svg',
+    image: '/images/collections/akoya.svg?v=2',
     i18n: {
       zh: {
         title: 'Akoya 珍珠',
@@ -190,7 +202,7 @@ export const collections: Collection[] = [
     title: 'Keshi Pearls',
     tagline: 'Natural free-form luster',
     description: 'Keshi pearls form without a nucleus as a by-product of culturing. Entirely nacre, they display extraordinary lustre in organic baroque shapes — no two are alike.',
-    image: '/images/collections/keshi.svg',
+    image: '/images/collections/keshi.svg?v=2',
     i18n: {
       zh: {
         title: 'Keshi 珍珠',
@@ -220,7 +232,7 @@ export const collections: Collection[] = [
     title: 'Mabé Pearls',
     tagline: 'Bold dome-shaped pearl',
     description: 'Mabé pearls grow against the inner shell of the oyster, producing a flat-backed dome of solid nacre. Their large surface and vivid overtones make them ideal for rings and earrings.',
-    image: '/images/collections/mabe.svg',
+    image: '/images/collections/mabe.svg?v=2',
     i18n: {
       zh: {
         title: '马贝珍珠',

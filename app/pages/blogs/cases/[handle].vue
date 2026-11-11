@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { site } from '~/config/site'
 import { cases, findCase } from '~/data/cases'
+import { findProduct } from '~/data/products'
 
 const route = useRoute()
 const found = findCase(route.params.handle as string)
@@ -12,6 +13,8 @@ if (!found) {
 const tr = useLocalized()
 const c = tr(found)
 const others = cases.filter(x => x.handle !== c.handle).slice(0, 3)
+// 案例关联的商品可能已下架，只在商品仍在列时显示「查看同款」
+const linkedProduct = computed(() => (c.product ? findProduct(c.product) : null))
 
 usePageSeo({ title: c.title, description: c.summary, image: c.finished, type: 'article' })
 </script>
@@ -60,8 +63,8 @@ usePageSeo({ title: c.title, description: c.summary, image: c.finished, type: 'a
         <cite v-if="c.quoteAuthor">— {{ c.quoteAuthor }}</cite>
       </blockquote>
 
-      <p v-if="c.product" style="margin-top: 32px">
-        <NuxtLinkLocale :to="`/products/${c.product}`" class="link-underline">{{ $t('cases.seeProduct') }} →</NuxtLinkLocale>
+      <p v-if="linkedProduct" style="margin-top: 32px">
+        <NuxtLinkLocale :to="`/products/${linkedProduct.handle}`" class="link-underline">{{ $t('cases.seeProduct') }} →</NuxtLinkLocale>
       </p>
     </div>
 

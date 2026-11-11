@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     baseUrl: site.url,
     defaultLocale: 'en',
     // vue-i18n 运行时选项（含缺键回退 fallbackLocale）在 app/i18n.config.ts 里配置
-    vueI18n: './app/i18n.config.ts',
+    vueI18n: './i18n/i18n.config.ts',
     strategy: 'prefix_except_default',
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
